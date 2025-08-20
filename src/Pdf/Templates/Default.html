@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Entrada - {{EVENT_TITLE}}</title>
+    <style>
+        @page {
+            margin: 16mm;
+        }
+
+        body {
+            font-family: DejaVu Sans, Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            color: #111;
+        }
+
+        .border {
+            border: 1px solid #222;
+        }
+
+        .btop {
+            border-top: 1px solid #222;
+        }
+
+        .bbtm {
+            border-bottom: 1px solid #222;
+        }
+
+        .pad {
+            padding: 8px;
+        }
+
+        .small {
+            font-size: 9px;
+            line-height: 1.25;
+        }
+
+        .muted {
+            color: #555;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+
+        .label {
+            font-size: 10px;
+            color: #666;
+            text-transform: uppercase;
+        }
+
+        .val {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .w-100 {
+            width: 100%;
+        }
+
+        .w-60 {
+            width: 60%;
+        }
+
+        .w-40 {
+            width: 40%;
+        }
+
+        .qr {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+        }
+
+        .poster {
+            width: 100%;
+            height: auto;
+        }
+
+        /*.code {
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            display: inline-block;
+        }*/
+
+        .divider {
+            height: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table class="w-100 border" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="pad" colspan="2">
+                <div class="title">{{EVENT_TITLE}}</div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="pad bbtm w-60" style="vertical-align: top;">
+                <img class="poster" src="{{POSTER_IMAGE_SRC}}" alt="{{EVENT_TITLE}}">
+                <div class="divider"></div>
+            </td>
+
+            <td class="pad bbtm w-40" style="vertical-align: top;">
+                <table class="w-100" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td class="center pad">
+                            <img class="qr" src="{{QR_IMAGE_SRC}}" alt="Código QR">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="divider"></td>
+                    </tr>
+                    <tr>
+                        <td class="pad border">
+                            <table class="w-100" cellspacing="0" cellpadding="2">
+                                <tr>
+                                    <td class="label">Fecha</td>
+                                    <td class="right">{{EVENT_DATE}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Hora</td>
+                                    <td class="right">{{EVENT_TIME}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Recinto</td>
+                                    <td class="right">{{VENUE_NAME}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Dirección</td>
+                                    <td class="right">{{VENUE_ADDRESS}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Localidad</td>
+                                    <td class="right">{{VENUE_CITY}}</td>
+                                </tr>
+                                <!--<tr>
+                                    <td class="label">Zona/Asiento</td>
+                                    <td class="right">{{SEAT_LABEL}}</td>
+                                </tr>-->
+                                <tr>
+                                    <td class="label">Titular</td>
+                                    <td class="right">{{ATTENDEE_NAME}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Código</td>
+                                    <td class="right"><span class="code">{{TICKET_CODE}}</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="label">Orden</td>
+                                    <td class="right">{{ORDER_NUMBER}}</td>
+                                </tr>
+                            </table>
+
+                            <!--<table class="w-100" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="pad" style="padding-left:0;">
+                                        {{EVENT_DESCRIPTION}}
+                                    </td>
+                                </tr>
+                            </table>-->
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="pad" colspan="2">
+                <div class="label">Condiciones generales de la entrada</div>
+                <div class="small">
+                    {{CONDITIONS_TEXT}}
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="pad" colspan="2">
+                <div class="label">Términos y condiciones</div>
+                <div class="small">
+                    {{LEGAL_TEXT}}
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="pad btop small muted" colspan="2" style="text-align:center;">
+                Entrada emitida por {{ISSUER_NAME}} &middot; {{ISSUER_WEBSITE}} &middot; {{SUPPORT_EMAIL}}
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<?php
+
+namespace DL\TicketManager\Frontend;
+
+use DL\TicketManager\Order\Ticket;
+use DL\TicketManager\Order\TicketStatus;
+
+class Validation
+{
+    public function register(): void
+    {
+        add_shortcode('ticket_validator', [$this, 'renderValidator']);
+        add_action('wp_enqueue_scripts', [$this, 'enqueueAssets']);
+        add_action('rest_api_init', [$this, 'registerEndpoint']);
+    }
+
+    public function renderValidator(): string
+    {
+
+
+        ob_start();
+        ?>
+        <div id="ticket-validator">
+            <h3>Validador de Tickets</h3>
+            <video id="qr-video"></video>
+            <p id="qr-result">Esperando lectura...</p>
+        </div>
+        <?php
+        return ob_get_clean();
+    }
+
+    public function enqueueAssets(): void
+    {
+        global $post;
+        if (!is_a($post, 'WP_Post')) {
+            return;
+        }
+
+        if (has_shortcode($post->post_content, 'ticket_validator')) {
+
+            wp_enqueue_script(
+                'qr-scanner',
+                plugin_dir_url(DL_TICKET_MANAGER_FILE) . 'assets/js/qr-scanner.umd.min.js',
+                [],
+                DL_TICKET_MANAGER_VERSION,
+                true
+            );
+
+            wp_enqueue_script(
+                'ticket-validator-js',
+                plugin_dir_url(DL_TICKET_MANAGER_FILE) . 'assets/js/ticket-validator.js',
+                ['qr-scanner', 'jquery'],
+                DL_TICKET_MANAGER_VERSION,
+                true
+            );
+
+            wp_localize_script('ticket-validator-js', 'ticketValidator', [
+                'endpoint' => esc_url(rest_url('tickets/v1/validate')),
+                'nonce'    => wp_create_nonce('wp_rest')
+            ]);
+
+            wp_enqueue_style(
+                'ticket-validator-css',
+                plugin_dir_url(DL_TICKET_MANAGER_FILE) . 'assets/css/ticket-validator.css',
+                [],
+                DL_TICKET_MANAGER_VERSION
+            );
+        }
+    }
+
+
+    public function registerEndpoint(): void
+    {
+        register_rest_route('tickets/v1', '/validate', [
+            'methods'  => 'POST',
+            'callback' => [$this, 'validateTicket'],
+            'permission_callback' => '__return_true',
+        ]);
+    }
+
+
+    public function validateTicket(\WP_REST_Request $request): \WP_REST_Response
+    {
+        $code = sanitize_text_field($request->get_param('code'));
+        $data = json_decode($code, true);
+
+        $order_id = $data['order_id'] ?? null;
+        $security = $data['security'] ?? null;
+
+        if ($order_id === null) {
+            return new \WP_REST_Response([
+                'status'  => 'error',
+                'message' => 'Código de ticket inválido.'
+            ], 400);
+        }
+
+        //Obtenemos el pedido y comprobamos si existe
+        $order = wc_get_order((int)$order_id);
+        if (!$order) {
+            return new \WP_REST_Response([
+                'status'  => 'error',
+                'message' => 'El pedido no es válido.'
+            ], 400);
+        }
+
+        //Obtenemos el pedido y comprobamos que es valido y tiene el estado procesando o completado
+        if (!in_array($order->get_status(), ['processing', 'completed'])) {
+            return new \WP_REST_Response([
+                'status'  => 'error',
+                'message' => 'El pedido no está en estado procesando/completado.'
+            ], 400);
+        }
+
+        //Comprobamos seguridad
+        if ($security !== get_post_meta($order_id, 'security', true)) {
+            return new \WP_REST_Response([
+                'status'  => 'error',
+                'message' => 'Código de seguridad inválido.'
+            ], 400);
+        }
+
+        //Comprobamos estado del ticket
+        $ticket = new Ticket();
+        $ticket_data = $ticket->getDataFromCode($data['code']);
+        $ticket_status = $ticket_data['status'] ?? null;
+
+        if ($ticket_status !== 'pending') {
+            return new \WP_REST_Response([
+                'status'  => 'error',
+                'message' => 'El ticket ya se ha usado o se ha cancelado.'
+            ], 400);
+        }
+
+        //Confirmamos ticket
+        $ticket->changeStatus($ticket_data['id'], TicketStatus::STATUS_CONFIRMED);
+
+        return new \WP_REST_Response([
+            'status'  => 'success',
+            'message' => "
+            <strong>{$ticket_data['event']}</strong>
+            <span>{$ticket_data['name']}</span>
+            <span>{$ticket_data['time']}, {$ticket_data['date']}</span>
+            ",
+        ]);
+    }
+}
