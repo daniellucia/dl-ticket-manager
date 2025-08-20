@@ -13,6 +13,13 @@ class FormHandler
         add_action('woocommerce_checkout_create_order_line_item', [$this, 'addOrderLineItemMeta'], 10, 4);
     }
 
+    /**
+     * Verificamos si el producto se puede vender individualmente
+     * @param bool $sold_individually
+     * @param mixed $product
+     * @return bool
+     * @author Daniel Lucia
+     */
     public function isSoldIndividually(bool $sold_individually, $product): bool
     {
         if ($product->get_type() === 'ticket') {
@@ -21,6 +28,11 @@ class FormHandler
         return $sold_individually;
     }
 
+    /**
+     * Mostramos el formulario para los tickets
+     * @return void
+     * @author Daniel Lucia
+     */
     public function outputForm(): void
     {
         global $product;
@@ -54,6 +66,14 @@ class FormHandler
         <?php
     }
 
+    /**
+     * Agregamos datos al carrito para los tickets
+     * @param mixed $cart_item_data
+     * @param mixed $product_id
+     * @param mixed $variation_id
+     * @return array
+     * @author Daniel Lucia
+     */
     public function addCartItemData($cart_item_data, $product_id, $variation_id): array
     {
 
@@ -64,6 +84,13 @@ class FormHandler
         return $cart_item_data;
     }
 
+    /**
+     * Mostramos los datos del item en el carrito
+     * @param mixed $item_data
+     * @param mixed $cart_item
+     * @return array
+     * @author Daniel Lucia
+     */
     public function displayItemData($item_data, $cart_item): array
     {
         if (isset($cart_item['ticket_names'])) {
@@ -77,6 +104,15 @@ class FormHandler
         return $item_data;
     }
 
+    /**
+     * Añadimos metadatos a la línea del pedido
+     * @param mixed $item
+     * @param mixed $cart_item_key
+     * @param mixed $values
+     * @param mixed $order
+     * @return void
+     * @author Daniel Lucia
+     */
     public function addOrderLineItemMeta($item, $cart_item_key, $values, $order)
     {
         if (isset($values['ticket_names']) && is_array($values['ticket_names'])) {

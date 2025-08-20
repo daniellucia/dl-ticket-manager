@@ -14,6 +14,11 @@ class Validation
         add_action('rest_api_init', [$this, 'registerEndpoint']);
     }
 
+    /**
+     * Mostramos el validador de tickets
+     * @return bool|string
+     * @author Daniel Lucia
+     */
     public function renderValidator(): string
     {
 
@@ -29,6 +34,11 @@ class Validation
         return ob_get_clean();
     }
 
+    /**
+     * Encolamos los scripts y estilos necesarios para el validador de tickets
+     * @return void
+     * @author Daniel Lucia
+     */
     public function enqueueAssets(): void
     {
         global $post;
@@ -68,7 +78,11 @@ class Validation
         }
     }
 
-
+    /**
+     * Registramos el endpoint para la validación de tickets
+     * @return void
+     * @author Daniel Lucia
+     */
     public function registerEndpoint(): void
     {
         register_rest_route('tickets/v1', '/validate', [
@@ -79,6 +93,12 @@ class Validation
     }
 
 
+    /**
+     * Validamos el ticket
+     * @param \WP_REST_Request $request
+     * @return \WP_REST_Response
+     * @author Daniel Lucia
+     */
     public function validateTicket(\WP_REST_Request $request): \WP_REST_Response
     {
         $code = sanitize_text_field($request->get_param('code'));

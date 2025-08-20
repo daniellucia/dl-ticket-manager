@@ -25,7 +25,7 @@ class TicketGenerator
      * Borra los tickets asociados cuando se elimina un pedido
      * @param mixed $order_id
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function deleteTicketsWithOrder($order_id)
     {
@@ -45,7 +45,7 @@ class TicketGenerator
     /**
      * Método para agregar el metabox de nombres de tickets
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function addTicketNamesMetabox(): void
     {
@@ -66,7 +66,7 @@ class TicketGenerator
      * Método para renderizar el metabox de nombres de tickets
      * @param mixed $order
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function renderTicketNamesMetabox($order): void
     {
@@ -105,7 +105,7 @@ class TicketGenerator
      * Con esto, marcamos los tickets como cancelados.
      * @param int $order_id
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function cancelTickets(int $order_id): void
     {
@@ -123,7 +123,7 @@ class TicketGenerator
      * Método para generar tickets para un pedido
      * @param int $order_id
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function generateTickets(int $order_id): void
     {
@@ -181,7 +181,7 @@ class TicketGenerator
      * Método para verificar si un evento tiene tickets
      * @param int $order_id
      * @return bool
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     private function eventHasTickets(int $order_id)
     {
@@ -203,7 +203,7 @@ class TicketGenerator
      * Método para agregar el campo de seguridad a un pedido
      * @param mixed $order_id
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function addOrderSecurityField($order_id)
     {
@@ -221,7 +221,7 @@ class TicketGenerator
      * Método para obtener la imagen QR de un ticket
      * @param mixed $order_id
      * @param mixed $code
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function getQrImage(int $order_id, string $code)
     {

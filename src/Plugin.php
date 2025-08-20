@@ -46,6 +46,11 @@ class Plugin
         echo '<div class="error"><p><strong>Ticket Manager</strong> requiere WooCommerce activo.</p></div>';
     }
 
+    /**
+     * Cargamos los componentes del plugin
+     * @return void
+     * @author Daniel Lucia
+     */
     public function loadComponents(): void
     {
         $this->product_type->register();

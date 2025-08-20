@@ -12,7 +12,7 @@ class TicketStatus
      * Método para obtener la etiqueta de un estado en formato html
      * @param mixed $status
      * @return string
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function getLabel($status)
     {
@@ -45,7 +45,7 @@ class TicketStatus
     /**
      * Método para obtener todos los estados de los tickets
      * @return string[]
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function getAllStatuses()
     {
@@ -59,7 +59,7 @@ class TicketStatus
     /**
      * Método para obtener el estado por defecto de los tickets
      * @return string
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function getDefaultStatus(): string
     {

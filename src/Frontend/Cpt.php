@@ -27,6 +27,12 @@ class Cpt
         });
     }
 
+    /**
+     * Quitamos el boton de añadir al carrito del listado si el producto es de tipo ticket
+     * @param mixed $button
+     * @param mixed $product
+     * @author Daniel Lucia
+     */
     public function hideAddToCartForTickets($button, $product)
     {
         if ($product->is_type('ticket')) {
@@ -35,6 +41,11 @@ class Cpt
         return $button;
     }
 
+    /**
+     * Agregamos estilos para las columnas del listado de tickets
+     * @return void
+     * @author Daniel Lucia
+     */
     public function customColumnStyles()
     {
         $screen = get_current_screen();
@@ -49,6 +60,11 @@ class Cpt
         }
     }
 
+    /**
+     * Redireccionamos si se intenta entrar directamente a un ticket
+     * @return void
+     * @author Daniel Lucia
+     */
     public function redirectSingular()
     {
         if (is_singular('dl-ticket')) {
@@ -57,6 +73,12 @@ class Cpt
         }
     }
 
+    /**
+     * Quitamos acciones del admin para los tickets
+     * @param mixed $actions
+     * @param mixed $post
+     * @author Daniel Lucia
+     */
     public function removeActions($actions, $post)
     {
 
@@ -68,6 +90,12 @@ class Cpt
 
         return $actions;
     }
+
+    /**
+     * Registramos el Custom Post Type para los tickets
+     * @return void
+     * @author Daniel Lucia
+     */
     public function registerCpt()
     {
         $labels = [
@@ -107,6 +135,11 @@ class Cpt
         register_post_type('dl-ticket', $args);
     }
 
+    /**
+     * Registramos la taxonomía para los tickets para que se pueda filtrar por eventos
+     * @return void
+     * @author Daniel Lucia
+     */
     public function registerTaxonomy(): void
     {
         $labels = [
@@ -138,6 +171,11 @@ class Cpt
         );
     }
 
+    /**
+     * Agregamos columnas personalizadas a la lista de tickets
+     * @param mixed $columns
+     * @author Daniel Lucia
+     */
     public function addCustomColumns($columns)
     {
         if (isset($columns['date'])) {
@@ -155,6 +193,13 @@ class Cpt
         return $columns;
     }
 
+    /**
+     * Renderizamos las columnas personalizadas en la lista de tickets
+     * @param mixed $column
+     * @param mixed $post_id
+     * @return void
+     * @author Daniel Lucia
+     */
     public function renderCustomColumns($column, $post_id)
     {
         switch ($column) {
@@ -195,6 +240,11 @@ class Cpt
         }
     }
 
+    /**
+     * Agregamos un filtro por eventos en la lista de tickets
+     * @return void
+     * @author Daniel Lucia
+     */
     public function addEventsFilterDropdown(): void
     {
         global $typenow;
@@ -218,6 +268,12 @@ class Cpt
         }
     }
 
+    /**
+     * Filtramos los tickets por evento
+     * @param mixed $query
+     * @return void
+     * @author Daniel Lucia
+     */
     public function filterTicketsByEvent($query)
     {
         global $pagenow;
@@ -239,6 +295,11 @@ class Cpt
         }
     }
 
+    /**
+     * Cambiamos el estado de un ticket mediante AJAX
+     * @return void
+     * @author Daniel Lucia
+     */
     public function ajaxChangeTicketStatus()
     {
         check_ajax_referer('dl_ticket_manager_status_nonce', 'nonce');
@@ -263,11 +324,16 @@ class Cpt
         wp_send_json_error(['message' => __('Error updating status', 'dl-ticket-manager')]);
     }
 
+    /**
+     * Agregamos el script AJAX para cambiar el estado del ticket
+     * @return void
+     * @author Daniel Lucia
+     */
     public function adminAjaxScript()
     {
         $screen = get_current_screen();
         if ($screen && $screen->post_type === 'dl-ticket') {
-?>
+        ?>
             <script>
                 jQuery(document).ready(function($) {
                     $('.dl-change-status').on('change', function() {
@@ -294,7 +360,7 @@ class Cpt
                     });
                 });
             </script>
-<?php
+        <?php
         }
     }
 }

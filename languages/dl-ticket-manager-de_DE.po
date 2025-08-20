@@ -68,8 +68,8 @@ msgid "Confirmed"
 msgstr "Bestätigt"
 
 #. Author of the plugin
-msgid "Daniel Lucia"
-msgstr "Daniel Lucia"
+msgid "Daniel Lúcia"
+msgstr "Daniel Lúcia"
 
 #: src/Config/Page.php:95
 msgid "Default template"

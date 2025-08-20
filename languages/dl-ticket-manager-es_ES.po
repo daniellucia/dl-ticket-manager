@@ -68,7 +68,7 @@ msgid "Confirmed"
 msgstr "Confirmado"
 
 #. Author of the plugin
-msgid "Daniel Lucia"
+msgid "Daniel Lúcia"
 msgstr "Daniel Lucía"
 
 #: src/Config/Page.php:95

@@ -10,6 +10,11 @@ class Page
         add_action('admin_init', [$this, 'registerSettings']);
     }
 
+    /**
+     * Agregamos la página de configuración del plugin
+     * @return void
+     * @author Daniel Lúcia
+     */
     public function addSettingsPage(): void
     {
         add_options_page(
@@ -21,6 +26,11 @@ class Page
         );
     }
 
+    /**
+     * Registra los ajustes del plugin
+     * @return void
+     * @author Daniel Lucia
+     */
     public function registerSettings(): void
     {
         register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_legal_text');
@@ -63,7 +73,7 @@ class Page
 
     public function renderSettingsPage(): void
     {
-?>
+        ?>
         <div class="wrap">
             <h1><?php esc_html_e('Ticket Manager Configuration', 'dl-ticket-manager'); ?></h1>
             <form method="post" action="options.php">
@@ -74,21 +84,36 @@ class Page
                 ?>
             </form>
         </div>
-<?php
+        <?php
     }
 
+    /**
+     * Mostramos campo para texto legal
+     * @return void
+     * @author Daniel Lucia
+     */
     public function renderLegalTextField(): void
     {
         $value = get_option('dl_ticket_manager_legal_text', '');
         echo '<textarea name="dl_ticket_manager_legal_text" rows="6" cols="60" style="width: 100%;">' . esc_textarea($value) . '</textarea>';
     }
 
+    /**
+     * Mostramos campo para condiciones generales
+     * @return void
+     * @author Daniel Lucia
+     */
     public function renderConditionsTextField(): void
     {
         $value = get_option('dl_ticket_manager_conditions_text', '');
         echo '<textarea name="dl_ticket_manager_conditions_text" rows="6" cols="60" style="width: 100%;">' . esc_textarea($value) . '</textarea>';
     }
 
+    /**
+     * Mostramos campo para plantilla de ticket
+     * @return void
+     * @author Daniel Lucia
+     */
     public function renderTemplateSelectField(): void
     {
         $templates = apply_filters('dl_ticket_manager_templates', [

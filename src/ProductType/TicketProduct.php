@@ -27,6 +27,11 @@ class TicketProduct
         add_filter('woocommerce_single_product_summary', [$this, 'singleProductSummary'], 31);
     }
 
+    /**
+     * Mostramos la plantilla para el ticket
+     * @return void
+     * @author Daniel Lucia
+     */
     public function singleProductSummary()
     {
         global $product;
@@ -36,6 +41,14 @@ class TicketProduct
         }
     }
 
+    /**
+     * Modificamos la plantilla del carrito para los tickets
+     * @param mixed $template
+     * @param mixed $template_name
+     * @param mixed $template_path
+     * @return string
+     * @author Daniel Lucia
+     */
     public function addCartTemplate($template, $template_name, $template_path): string
     {
         if ($template_name === 'single-product/add-to-cart/ticket.php') {
@@ -44,17 +57,36 @@ class TicketProduct
         return $template;
     }
 
+    /**
+     * Añadimos el tipo de producto "ticket"
+     * @param array $types
+     * @return array
+     * @author Daniel Lucia
+     */
     public function addType(array $types): array
     {
         $types['ticket'] = __('Ticket', 'dl-ticket-manager');
         return $types;
     }
 
+    /**
+     * Modificamos la clase del producto según su tipo
+     * @param string $classname
+     * @param string $product_type
+     * @return string
+     * @author Daniel Lucia
+     */
     public function mapProductClass(string $classname, string $product_type): string
     {
         return $product_type === 'ticket' ? WC_Product_Ticket::class : $classname;
     }
 
+    /**
+     * Modificamos las pestañas de datos del producto
+     * @param array $tabs
+     * @return array
+     * @author Daniel Lucia
+     */
     public function productDataTabs(array $tabs): array
     {
         $tabs['event'] = [
@@ -67,6 +99,11 @@ class TicketProduct
         return $tabs;
     }
 
+    /**
+     * Mostramos el panel de datos del producto
+     * @return void
+     * @author Daniel Lucia
+     */
     public function productDataPanelContent()
     {
         echo '<div id="event_product_data" class="panel woocommerce_options_panel">';
@@ -95,7 +132,6 @@ class TicketProduct
             'type'  => 'time',
         ]);
 
-        // Nuevo campo: recinto
         woocommerce_wp_text_input([
             'id'  => '_event_venue',
             'label'  => __('Event venue', 'dl-ticket-manager'),
@@ -140,6 +176,12 @@ class TicketProduct
         echo '</div>';
     }
 
+    /**
+     * Guardamos los campos personalizados del producto
+     * @param int $post_id
+     * @return void
+     * @author Daniel Lucia
+     */
     public function saveProductDataFields(int $post_id): void
     {
         $event_date = $_POST['_event_date'] ?? '';
@@ -168,6 +210,13 @@ class TicketProduct
         update_post_meta($post_id, '_is_nominative', $is_nominative);
     }
 
+    /**
+     * Verificamos si el ticket se puede comprar revisando la fecha de finalización
+     * @param bool $purchasable
+     * @param \WC_Product $product
+     * @return bool
+     * @author Daniel Lucia
+     */
     public function isTicketPurchasable(bool $purchasable, \WC_Product $product): bool
     {
         if ($product->get_type() === 'ticket') {
@@ -180,11 +229,15 @@ class TicketProduct
         return $purchasable;
     }
 
-
+    /**
+     * Mostramos un mensaje si la venta ha terminado
+     * @return void
+     * @author Daniel Lucia
+     */
     public function showSaleEndedMessage(): void
     {
         global $product;
-        
+
         // Nos aseguramos de que es un objeto de producto válido y no se puede comprar
         if ($product instanceof \WC_Product && $product->get_type() === 'ticket' && !$product->is_purchasable()) {
             $end_date = $product->get_meta('_end_date');
@@ -194,6 +247,13 @@ class TicketProduct
         }
     }
 
+    /**
+     * Cambiamos el texto del botón "Añadir al carrito"
+     * @param string $text
+     * @param \WC_Product $product
+     * @return string
+     * @author Daniel Lucia
+     */
     public function changeAddToCartText(string $text, \WC_Product $product): string
     {
         if ($product->get_type() === 'ticket' && !$product->is_purchasable()) {
@@ -202,6 +262,12 @@ class TicketProduct
         return $text;
     }
 
+    /**
+     * Encolamos los scripts y estilos necesarios para el admin
+     * @param mixed $hook
+     * @return void
+     * @author Daniel Lucia
+     */
     public function admin_scripts($hook): void
     {
         global $post_type;

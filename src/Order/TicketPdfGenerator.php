@@ -27,7 +27,7 @@ class TicketPdfGenerator
     /**
      * Revisa si existe el parámetro GET "code-ticket" y genera el PDF para descargar.
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function maybeDownloadTicket(): void
     {
@@ -50,7 +50,7 @@ class TicketPdfGenerator
      * @param string $code
      * @param bool $download
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function createPdf(string $code, bool $download = true): void
     {

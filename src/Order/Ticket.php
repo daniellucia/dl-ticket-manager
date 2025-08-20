@@ -9,7 +9,7 @@ class Ticket
      * Método para crear un ticket
      * @param mixed $data
      * @return int|\WP_Error
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function create($data)
     {
@@ -43,7 +43,7 @@ class Ticket
      * @param int $ticket_id
      * @param string $new_status
      * @return void
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function changeStatus(int $ticket_id, string $new_status): void
     {
@@ -63,7 +63,7 @@ class Ticket
      * Método para crear un evento como taxonomia
      * @param string $eventName
      * @return int
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function createEvent(string $eventName): int
     {
@@ -86,7 +86,7 @@ class Ticket
      * Método para obtener los tickets de un pedido
      * @param int $order_id
      * @return array{code: mixed, event: mixed, id: bool|int, name: mixed, status: mixed[]}
-     * @author Daniel Lucia
+     * @author Daniel Lúcia
      */
     public function getFromOrderId(int $order_id)
     {
@@ -120,6 +120,12 @@ class Ticket
         return $tickets;
     }
 
+    /**
+     * Obtenemos los datos de un ticket a partir de su código
+     * @param string $code
+     * @return array
+     * @author Daniel Lucia
+     */
     public function getDataFromCode(string $code): array
     {
         $query = new \WP_Query([
