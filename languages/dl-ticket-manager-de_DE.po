@@ -1,0 +1,305 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ticket Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-20 16:52+0000\n"
+"PO-Revision-Date: 2025-08-20 17:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: German\n"
+"Language: de_DE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.29\n"
+"X-Domain: dl-ticket-manager"
+
+#: src/Frontend/FormHandler.php:72
+msgid "#"
+msgstr "#"
+
+#: src/Frontend/Cpt.php:76
+msgid "Add new"
+msgstr "Neu hinzufügen"
+
+#: src/Frontend/Cpt.php:121
+msgid "Add new event"
+msgstr "Neues Ereignis hinzufügen"
+
+#: src/Frontend/Cpt.php:77
+msgid "Add new ticket"
+msgstr "Neues Ticket hinzufügen"
+
+#: src/ProductType/TicketProduct.php:109
+msgid "Address"
+msgstr "Adresse"
+
+#: src/Frontend/Cpt.php:116
+msgid "All events"
+msgstr "Alle Veranstaltungen"
+
+#: src/Order/TicketGenerator.php:58
+msgid "Asistentes"
+msgstr "Assistenten"
+
+#: src/Order/TicketStatus.php:31
+msgid "Cancelled"
+msgstr "Abgesagt"
+
+#: src/Frontend/Cpt.php:153
+msgid "Change Status"
+msgstr "Status ändern"
+
+#: src/ProductType/TicketProduct.php:117 src/ProductType/TicketProduct.php:118
+msgid "City"
+msgstr "Stadt"
+
+#: src/Frontend/Cpt.php:150 src/Order/TicketGenerator.php:94
+msgid "Code"
+msgstr "Code"
+
+#: src/Config/Page.php:34
+msgid "Configure the legal texts and conditions of the plugin."
+msgstr "Konfigurieren Sie die Rechtstexte und Bedingungen des Plugins."
+
+#: src/Order/TicketStatus.php:26
+msgid "Confirmed"
+msgstr "Bestätigt"
+
+#. Author of the plugin
+msgid "Daniel Lucia"
+msgstr "Daniel Lucia"
+
+#: src/Config/Page.php:95
+msgid "Default template"
+msgstr "Standardvorlage"
+
+#: src/ProductType/TicketProduct.php:77
+msgid "Does this ticket require the name of the attendees?"
+msgstr "Ist auf diesem Ticket der Name der Teilnehmer erforderlich?"
+
+#: src/Frontend/Cpt.php:151
+msgid "Download"
+msgstr "Herunterladen"
+
+#: src/Frontend/Cpt.php:163 src/Order/TicketGenerator.php:95
+msgid "Download ticket"
+msgstr "Ticket herunterladen"
+
+#: src/Frontend/Cpt.php:119
+msgid "Edit event"
+msgstr "Ereignis bearbeiten"
+
+#: src/Frontend/Cpt.php:78
+msgid "Edit ticket"
+msgstr "Ticket bearbeiten"
+
+#: src/ProductType/TicketProduct.php:133
+msgid "End sale date"
+msgstr "Enddatum des Verkaufs"
+
+#: src/ProductType/TicketProduct.php:112
+msgid "Enter the address where the event will take place."
+msgstr "Geben Sie die Adresse ein, an der die Veranstaltung stattfinden soll."
+
+#: src/ProductType/TicketProduct.php:120
+msgid "Enter the city where the event will take place."
+msgstr "Geben Sie die Stadt ein, in der die Veranstaltung stattfinden soll."
+
+#: src/ProductType/TicketProduct.php:136
+msgid "Enter the end sale date for the ticket."
+msgstr "Geben Sie das Endverkaufsdatum für das Ticket ein."
+
+#: src/ProductType/TicketProduct.php:94
+msgid "Enter the start time of the event."
+msgstr "Geben Sie die Startzeit des Ereignisses ein."
+
+#: src/ProductType/TicketProduct.php:128
+msgid "Enter the state where the event will take place."
+msgstr ""
+"Geben Sie das Bundesland ein, in dem die Veranstaltung stattfinden soll."
+
+#: src/ProductType/TicketProduct.php:104
+msgid "Enter the venue where the event will take place."
+msgstr ""
+"Geben Sie den Veranstaltungsort ein, an dem die Veranstaltung stattfinden "
+"wird."
+
+#: src/Frontend/Cpt.php:263
+msgid "Error updating status"
+msgstr "Fehler beim Aktualisieren des Status"
+
+#: src/Frontend/Cpt.php:114 src/ProductType/TicketProduct.php:61
+msgid "Event"
+msgstr "Ereignis"
+
+#: src/ProductType/TicketProduct.php:110
+msgid "Event address"
+msgstr "Veranstaltungsadresse"
+
+#: src/ProductType/TicketProduct.php:82
+msgid "Event date"
+msgstr "Veranstaltungsdatum"
+
+#: src/ProductType/TicketProduct.php:91
+msgid "Event time"
+msgstr "Ereigniszeit"
+
+#: src/ProductType/TicketProduct.php:101 src/ProductType/TicketProduct.php:102
+msgid "Event venue"
+msgstr "Veranstaltungsort"
+
+#: src/Frontend/Cpt.php:113 src/Frontend/Cpt.php:123
+msgid "Events"
+msgstr "Veranstaltungen"
+
+#: src/Config/Page.php:49
+msgid "General conditions of entry"
+msgstr "Allgemeine Teilnahmebedingungen"
+
+#: src/Config/Page.php:32
+msgid "General settings"
+msgstr "Allgemeine Einstellungen"
+
+#: src/ProductType/TicketProduct.php:85
+msgid "Introduce la fecha de inicio del evento."
+msgstr "Stellen Sie die fecha de inicio del evento vor."
+
+#: src/Config/Page.php:41
+msgid "Legal text"
+msgstr "Gesetzestext"
+
+#: src/Order/TicketGenerator.php:93
+msgid "Name"
+msgstr "Name"
+
+#: src/Frontend/FormHandler.php:35
+msgid "Name(s) for the ticket:"
+msgstr "Name(n) für das Ticket:"
+
+#: src/Frontend/Cpt.php:122
+msgid "New event name"
+msgstr "Neuer Ereignisname"
+
+#: src/Frontend/Cpt.php:79
+msgid "New ticket"
+msgstr "Neues Ticket"
+
+#: src/Order/TicketGenerator.php:74
+msgid "No order data."
+msgstr "Keine Bestelldaten."
+
+#: src/Frontend/Cpt.php:82
+msgid "No tickets found"
+msgstr "Keine Tickets gefunden"
+
+#: src/Frontend/Cpt.php:83
+msgid "No tickets found in trash"
+msgstr "Keine Tickets im Papierkorb gefunden"
+
+#: src/Frontend/FormHandler.php:48
+msgid "Nombre del titular del ticket"
+msgstr "Nombre del titular del ticket"
+
+#: src/ProductType/TicketProduct.php:76
+msgid "Nominative ticket"
+msgstr "Namensticket"
+
+#: src/Frontend/Cpt.php:149
+msgid "Order"
+msgstr "Befehl"
+
+#: src/Frontend/Cpt.php:117
+msgid "Parent event"
+msgstr "Übergeordnetes Ereignis"
+
+#: src/Frontend/Cpt.php:118
+msgid "Parent event:"
+msgstr "Übergeordnetes Ereignis:"
+
+#: src/Order/TicketStatus.php:21
+msgid "Pending"
+msgstr "Ausstehend"
+
+#. Description of the plugin
+msgid "Plugin para venta de tickets con WooCommerce."
+msgstr "Plugin zum Verkauf von Tickets mit WooCommerce."
+
+#: src/ProductType/TicketProduct.php:200
+msgid "Sale completed"
+msgstr "Verkauf abgeschlossen"
+
+#: src/Frontend/Cpt.php:115
+msgid "Search events"
+msgstr "Ereignisse suchen"
+
+#: src/Frontend/Cpt.php:81
+msgid "Search tickets"
+msgstr "Tickets suchen"
+
+#: src/Order/TicketGenerator.php:81
+msgid "Security code"
+msgstr "Sicherheitscode"
+
+#: src/ProductType/TicketProduct.php:125 src/ProductType/TicketProduct.php:126
+msgid "State"
+msgstr "Zustand"
+
+#: src/Frontend/Cpt.php:152
+msgid "Status"
+msgstr "Status"
+
+#: src/Frontend/Cpt.php:258
+msgid "Status updated"
+msgstr "Status aktualisiert"
+
+#: src/ProductType/TicketProduct.php:192
+msgid "The ticket sales for this event have ended."
+msgstr "Der Ticketverkauf für diese Veranstaltung ist beendet."
+
+#: src/Frontend/Cpt.php:75 src/ProductType/TicketProduct.php:49
+msgid "Ticket"
+msgstr "Ticket"
+
+#. Name of the plugin
+#: src/Config/Page.php:17
+msgid "Ticket Manager"
+msgstr "Ticketmanager"
+
+#: src/Config/Page.php:16
+msgid "Ticket Manager Configuración"
+msgstr "Ticket Manager Configación"
+
+#: src/Config/Page.php:68
+msgid "Ticket Manager Configuration"
+msgstr "Ticket-Manager-Konfiguration"
+
+#: src/Config/Page.php:57
+msgid "Ticket template"
+msgstr "Ticketvorlage"
+
+#: src/Frontend/Cpt.php:74 src/Frontend/Cpt.php:84
+msgid "Tickets"
+msgstr "Tickets"
+
+#: src/Frontend/Cpt.php:208
+#, php-format
+msgid "Todos los %s"
+msgstr "Todos los %s"
+
+#: src/Order/TicketStatus.php:36
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: src/Frontend/Cpt.php:120
+msgid "Update event"
+msgstr "Update-Ereignis"
+
+#: src/Order/TicketGenerator.php:85
+msgid "Valid attendees:"
+msgstr "Gültige Teilnehmer:"
+
+#: src/Frontend/Cpt.php:80
+msgid "View ticket"
+msgstr "Ticket ansehen"
