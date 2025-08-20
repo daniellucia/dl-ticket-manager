@@ -1,10 +1,11 @@
 <?php
 
 /**
- * Plugin Name: Ticket Manager
+ * Plugin Name: Ticket Manager for WooCommerce
  * Description: Plugin para venta de tickets con WooCommerce.
- * Version: 1.0.0
- * Author: Daniel Lucia
+ * Version: 0.0.61
+ * Author: Daniel Lúcia
+ * Author URI: http://www.daniellucia.es
  * textdomain: dl-ticket-manager
  */
 
