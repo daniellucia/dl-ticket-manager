@@ -58,12 +58,16 @@ class TicketPdfGenerator
         $options = new Options();
         $options->set('isRemoteEnabled', true);
         $options = apply_filters('dl_ticket_manager_dompdf_options', $options);
-        
+
         $dompdf = new Dompdf($options);
         $ticket = new Ticket();
 
         $ticket_data = $ticket->getDataFromCode($code);
         $order_id = $ticket_data['order_id'] ?? 0;
+
+        if ($order_id == 0) {
+            wp_die(__('The order associated with this ticket has not been found.', 'dl-ticket-manager'));
+        }
 
         $html = $this->renderTemplate(
             get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.html'),
