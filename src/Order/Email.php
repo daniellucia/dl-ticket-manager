@@ -67,12 +67,20 @@ class Email
 
                 $tickets = (new Ticket())->getFromOrderId($order_id);
                 if (!empty($tickets)) {
+                    echo '<table style="margin-bottom: 40px; width: 100%; border-collapse: collapse;" cellpadding="0" cellspacing="0">';
                     foreach ($tickets as $ticket) {
                         $code = $ticket['code'];
-                        echo '<p><strong>' . $ticket['name'] . '</strong></p>';
-                        echo '<p><img src="' . $ticket_generator->getQrImage($order_id, $code). '" style="margin-top:10px; margin-bottom: 40px; max-width:250px; height:auto;" /></p>';
+                        echo '<tr>';
+                            echo '<td style="padding: 0;">';
+                                echo '<strong>' . $ticket['name'] . '</strong><br />';
+                                echo $ticket['event'] ;
+                            echo '</td>';
+                            echo '<td style="padding: 0; text-align: right;"><img src="' . $ticket_generator->getQrImage($order_id, $code). '" style="width:220px; height:auto; margin: 0;" /></td>';
+                        echo '</tr>';
                     }
+                    echo '</table>';
                 }
+                
             }
         }
     }
