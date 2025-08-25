@@ -188,12 +188,14 @@ class Page
         $logo_id = get_option('dl_ticket_manager_pdf_logo', '');
         $logo_url = $logo_id ? wp_get_attachment_url($logo_id) : '';
         ?>
-        <div>
+        
+        <div style="display: flex;gap: 10px;align-items: center;">
             <img id="dl-ticket-manager-logo-preview" src="<?php echo esc_url($logo_url); ?>" style="max-width:150px;max-height:80px;margin: 0 20px 0 0;<?php echo $logo_url ? '' : 'display:none;'; ?>" />
             <input type="hidden" id="dl-ticket-manager-pdf-logo" name="dl_ticket_manager_pdf_logo" value="<?php echo esc_attr($logo_id); ?>" />
             <button type="button" class="button" id="dl-ticket-manager-select-logo"><?php esc_html_e('Seleccionar logo', 'dl-ticket-manager'); ?></button>
             <button type="button" class="button" id="dl-ticket-manager-remove-logo" <?php echo $logo_url ? '' : 'style="display:none;"'; ?>><?php esc_html_e('Eliminar logo', 'dl-ticket-manager'); ?></button>
         </div>
+
         <script>
         jQuery(document).ready(function($){
             var frame;
