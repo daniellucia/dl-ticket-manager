@@ -57,6 +57,8 @@ class TicketPdfGenerator
         $ticket_generator = new TicketGenerator();
         $options = new Options();
         $options->set('isRemoteEnabled', true);
+        $options = apply_filters('dl_ticket_manager_dompdf_options', $options);
+        
         $dompdf = new Dompdf($options);
         $ticket = new Ticket();
 
