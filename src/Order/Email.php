@@ -11,7 +11,7 @@ class Email
     {
         add_action('woocommerce_email_order_details', [$this, 'add_ticket_message'], 20, 4);
         //add_filter('woocommerce_email_order_address', [$this, 'maybe_remove_billing_address'], 10, 5);
-        //add_filter('woocommerce_email_attachments', [$this, 'attach_ticket_pdf'], 10, 3);
+        add_filter('woocommerce_email_attachments', [$this, 'attach_ticket_pdf'], 10, 3);
     }
 
     /**

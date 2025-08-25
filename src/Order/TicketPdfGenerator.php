@@ -110,7 +110,11 @@ class TicketPdfGenerator
 
         if (!$download) {
 
-            $pdf_path = plugin_dir_url(DL_TICKET_MANAGER_FILE) . "temp/{$code}.pdf";
+            $pdf_path = plugin_dir_path(DL_TICKET_MANAGER_FILE) . "temp/{$code}.pdf";
+            if (file_exists($pdf_path)) {
+                unlink($pdf_path);
+            }
+
             file_put_contents($pdf_path, $dompdf->output());
             return $pdf_path;
         } else {
