@@ -115,7 +115,7 @@ class TicketPdfGenerator
             return $pdf_path;
         } else {
 
-            $dompdf->stream("ticket-{$code}.pdf", ["Attachment" => true]);
+            $dompdf->stream("{$code}.pdf", ["Attachment" => true]);
         }
 
         return null;
