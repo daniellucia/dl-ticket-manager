@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Ticket Manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 16:52+0000\n"
-"PO-Revision-Date: 2025-08-20 17:01+0000\n"
+"PO-Revision-Date: 2025-08-25 18:46+0000\n"
 "Last-Translator: \n"
 "Language-Team: Catalan\n"
 "Language: ca\n"
@@ -15,51 +15,66 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.29\n"
 "X-Domain: dl-ticket-manager"
 
-#: src/Frontend/FormHandler.php:72
+#: src/Frontend/FormHandler.php:99
 msgid "#"
 msgstr "#"
 
-#: src/Frontend/Cpt.php:76
+#: src/Order/TicketPdfGenerator.php:152
+#, php-format
+msgid "%s of %s of %s"
+msgstr ""
+
+#: src/Frontend/Cpt.php:104
 msgid "Add new"
 msgstr "Afegeix nou"
 
-#: src/Frontend/Cpt.php:121
+#: src/Frontend/Cpt.php:154
 msgid "Add new event"
 msgstr "Afegeix un esdeveniment nou"
 
-#: src/Frontend/Cpt.php:77
+#: src/Frontend/Cpt.php:105
 msgid "Add new ticket"
 msgstr "Afegeix un bitllet nou"
 
-#: src/ProductType/TicketProduct.php:109
+#: src/ProductType/TicketProduct.php:145 src/Pdf/Templates/Default.php:158
 msgid "Address"
 msgstr "Adreça"
 
-#: src/Frontend/Cpt.php:116
+#: src/Frontend/Cpt.php:149
 msgid "All events"
 msgstr "Tots els esdeveniments"
+
+#: src/Order/TicketPdfGenerator.php:137
+msgid "april"
+msgstr ""
 
 #: src/Order/TicketGenerator.php:58
 msgid "Asistentes"
 msgstr "Assistents"
 
+#: src/Order/TicketPdfGenerator.php:141
+msgid "august"
+msgstr ""
+
 #: src/Order/TicketStatus.php:31
 msgid "Cancelled"
 msgstr "Cancel·lat"
 
-#: src/Frontend/Cpt.php:153
+#: src/Frontend/Cpt.php:191
 msgid "Change Status"
 msgstr "Canvia l'estat"
 
-#: src/ProductType/TicketProduct.php:117 src/ProductType/TicketProduct.php:118
+#: src/ProductType/TicketProduct.php:153 src/ProductType/TicketProduct.php:154
+#: src/Pdf/Templates/Default.php:162
 msgid "City"
 msgstr "Ciutat"
 
-#: src/Frontend/Cpt.php:150 src/Order/TicketGenerator.php:94
+#: src/Frontend/Cpt.php:188 src/Order/TicketGenerator.php:94
+#: src/Pdf/Templates/Default.php:174
 msgid "Code"
 msgstr "Codi"
 
-#: src/Config/Page.php:34
+#: src/Config/Page.php:47
 msgid "Configure the legal texts and conditions of the plugin."
 msgstr "Configura els textos legals i les condicions del complement."
 
@@ -71,115 +86,167 @@ msgstr "Confirmat"
 msgid "Daniel Lúcia"
 msgstr "Daniel Llúcia"
 
-#: src/Config/Page.php:95
+#: src/Pdf/Templates/Default.php:146
+msgid "Date"
+msgstr ""
+
+#: src/Order/TicketPdfGenerator.php:145
+msgid "december"
+msgstr ""
+
+#: src/Config/Page.php:147
 msgid "Default template"
 msgstr "Plantilla predeterminada"
 
-#: src/ProductType/TicketProduct.php:77
+#: src/ProductType/TicketProduct.php:114
 msgid "Does this ticket require the name of the attendees?"
 msgstr "Aquesta entrada requereix el nom dels assistents?"
 
-#: src/Frontend/Cpt.php:151
+#: src/Frontend/Cpt.php:189
 msgid "Download"
 msgstr "Descarrega"
 
-#: src/Frontend/Cpt.php:163 src/Order/TicketGenerator.php:95
+#: src/Frontend/Cpt.php:208 src/Order/TicketGenerator.php:95
 msgid "Download ticket"
 msgstr "Descarrega el tiquet"
 
-#: src/Frontend/Cpt.php:119
+#: src/Frontend/Cpt.php:152
 msgid "Edit event"
 msgstr "Edita l'esdeveniment"
 
-#: src/Frontend/Cpt.php:78
+#: src/Frontend/Cpt.php:106
 msgid "Edit ticket"
 msgstr "Edita el tiquet"
 
-#: src/ProductType/TicketProduct.php:133
+#: src/ProductType/TicketProduct.php:169
 msgid "End sale date"
 msgstr "Data de finalització de la venda"
 
-#: src/ProductType/TicketProduct.php:112
+#: src/ProductType/TicketProduct.php:148
 msgid "Enter the address where the event will take place."
 msgstr "Introduïu l'adreça on tindrà lloc l'esdeveniment."
 
-#: src/ProductType/TicketProduct.php:120
+#: src/ProductType/TicketProduct.php:156
 msgid "Enter the city where the event will take place."
 msgstr "Introduïu la ciutat on tindrà lloc l'esdeveniment."
 
-#: src/ProductType/TicketProduct.php:136
+#: src/ProductType/TicketProduct.php:172
 msgid "Enter the end sale date for the ticket."
 msgstr "Introduïu la data de finalització de la venda del bitllet."
 
-#: src/ProductType/TicketProduct.php:94
+#: src/ProductType/TicketProduct.php:131
 msgid "Enter the start time of the event."
 msgstr "Introduïu l'hora d'inici de l'esdeveniment."
 
-#: src/ProductType/TicketProduct.php:128
+#: src/ProductType/TicketProduct.php:164
 msgid "Enter the state where the event will take place."
 msgstr "Introduïu l'estat on tindrà lloc l'esdeveniment."
 
-#: src/ProductType/TicketProduct.php:104
+#: src/ProductType/TicketProduct.php:140
 msgid "Enter the venue where the event will take place."
 msgstr "Introduïu el lloc on tindrà lloc l'esdeveniment."
 
-#: src/Frontend/Cpt.php:263
+#: src/Frontend/Cpt.php:324
 msgid "Error updating status"
 msgstr "S'ha produït un error en actualitzar l'estat"
 
-#: src/Frontend/Cpt.php:114 src/ProductType/TicketProduct.php:61
+#: src/Frontend/Cpt.php:147 src/ProductType/TicketProduct.php:93
 msgid "Event"
 msgstr "Esdeveniment"
 
-#: src/ProductType/TicketProduct.php:110
+#: src/ProductType/TicketProduct.php:146
 msgid "Event address"
 msgstr "Adreça de l'esdeveniment"
 
-#: src/ProductType/TicketProduct.php:82
+#: src/ProductType/TicketProduct.php:119
 msgid "Event date"
 msgstr "Data de l'esdeveniment"
 
-#: src/ProductType/TicketProduct.php:91
+#: src/ProductType/TicketProduct.php:128
 msgid "Event time"
 msgstr "Hora de l'esdeveniment"
 
-#: src/ProductType/TicketProduct.php:101 src/ProductType/TicketProduct.php:102
+#: src/ProductType/TicketProduct.php:137 src/ProductType/TicketProduct.php:138
 msgid "Event venue"
 msgstr "Lloc de l'esdeveniment"
 
-#: src/Frontend/Cpt.php:113 src/Frontend/Cpt.php:123
+#: src/Frontend/Cpt.php:146 src/Frontend/Cpt.php:156
 msgid "Events"
 msgstr "Esdeveniments"
 
-#: src/Config/Page.php:49
+#: src/Order/TicketPdfGenerator.php:135
+msgid "february"
+msgstr ""
+
+#: src/Config/Page.php:62
 msgid "General conditions of entry"
 msgstr "Condicions generals d'entrada"
 
-#: src/Config/Page.php:32
+#: src/Pdf/Templates/Default.php:199
+msgid "General conditions of ticket"
+msgstr ""
+
+#: src/Config/Page.php:45
 msgid "General settings"
 msgstr "Configuració general"
 
-#: src/ProductType/TicketProduct.php:85
+#. Author URI of the plugin
+msgid "http://www.daniellucia.es"
+msgstr ""
+
+#: src/ProductType/TicketProduct.php:122
 msgid "Introduce la fecha de inicio del evento."
 msgstr "Introduïu la data d'inici de l'esdeveniment."
 
-#: src/Config/Page.php:41
+#: src/Config/Page.php:94
+msgid "Issuer email"
+msgstr ""
+
+#: src/Config/Page.php:78
+msgid "Issuer name"
+msgstr ""
+
+#: src/Config/Page.php:86
+msgid "Issuer website"
+msgstr ""
+
+#: src/Order/TicketPdfGenerator.php:134
+msgid "january"
+msgstr ""
+
+#: src/Order/TicketPdfGenerator.php:140
+msgid "july"
+msgstr ""
+
+#: src/Order/TicketPdfGenerator.php:139
+msgid "june"
+msgstr ""
+
+#: src/Config/Page.php:54
 msgid "Legal text"
 msgstr "Text legal"
+
+#: src/Order/TicketPdfGenerator.php:136
+msgid "march"
+msgstr ""
+
+#: src/Order/TicketPdfGenerator.php:138
+msgid "may"
+msgstr ""
 
 #: src/Order/TicketGenerator.php:93
 msgid "Name"
 msgstr "Nom"
 
-#: src/Frontend/FormHandler.php:35
+#: src/Frontend/FormHandler.php:47
 msgid "Name(s) for the ticket:"
 msgstr "Nom(s) del bitllet:"
 
-#: src/Frontend/Cpt.php:122
+#: src/Frontend/Cpt.php:155
 msgid "New event name"
 msgstr "Nom del nou esdeveniment"
 
-#: src/Frontend/Cpt.php:79
+#: src/Frontend/Cpt.php:107
 msgid "New ticket"
 msgstr "Bitllet nou"
 
@@ -187,31 +254,39 @@ msgstr "Bitllet nou"
 msgid "No order data."
 msgstr "Sense dades de comanda."
 
-#: src/Frontend/Cpt.php:82
+#: src/Frontend/Cpt.php:110
 msgid "No tickets found"
 msgstr "No s'han trobat bitllets"
 
-#: src/Frontend/Cpt.php:83
+#: src/Frontend/Cpt.php:111
 msgid "No tickets found in trash"
 msgstr "No s'han trobat bitllets a la paperera"
 
-#: src/Frontend/FormHandler.php:48
+#: src/Frontend/FormHandler.php:60
 msgid "Nombre del titular del ticket"
 msgstr "Nom del titular del bitllet"
 
-#: src/ProductType/TicketProduct.php:76
+#: src/ProductType/TicketProduct.php:113
 msgid "Nominative ticket"
 msgstr "bitllet nominatiu"
 
-#: src/Frontend/Cpt.php:149
+#: src/Order/TicketPdfGenerator.php:144
+msgid "november"
+msgstr ""
+
+#: src/Order/TicketPdfGenerator.php:143
+msgid "october"
+msgstr ""
+
+#: src/Frontend/Cpt.php:187 src/Pdf/Templates/Default.php:178
 msgid "Order"
 msgstr "Comanda"
 
-#: src/Frontend/Cpt.php:117
+#: src/Frontend/Cpt.php:150
 msgid "Parent event"
 msgstr "Esdeveniment principal"
 
-#: src/Frontend/Cpt.php:118
+#: src/Frontend/Cpt.php:151
 msgid "Parent event:"
 msgstr "Esdeveniment principal:"
 
@@ -223,15 +298,15 @@ msgstr "Pendent"
 msgid "Plugin para venta de tickets con WooCommerce."
 msgstr "Connector per a la venda d'entrades amb WooCommerce."
 
-#: src/ProductType/TicketProduct.php:200
+#: src/ProductType/TicketProduct.php:260
 msgid "Sale completed"
 msgstr "Venda completada"
 
-#: src/Frontend/Cpt.php:115
+#: src/Frontend/Cpt.php:148
 msgid "Search events"
 msgstr "Cerca esdeveniments"
 
-#: src/Frontend/Cpt.php:81
+#: src/Frontend/Cpt.php:109
 msgid "Search tickets"
 msgstr "Cerca entrades"
 
@@ -239,48 +314,76 @@ msgstr "Cerca entrades"
 msgid "Security code"
 msgstr "Codi de seguretat"
 
-#: src/ProductType/TicketProduct.php:125 src/ProductType/TicketProduct.php:126
+#: src/Order/TicketPdfGenerator.php:142
+msgid "september"
+msgstr ""
+
+#: src/ProductType/TicketProduct.php:161 src/ProductType/TicketProduct.php:162
 msgid "State"
 msgstr "Estat"
 
-#: src/Frontend/Cpt.php:152
+#: src/Frontend/Cpt.php:190
 msgid "Status"
 msgstr "Estat"
 
-#: src/Frontend/Cpt.php:258
+#: src/Frontend/Cpt.php:319
 msgid "Status updated"
 msgstr "Estat actualitzat"
 
-#: src/ProductType/TicketProduct.php:192
+#: src/Pdf/Templates/Default.php:210
+msgid "Terms and conditions"
+msgstr ""
+
+#: src/Order/TicketPdfGenerator.php:70
+msgid "The order associated with this ticket has not been found."
+msgstr ""
+
+#: src/ProductType/TicketProduct.php:245
 msgid "The ticket sales for this event have ended."
 msgstr "La venda d'entrades per a aquest esdeveniment ha finalitzat."
 
-#: src/Frontend/Cpt.php:75 src/ProductType/TicketProduct.php:49
+#: src/Frontend/Cpt.php:103 src/ProductType/TicketProduct.php:68
+#: src/Pdf/Templates/Default.php:6
 msgid "Ticket"
 msgstr "Bitllet"
 
-#. Name of the plugin
-#: src/Config/Page.php:17
+#: src/Pdf/Templates/Default.php:170
+msgid "Ticket Holder"
+msgstr ""
+
+#: src/Pdf/Templates/Default.php:220
+msgid "Ticket issued by"
+msgstr ""
+
+#: src/Config/Page.php:22
 msgid "Ticket Manager"
 msgstr "Gestor d'entrades"
 
-#: src/Config/Page.php:16
+#: src/Config/Page.php:21
 msgid "Ticket Manager Configuración"
 msgstr "Configuració del gestor de tiquets"
 
-#: src/Config/Page.php:68
+#: src/Config/Page.php:105
 msgid "Ticket Manager Configuration"
 msgstr "Configuració del gestor de tiquets"
 
-#: src/Config/Page.php:57
+#. Name of the plugin
+msgid "Ticket Manager for WooCommerce"
+msgstr ""
+
+#: src/Config/Page.php:70
 msgid "Ticket template"
 msgstr "Plantilla de tiquet"
 
-#: src/Frontend/Cpt.php:74 src/Frontend/Cpt.php:84
+#: src/Frontend/Cpt.php:102 src/Frontend/Cpt.php:112
 msgid "Tickets"
 msgstr "Entrades"
 
-#: src/Frontend/Cpt.php:208
+#: src/Pdf/Templates/Default.php:150
+msgid "Time"
+msgstr ""
+
+#: src/Frontend/Cpt.php:258
 #, php-format
 msgid "Todos los %s"
 msgstr "Tots els %s"
@@ -289,7 +392,7 @@ msgstr "Tots els %s"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: src/Frontend/Cpt.php:120
+#: src/Frontend/Cpt.php:153
 msgid "Update event"
 msgstr "Actualitza l'esdeveniment"
 
@@ -297,6 +400,10 @@ msgstr "Actualitza l'esdeveniment"
 msgid "Valid attendees:"
 msgstr "Assistents vàlids:"
 
-#: src/Frontend/Cpt.php:80
+#: src/Pdf/Templates/Default.php:154
+msgid "Venue"
+msgstr ""
+
+#: src/Frontend/Cpt.php:108
 msgid "View ticket"
 msgstr "Veure tiquet"
