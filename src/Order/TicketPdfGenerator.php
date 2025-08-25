@@ -170,25 +170,4 @@ class TicketPdfGenerator
         return sprintf(__('%s of %s of %s', 'dl-ticket-manager'), $day, $months[$month], $year);
     }
 
-
-    /**
-     * Renderiza una plantilla HTML simple sustituyendo variables por su valor.
-     * @param string $template_path Ruta absoluta al archivo de plantilla.
-     * @param array $vars Array asociativo ['variable' => 'valor']
-     * @return string
-     */
-    public function renderTemplate(string $template_path, array $vars): string
-    {
-        if (!file_exists($template_path)) {
-            return '';
-        }
-
-        $html = file_get_contents($template_path);
-
-        foreach ($vars as $key => $value) {
-            $html = str_replace('{{' . $key . '}}', $value, $html);
-        }
-
-        return $html;
-    }
 }
