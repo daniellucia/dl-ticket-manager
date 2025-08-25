@@ -78,7 +78,7 @@ class TicketPdfGenerator
                 'ATTENDEE_NAME' => $ticket_data['name'] ?? '',
                 'POSTER_IMAGE_SRC' => $ticket_data['thumbnail_url'] ?? '',
                 'EVENT_DESCRIPTION' => $ticket_data['description'] ?? '',
-                'EVENT_DATE' => $ticket_data['date'] ?? '',
+                'EVENT_DATE' => $this->format_date($ticket_data['date'] ?? ''),
                 'EVENT_TIME' => $ticket_data['time'] ?? '',
                 'VENUE_ADDRESS' => $ticket_data['address'] ?? '',
                 'VENUE_CITY' => $ticket_data['city'] ?? '',
@@ -96,6 +96,48 @@ class TicketPdfGenerator
 
         $dompdf->stream("ticket-{$code}.pdf", ["Attachment" => $download]);
     }
+
+    /**
+     * Formatea una fecha en formato Y-m-d a un formato legible.
+     * @param string $string_date
+     * @return string
+     * @author Daniel Lucia
+     */
+    private function format_date(string $string_date): string
+    {
+
+        if (trim($string_date) === '') {
+            return '';
+        }
+        
+        $date = \DateTime::createFromFormat('Y-m-d', $string_date);
+
+        if (!$date) {
+            return $string_date;
+        }
+
+        $months = [
+            1 => __('january', 'dl-ticket-manager'),
+            2 => __('february', 'dl-ticket-manager'),
+            3 => __('march', 'dl-ticket-manager'),
+            4 => __('april', 'dl-ticket-manager'),
+            5 => __('may', 'dl-ticket-manager'),
+            6 => __('june', 'dl-ticket-manager'),
+            7 => __('july', 'dl-ticket-manager'),
+            8 => __('august', 'dl-ticket-manager'),
+            9 => __('september', 'dl-ticket-manager'),
+            10 => __('october', 'dl-ticket-manager'),
+            11 => __('november', 'dl-ticket-manager'),
+            12 => __('december', 'dl-ticket-manager')
+        ];
+
+        $day   = $date->format('j');
+        $month   = (int) $date->format('n');
+        $year   = $date->format('Y');
+
+        return sprintf(__('%s of %s of %s', 'dl-ticket-manager'), $day, $months[$month], $year);
+    }
+
 
     /**
      * Renderiza una plantilla HTML simple sustituyendo variables por su valor.
