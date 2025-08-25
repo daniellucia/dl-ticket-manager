@@ -96,6 +96,9 @@ class TicketPdfGenerator
                 'ORDER_NUMBER' => $ticket_data['order_id'] ?? '',
                 'CONDITIONS_TEXT' => wpautop(get_option('dl_ticket_manager_conditions_text', '')),
                 'LEGAL_TEXT' => wpautop(get_option('dl_ticket_manager_legal_text', '')),
+                'ISSUER_NAME' => get_option('dl_ticket_manager_issuer_name', ''),
+                'ISSUER_WEBSITE' => get_option('dl_ticket_manager_issuer_website', ''),
+                'SUPPORT_EMAIL' => get_option('dl_ticket_manager_support_email', ''),
             ])
         );
 

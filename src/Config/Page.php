@@ -36,6 +36,9 @@ class Page
         register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_legal_text');
         register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_conditions_text');
         register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_template');
+        register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_issuer_name');
+        register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_issuer_website');
+        register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_support_email');
 
         add_settings_section(
             'dl_ticket_manager_section',
@@ -66,6 +69,30 @@ class Page
             'dl_ticket_manager_template',
             __('Ticket template', 'dl-ticket-manager'),
             [$this, 'renderTemplateSelectField'],
+            'dl-ticket-manager-settings',
+            'dl_ticket_manager_section'
+        );
+
+        add_settings_field(
+            'dl_ticket_manager_issuer_name',
+            __('Issuer name', 'dl-ticket-manager'),
+            [$this, 'renderIssuerNameField'],
+            'dl-ticket-manager-settings',
+            'dl_ticket_manager_section'
+        );
+
+        add_settings_field(
+            'dl_ticket_manager_issuer_website',
+            __('Issuer website', 'dl-ticket-manager'),
+            [$this, 'renderIssuerWebsiteField'],
+            'dl-ticket-manager-settings',
+            'dl_ticket_manager_section'
+        );
+
+        add_settings_field(
+            'dl_ticket_manager_support_email',
+            __('Issuer email', 'dl-ticket-manager'),
+            [$this, 'renderIssuerEmailField'],
             'dl-ticket-manager-settings',
             'dl_ticket_manager_section'
         );
@@ -126,5 +153,23 @@ class Page
             echo '<option value="' . esc_attr($key) . '"' . selected($selected, $key, false) . '>' . esc_html($label) . '</option>';
         }
         echo '</select>';
+    }
+
+    public function renderIssuerNameField(): void
+    {
+        $value = get_option('dl_ticket_manager_issuer_name', '');
+        echo '<input type="text" name="dl_ticket_manager_issuer_name" value="' . esc_attr($value) . '" style="width: 100%;" />';
+    }
+
+    public function renderIssuerWebsiteField(): void
+    {
+        $value = get_option('dl_ticket_manager_issuer_website', '');
+        echo '<input type="text" name="dl_ticket_manager_issuer_website" value="' . esc_attr($value) . '" style="width: 100%;" />';
+    }
+
+    public function renderIssuerEmailField(): void
+    {
+        $value = get_option('dl_ticket_manager_support_email', '');
+        echo '<input type="email" name="dl_ticket_manager_support_email" value="' . esc_attr($value) . '" style="width: 100%;" />';
     }
 }
