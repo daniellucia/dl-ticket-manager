@@ -42,10 +42,11 @@ class FormHandler
         }
 
         $is_nominative = get_post_meta($product->get_id(), '_is_nominative', true);
- 
+        $classes_input = apply_filters('dl_ticket_manager_input_classes', 'input-text form-control form-input woocommerce-Input woocommerce-input-text');
+
         echo '<div id="ticket-names-wrapper" ' . ($is_nominative ? 'style="display:block;"' : 'style="display:none;"') . '>';
         echo '<label>' . __('Name(s) for the ticket:', 'dl-ticket-manager') . '</label>';
-        echo '<div class="ticket-name"><input type="text" name="ticket_names[]" required ></div>';
+        echo '<div class="ticket-name"><input type="text" name="ticket_names[]" required class="' . esc_attr($classes_input) . '"></div>';
         echo '</div>';
         ?>
 
@@ -57,7 +58,7 @@ class FormHandler
                     var wrapper = $('#ticket-names-wrapper');
                     wrapper.find('.ticket-name').remove();
                     for (let i = 0; i < count; i++) {
-                        wrapper.append('<div class="ticket-name"><input type="text" name="ticket_names[]" required placeholder="<?php esc_attr_e('Nombre del titular del ticket', 'dl-ticket-manager'); ?>"></div>');
+                        wrapper.append('<div class="ticket-name"><input type="text" name="ticket_names[]" required placeholder="<?php esc_attr_e('Nombre del titular del ticket', 'dl-ticket-manager'); ?>" class="' . esc_attr($classes_input) . '"></div>');
                     }
                 }).trigger('change');
             });
