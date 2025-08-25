@@ -238,4 +238,30 @@ class TicketGenerator
         );
         return (new QRCode)->render($data);
     }
+
+    
+    /**
+     * Limpia la carpeta temporal de archivos PDF.
+     * @return void
+     * @author Daniel Lucia
+     */
+    public function maybeCleanTempFolder()
+    {
+        // Solo ejecuta una vez al día
+        if (get_transient('dl_ticket_manager_temp_cleaned')) {
+            return;
+        }
+
+        $temp_dir = plugin_dir_path(DL_TICKET_MANAGER_FILE) . 'temp/';
+        if (is_dir($temp_dir)) {
+            foreach (glob($temp_dir . '*') as $file) {
+                if (is_file($file)) {
+                    @unlink($file);
+                }
+            }
+        }
+
+        // Marca que ya se ha limpiado hoy
+        set_transient('dl_ticket_manager_temp_cleaned', true, DAY_IN_SECONDS);
+    }
 }

@@ -170,5 +170,4 @@ class TicketPdfGenerator
 
         return sprintf(__('%s of %s of %s', 'dl-ticket-manager'), $day, $months[$month], $year);
     }
-
 }
