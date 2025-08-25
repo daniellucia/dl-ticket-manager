@@ -4,6 +4,7 @@ namespace DL\TicketManager\Order;
 
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use League\Plates\Engine;
 
 class TicketPdfGenerator
 {
@@ -69,9 +70,17 @@ class TicketPdfGenerator
             wp_die(__('The order associated with this ticket has not been found.', 'dl-ticket-manager'));
         }
 
-        $html = $this->renderTemplate(
-            get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.html'),
-            [
+        $template_folder = get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.php');
+        $template_folder = dirname($template_folder);
+
+        $template_file = basename(get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.php'));
+        $template_file = pathinfo($template_file, PATHINFO_FILENAME);
+        
+        $template = new Engine($template_folder);
+
+        $html = $template->render(
+            $template_file,
+            apply_filters('dl_ticket_manager_pdf_template_vars', [
                 'QR_IMAGE_SRC' => $ticket_generator->getQrImage($order_id, $code),
                 'TICKET_CODE' => $ticket_data['code'] ?? '',
                 'EVENT_TITLE' => $ticket_data['event'] ?? '',
@@ -87,7 +96,7 @@ class TicketPdfGenerator
                 'ORDER_NUMBER' => $ticket_data['order_id'] ?? '',
                 'CONDITIONS_TEXT' => wpautop(get_option('dl_ticket_manager_conditions_text', '')),
                 'LEGAL_TEXT' => wpautop(get_option('dl_ticket_manager_legal_text', '')),
-            ]
+            ])
         );
 
         $dompdf->loadHtml($html);
@@ -109,7 +118,7 @@ class TicketPdfGenerator
         if (trim($string_date) === '') {
             return '';
         }
-        
+
         $date = \DateTime::createFromFormat('Y-m-d', $string_date);
 
         if (!$date) {

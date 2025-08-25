@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Entrada - {{EVENT_TITLE}}</title>
+    <title><?= __('Ticket', 'dl-ticket-manager') ?> - <?= $this->e($EVENT_TITLE) ?></title>
     <style>
         @page {
             margin: 16mm;
@@ -118,14 +118,14 @@
     <table class="w-100" cellspacing="0" cellpadding="0">
         <tr>
             <td class="pad" colspan="2">
-                <div class="title">{{EVENT_TITLE}}</div>
-                <div class="subtitle">{{EVENT_DATE}}</div>
+                <div class="title"><?= $this->e($EVENT_TITLE) ?></div>
+                <div class="subtitle"><?= $this->e($EVENT_DATE) ?></div>
             </td>
         </tr>
 
         <tr>
             <td class="pad bbtm w-50" style="vertical-align: top;">
-                <img class="poster" src="{{POSTER_IMAGE_SRC}}" alt="{{EVENT_TITLE}}">
+                <img class="poster" src="<?= $this->e($POSTER_IMAGE_SRC) ?>" alt="<?= $this->e($EVENT_TITLE) ?>">
                 <div class="divider"></div>
             </td>
 
@@ -133,7 +133,7 @@
                 <table class="w-100" cellspacing="0" cellpadding="0">
                     <tr>
                         <td class="center pad">
-                            <img class="qr" src="{{QR_IMAGE_SRC}}" alt="Código QR">
+                            <img class="qr" src="<?= $this->e($QR_IMAGE_SRC) ?>" alt="Código QR">
                         </td>
                     </tr>
                     <tr>
@@ -143,40 +143,40 @@
                         <td>
                             <table class="w-100" cellspacing="0" cellpadding="2">
                                 <tr>
-                                    <td class="label">Fecha</td>
-                                    <td class="right">{{EVENT_DATE}}</td>
+                                    <td class="label"><?= __('Date', 'dl-ticket-manager') ?></td>
+                                    <td class="right"><?= $this->e($EVENT_DATE) ?></td>
                                 </tr>
                                 <tr>
-                                    <td class="label">Hora</td>
-                                    <td class="right">{{EVENT_TIME}}</td>
+                                    <td class="label"><?= __('Time', 'dl-ticket-manager') ?></td>
+                                    <td class="right"><?= $this->e($EVENT_TIME) ?></td>
                                 </tr>
                                 <tr>
-                                    <td class="label">Recinto</td>
-                                    <td class="right">{{VENUE_NAME}}</td>
+                                    <td class="label"><?= __('Venue', 'dl-ticket-manager') ?></td>
+                                    <td class="right"><?= $this->e($VENUE_NAME) ?></td>
                                 </tr>
                                 <tr>
-                                    <td class="label">Dirección</td>
-                                    <td class="right">{{VENUE_ADDRESS}}</td>
+                                    <td class="label"><?= __('Address', 'dl-ticket-manager') ?></td>
+                                    <td class="right"><?= $this->e($VENUE_ADDRESS) ?></td>
                                 </tr>
                                 <tr>
-                                    <td class="label">Localidad</td>
-                                    <td class="right">{{VENUE_CITY}}</td>
+                                    <td class="label"><?= __('City', 'dl-ticket-manager') ?></td>
+                                    <td class="right"><?= $this->e($VENUE_CITY) ?></td>
                                 </tr>
                                 <!--<tr>
                                     <td class="label">Zona/Asiento</td>
                                     <td class="right">{{SEAT_LABEL}}</td>
                                 </tr>-->
                                 <tr>
-                                    <td class="label">Titular</td>
-                                    <td class="right">{{ATTENDEE_NAME}}</td>
+                                    <td class="label"><?= __('Ticket Holder', 'dl-ticket-manager') ?></td>
+                                    <td class="right"><?= $this->e($ATTENDEE_NAME) ?></td>
                                 </tr>
                                 <tr>
-                                    <td class="label">Código</td>
-                                    <td class="right"><span class="code">{{TICKET_CODE}}</span></td>
+                                    <td class="label"><?= __('Code', 'dl-ticket-manager') ?></td>
+                                    <td class="right"><span class="code"><?= $this->e($TICKET_CODE) ?></span></td>
                                 </tr>
                                 <tr>
-                                    <td class="label">Pedido</td>
-                                    <td class="right">{{ORDER_NUMBER}}</td>
+                                    <td class="label"><?= __('Order', 'dl-ticket-manager') ?></td>
+                                    <td class="right"><?= $this->e($ORDER_NUMBER) ?></td>
                                 </tr>
                             </table>
 
@@ -193,27 +193,31 @@
             </td>
         </tr>
 
+        <?php if ($CONDITIONS_TEXT) : ?>
         <tr>
             <td class="pad" colspan="2">
-                <div class="label">Condiciones generales de la entrada</div>
+                <div class="label"><?= __('General conditions of ticket', 'dl-ticket-manager') ?></div>
                 <div class="small">
-                    {{CONDITIONS_TEXT}}
+                    <?= $CONDITIONS_TEXT ?>
                 </div>
             </td>
         </tr>
+        <?php endif; ?>
 
+        <?php if ($LEGAL_TEXT) : ?>
         <tr>
             <td class="pad" colspan="2">
-                <div class="label">Términos y condiciones</div>
+                <div class="label"><?= __('Terms and conditions', 'dl-ticket-manager') ?></div>
                 <div class="small">
-                    {{LEGAL_TEXT}}
+                    <?= $LEGAL_TEXT ?>
                 </div>
             </td>
         </tr>
+        <?php endif; ?>
 
         <tr>
             <td class="pad btop small muted" colspan="2" style="text-align:center;">
-                Entrada emitida por {{ISSUER_NAME}} &middot; {{ISSUER_WEBSITE}} &middot; {{SUPPORT_EMAIL}}
+                <?= __('Ticket issued by', 'dl-ticket-manager') ?> <?= $this->e($ISSUER_NAME) ?> &middot; <?= $this->e($ISSUER_WEBSITE) ?> &middot; <?= $this->e($SUPPORT_EMAIL) ?>
             </td>
         </tr>
     </table>
