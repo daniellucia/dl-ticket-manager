@@ -70,6 +70,9 @@ class TicketPdfGenerator
             wp_die(__('The order associated with this ticket has not been found.', 'dl-ticket-manager'));
         }
 
+        $logo_id = get_option('dl_ticket_manager_pdf_logo', '');
+        $logo_url = $logo_id ? wp_get_attachment_url($logo_id) : '';
+
         $template_folder = get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.php');
         $template_folder = dirname($template_folder);
 
@@ -81,6 +84,7 @@ class TicketPdfGenerator
         $html = $template->render(
             $template_file,
             apply_filters('dl_ticket_manager_pdf_template_vars', [
+                'LOGO' => $logo_url,
                 'QR_IMAGE_SRC' => $ticket_generator->getQrImage($order_id, $code),
                 'TICKET_CODE' => $ticket_data['code'] ?? '',
                 'EVENT_TITLE' => $ticket_data['event'] ?? '',
@@ -101,7 +105,7 @@ class TicketPdfGenerator
                 'SUPPORT_EMAIL' => get_option('dl_ticket_manager_support_email', ''),
             ])
         );
-
+        
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
         $dompdf = apply_filters('dl_ticket_manager_dompdf', $dompdf);

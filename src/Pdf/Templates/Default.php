@@ -117,9 +117,12 @@
 
     <table class="w-100" cellspacing="0" cellpadding="0">
         <tr>
-            <td class="pad" colspan="2">
+            <td class="pad">
                 <div class="title"><?= $this->e($EVENT_TITLE) ?></div>
                 <div class="subtitle"><?= $this->e($EVENT_DATE) ?></div>
+            </td>
+            <td style="text-align: right;">
+                <img src="<?= $LOGO ?>" style="max-width:200px;max-height:110px;margin: 0;" />
             </td>
         </tr>
 
@@ -131,14 +134,7 @@
 
             <td class="pad bbtm w-50" style="vertical-align: top;">
                 <table class="w-100" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td class="center pad">
-                            <img class="qr" src="<?= $this->e($QR_IMAGE_SRC) ?>" alt="Código QR">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="divider"></td>
-                    </tr>
+                    
                     <tr>
                         <td>
                             <table class="w-100" cellspacing="0" cellpadding="2">
@@ -189,6 +185,13 @@
                             </table>-->
                         </td>
                     </tr>
+
+                    <tr>
+                        <td class="center pad">
+                            <img class="qr" src="<?= $this->e($QR_IMAGE_SRC) ?>" alt="Código QR">
+                        </td>
+                    </tr>
+                    
                 </table>
             </td>
         </tr>
