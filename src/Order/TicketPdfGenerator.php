@@ -75,7 +75,7 @@ class TicketPdfGenerator
 
         $template_file = basename(get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.php'));
         $template_file = pathinfo($template_file, PATHINFO_FILENAME);
-        
+
         $template = new Engine($template_folder);
 
         $html = $template->render(
@@ -101,6 +101,8 @@ class TicketPdfGenerator
 
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
+        $dompdf = apply_filters('dl_ticket_manager_dompdf', $dompdf);
+
         $dompdf->render();
 
         $dompdf->stream("ticket-{$code}.pdf", ["Attachment" => $download]);
