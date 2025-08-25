@@ -48,7 +48,7 @@
         }
 
         .subtitle {
-            font-size: 20px;
+            font-size: 17px;
             letter-spacing: .3px;
         }
 
@@ -120,6 +120,7 @@
             <td class="pad">
                 <div class="title"><?= $this->e($EVENT_TITLE) ?></div>
                 <div class="subtitle"><?= $this->e($EVENT_DATE) ?></div>
+                <div class="subtitle"><?= $this->e($ATTENDEE_NAME) ?></div>
             </td>
             <td style="text-align: right;">
                 <img src="<?= $LOGO ?>" style="max-width:200px;max-height:110px;margin: 0;" />
@@ -127,14 +128,15 @@
         </tr>
 
         <tr>
-            <td class="pad bbtm w-50" style="vertical-align: top;">
-                <img class="poster" src="<?= $this->e($POSTER_IMAGE_SRC) ?>" alt="<?= $this->e($EVENT_TITLE) ?>">
+            <td class="bbtm" style="vertical-align: top; padding-top: 10px;" colspan="2">
+                <img class="poster" src="<?= $this->e($TICKET_IMAGE) ?>" alt="<?= $this->e($EVENT_TITLE) ?>">
                 <div class="divider"></div>
             </td>
-
+        </tr>
+        <tr>
             <td class="pad bbtm w-50" style="vertical-align: top;">
                 <table class="w-100" cellspacing="0" cellpadding="0">
-                    
+
                     <tr>
                         <td>
                             <table class="w-100" cellspacing="0" cellpadding="2">
@@ -186,36 +188,34 @@
                         </td>
                     </tr>
 
-                    <tr>
-                        <td class="center pad">
-                            <img class="qr" src="<?= $this->e($QR_IMAGE_SRC) ?>" alt="Código QR">
-                        </td>
-                    </tr>
-                    
                 </table>
+            </td>
+
+            <td class="pad bbtm" style="text-align: right;">
+                <img class="qr" src="<?= $this->e($QR_IMAGE_SRC) ?>" alt="Código QR">
             </td>
         </tr>
 
         <?php if ($CONDITIONS_TEXT) : ?>
-        <tr>
-            <td class="pad" colspan="2">
-                <div class="label"><?= __('General conditions of ticket', 'dl-ticket-manager') ?></div>
-                <div class="small">
-                    <?= $CONDITIONS_TEXT ?>
-                </div>
-            </td>
-        </tr>
+            <tr>
+                <td class="pad" colspan="2">
+                    <div class="label"><?= __('General conditions of ticket', 'dl-ticket-manager') ?></div>
+                    <div class="small">
+                        <?= $CONDITIONS_TEXT ?>
+                    </div>
+                </td>
+            </tr>
         <?php endif; ?>
 
         <?php if ($LEGAL_TEXT) : ?>
-        <tr>
-            <td class="pad" colspan="2">
-                <div class="label"><?= __('Terms and conditions', 'dl-ticket-manager') ?></div>
-                <div class="small">
-                    <?= $LEGAL_TEXT ?>
-                </div>
-            </td>
-        </tr>
+            <tr>
+                <td class="pad" colspan="2">
+                    <div class="label"><?= __('Terms and conditions', 'dl-ticket-manager') ?></div>
+                    <div class="small">
+                        <?= $LEGAL_TEXT ?>
+                    </div>
+                </td>
+            </tr>
         <?php endif; ?>
 
         <tr>

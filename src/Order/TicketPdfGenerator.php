@@ -85,6 +85,7 @@ class TicketPdfGenerator
             $template_file,
             apply_filters('dl_ticket_manager_pdf_template_vars', [
                 'LOGO' => $logo_url,
+                'TICKET_IMAGE' => $ticket_data['image_url'] ?? '',
                 'QR_IMAGE_SRC' => $ticket_generator->getQrImage($order_id, $code),
                 'TICKET_CODE' => $ticket_data['code'] ?? '',
                 'EVENT_TITLE' => $ticket_data['event'] ?? '',
@@ -105,7 +106,7 @@ class TicketPdfGenerator
                 'SUPPORT_EMAIL' => get_option('dl_ticket_manager_support_email', ''),
             ])
         );
-        
+
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
         $dompdf = apply_filters('dl_ticket_manager_dompdf', $dompdf);

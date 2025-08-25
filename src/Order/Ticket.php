@@ -148,6 +148,9 @@ class Ticket
             $product_id = get_post_meta(get_the_ID(), 'product_id', true);
             $product = wc_get_product($product_id);
 
+            $image_id = get_post_meta($product_id, '_ticket_image', true);
+            $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
+
             $ticket = apply_filters('dl_ticket_manager_get_ticket_data', [
                 'id'      => get_the_ID(),
                 'code'    => get_post_meta(get_the_ID(), 'code', true),
@@ -164,9 +167,10 @@ class Ticket
                 'city' => get_post_meta($product_id, '_event_city', true),
                 'state' => get_post_meta($product_id, '_event_state', true),
                 'venue' => get_post_meta($product_id, '_event_venue', true),
+                'image_url' => $image_url,
             ]);
         }
-        
+
         wp_reset_postdata();
 
         return $ticket;

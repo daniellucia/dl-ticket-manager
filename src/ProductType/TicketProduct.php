@@ -173,6 +173,50 @@ class TicketProduct
             'type'  => 'date',
         ]);
 
+        $image_id = get_post_meta(get_the_ID(), '_ticket_image', true);
+        $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
+        ?>
+        
+        <p class="form-field" style="display: flex;gap: 10px;align-items: flex-start;">
+            <label><?php esc_html_e('Imagen para ticket', 'dl-ticket-manager'); ?></label>
+            <input type="hidden" id="dl-ticket-image" name="_ticket_image" value="<?php echo esc_attr($image_id); ?>" />
+            <button type="button" class="button" id="dl-ticket-select-image"><?php esc_html_e('Select image for ticket', 'dl-ticket-manager'); ?></button>
+            <button type="button" class="button" id="dl-ticket-remove-image" <?php echo $image_url ? '' : 'style="display:none;"'; ?>><?php esc_html_e('Remove image', 'dl-ticket-manager'); ?></button>
+            <img id="dl-ticket-image-preview" src="<?php echo esc_url($image_url); ?>" style="max-width: 208px;max-height:80px;<?php echo $image_url ? '' : 'display:none;'; ?>" />
+        </p>
+
+        <script>
+        jQuery(document).ready(function($){
+            var frame;
+            $('#dl-ticket-select-image').on('click', function(e){
+                e.preventDefault();
+                if (frame) {
+                    frame.open();
+                    return;
+                }
+                frame = wp.media({
+                    title: '<?php esc_html_e('Select image for ticket', 'dl-ticket-manager'); ?>',
+                    button: { text: '<?php esc_html_e('Use this image', 'dl-ticket-manager'); ?>' },
+                    multiple: false
+                });
+                frame.on('select', function(){
+                    var attachment = frame.state().get('selection').first().toJSON();
+                    $('#dl-ticket-image').val(attachment.id);
+                    $('#dl-ticket-image-preview').attr('src', attachment.url).show();
+                    $('#dl-ticket-remove-image').show();
+                });
+                frame.open();
+            });
+            $('#dl-ticket-remove-image').on('click', function(e){
+                e.preventDefault();
+                $('#dl-ticket-image').val('');
+                $('#dl-ticket-image-preview').hide();
+                $(this).hide();
+            });
+        });
+        </script>
+        <?php
+
         echo '</div>';
     }
 
@@ -208,6 +252,9 @@ class TicketProduct
 
         $is_nominative = isset($_POST['_is_nominative']) ? 'yes' : 'no';
         update_post_meta($post_id, '_is_nominative', $is_nominative);
+
+        $ticket_image = $_POST['_ticket_image'] ?? '';
+        update_post_meta($post_id, '_ticket_image', sanitize_text_field($ticket_image));
     }
 
     /**
