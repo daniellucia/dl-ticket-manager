@@ -54,19 +54,13 @@ class Plugin
     public function loadComponents(): void
     {
         $this->product_type->register();
-
         $this->form_handler->register();
-
         $this->ticket_generator->register();
-
         $this->cpt->registerCpt();
         $this->cpt->registerTaxonomy();
         $this->cpt->register();
-
         $this->pdf->maybeDownloadTicket();
-
         $this->config_page->register();
-
         $this->validation->register();
     }
 }
