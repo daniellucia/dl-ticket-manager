@@ -8,6 +8,7 @@ use DL\TicketManager\Frontend\Cpt;
 use DL\TicketManager\Frontend\Validation;
 use DL\TicketManager\Order\TicketGenerator;
 use DL\TicketManager\Order\TicketPdfGenerator;
+use DL\TicketManager\Order\Email;
 use DL\TicketManager\Config\Page;
 
 class Plugin
@@ -19,6 +20,7 @@ class Plugin
     private TicketPdfGenerator $pdf;
     private Page $config_page;
     private Validation $validation;
+    private Email $email;
 
     public function __construct()
     {
@@ -29,6 +31,7 @@ class Plugin
         $this->pdf = new TicketPdfGenerator();
         $this->config_page = new Page();
         $this->validation = new Validation();
+        $this->email = new Email();
     }
 
     public function init(): void
@@ -62,5 +65,6 @@ class Plugin
         $this->pdf->maybeDownloadTicket();
         $this->config_page->register();
         $this->validation->register();
+        $this->email->register();
     }
 }

@@ -53,7 +53,7 @@ class TicketPdfGenerator
      * @return void
      * @author Daniel Lúcia
      */
-    public function createPdf(string $code, bool $download = true): void
+    public function createPdf(string $code, bool $download = true)
     {
         $ticket_generator = new TicketGenerator();
         $options = new Options();
@@ -108,7 +108,17 @@ class TicketPdfGenerator
 
         $dompdf->render();
 
-        $dompdf->stream("ticket-{$code}.pdf", ["Attachment" => $download]);
+        if (!$download) {
+
+            $pdf_path = plugin_dir_url(DL_TICKET_MANAGER_FILE) . "temp/{$code}.pdf";
+            file_put_contents($pdf_path, $dompdf->output());
+            return $pdf_path;
+        } else {
+
+            $dompdf->stream("ticket-{$code}.pdf", ["Attachment" => true]);
+        }
+
+        return null;
     }
 
     /**
