@@ -56,6 +56,7 @@ class Cpt
                 .wp-list-table th.column-download { width: 120px; }
                 .wp-list-table th.column-status { width: 100px; }
                 .wp-list-table th.column-change-status { width: 90px; }
+                .wp-list-table th.column-identifier { width: 110px; }
             </style>';
         }
     }
@@ -185,6 +186,7 @@ class Cpt
 
         //$columns['event'] = __('Event', 'dl-ticket-manager');
         $columns['order_id'] = __('Order', 'dl-ticket-manager');
+        $columns['identifier'] = __('Identifier', 'dl-ticket-manager');
         $columns['code'] = __('Code', 'dl-ticket-manager');
         $columns['download'] = __('Download', 'dl-ticket-manager');
         $columns['status'] = __('Status', 'dl-ticket-manager');
@@ -215,6 +217,15 @@ class Cpt
                 echo '<a href="' . admin_url('post.php?post=' . $order_id . '&action=edit') . '">';
                 echo $order_id;
                 echo '</a>';
+                break;
+            case 'identifier':
+                echo '<pre style="margin: 0;">';
+                $identifier = esc_html(get_post_meta($post_id, 'identifier', true));
+                if (!$identifier) {
+                    $identifier = 'n/a';
+                }
+                echo $identifier;
+                echo '</pre>';
                 break;
             case 'code':
                 echo '<pre style="margin: 0;">';

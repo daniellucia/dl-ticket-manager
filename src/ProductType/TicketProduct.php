@@ -114,6 +114,33 @@ class TicketProduct
             'description' => __('Does this ticket require the name of the attendees?', 'dl-ticket-manager'),
         ]);
 
+        // Mostrar DNI
+        $is_nominative = get_post_meta(get_the_ID(), '_is_nominative', true);
+        $show_id_style = ($is_nominative === 'yes') ? '' : 'display:none;';
+        ?>
+        <div id="show-id-checkbox" style="<?php echo $show_id_style; ?>">
+            <?php
+            woocommerce_wp_checkbox([
+                'id' => '_is_show_id',
+                'label' => __('Request DNI', 'dl-ticket-manager'),
+                'description' => __('Check to request the attendee\'s DNI on the ticket.', 'dl-ticket-manager'),
+            ]);
+            ?>
+        </div>
+        <script>
+        jQuery(document).ready(function($){
+            $('#_is_nominative').on('change', function(){
+                if ($(this).is(':checked')) {
+                    $('#show-id-checkbox').show();
+                } else {
+                    $('#show-id-checkbox').hide();
+                    $('#_is_show_id').prop('checked', false);
+                }
+            }).trigger('change');
+        });
+        </script>
+        <?php
+
         woocommerce_wp_text_input([
             'id'  => '_event_date',
             'label'  => __('Event date', 'dl-ticket-manager'),
@@ -252,6 +279,9 @@ class TicketProduct
 
         $is_nominative = isset($_POST['_is_nominative']) ? 'yes' : 'no';
         update_post_meta($post_id, '_is_nominative', $is_nominative);
+
+        $is_show_id = isset($_POST['_is_show_id']) ? 'yes' : 'no';
+        update_post_meta($post_id, '_is_show_id', $is_show_id);
 
         $ticket_image = $_POST['_ticket_image'] ?? '';
         update_post_meta($post_id, '_ticket_image', sanitize_text_field($ticket_image));

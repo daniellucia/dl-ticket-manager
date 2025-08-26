@@ -162,7 +162,9 @@ class TicketGenerator
                 continue;
             }
 
-            foreach ($names as $name) {
+            $ids = $item->get_meta('ticket_ids', true);
+
+            foreach ($names as $index => $name) {
                 $code = (new Code())->generate(8, $product->get_id());
 
                 $this->ticket->create([
@@ -172,6 +174,7 @@ class TicketGenerator
                     'name'     => $name,
                     'event'   => $product_name,
                     'status'  => (new TicketStatus())->getDefaultStatus(),
+                    'identifier' => isset($ids[$index]) ? $ids[$index] : '',
                 ]);
             }
         }

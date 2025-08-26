@@ -42,11 +42,24 @@ class FormHandler
         }
 
         $is_nominative = get_post_meta($product->get_id(), '_is_nominative', true);
+        $is_show_id = get_post_meta($product->get_id(), '_is_show_id', true);
         $classes_input = apply_filters('dl_ticket_manager_input_classes', 'input-text form-control form-input woocommerce-Input woocommerce-input-text');
 
-        echo '<div id="ticket-names-wrapper" ' . ($is_nominative ? 'style="display:block;"' : 'style="display:none;"') . '>';
-        echo '<label>' . __('Name(s) for the ticket:', 'dl-ticket-manager') . '</label>';
-        echo '<div class="ticket-name"><input type="text" name="ticket_names[]" required class="' . esc_attr($classes_input) . '"></div>';
+        echo '<div class="ticket-names-wrapper" id="ticket-names-wrapper" ' . ($is_nominative ? 'style="display:flex;"' : 'style="display:none;"') . '>';
+        
+            echo '<label>' . __('Name(s) for the ticket:', 'dl-ticket-manager') . '</label>';
+
+            echo '<div class="ticket-name">';
+            
+                echo '<input type="text" name="ticket_names[]" required class="' . esc_attr($classes_input) . '">';
+                if ($is_show_id) {
+                    echo '<input type="text" name="ticket_ids[]" required placeholder="' . __('ID of the ticket holder', 'dl-ticket-manager') . '" class="' . esc_attr($classes_input) . '">';
+                }
+
+            echo '</div>';
+
+            do_action('dl_ticket_manager_after_ticket_name_input', $product, $is_show_id, $classes_input);
+
         echo '</div>';
         ?>
 
@@ -58,7 +71,15 @@ class FormHandler
                     var wrapper = $('#ticket-names-wrapper');
                     wrapper.find('.ticket-name').remove();
                     for (let i = 0; i < count; i++) {
-                        wrapper.append('<div class="ticket-name"><input type="text" name="ticket_names[]" required placeholder="<?php esc_attr_e('Nombre del titular del ticket', 'dl-ticket-manager'); ?>" class="' . esc_attr($classes_input) . '"></div>');
+                        wrapper.append(`
+                        <div class="ticket-name">
+                        <input type="text" name="ticket_names[]" required placeholder="<?php esc_attr_e('Nombre del titular del ticket', 'dl-ticket-manager'); ?>" class="<?php esc_attr_e($classes_input); ?>">
+                        <?php if ($is_show_id) : ?>
+                        <input type="text" name="ticket_ids[]" required placeholder="<?php esc_attr_e('ID of the ticket holder', 'dl-ticket-manager'); ?>" class="<?php esc_attr_e($classes_input); ?>">
+                        <?php endif; ?>
+                        </div>
+                        <?php do_action('dl_ticket_manager_after_ticket_name_input', $product, $is_show_id, $classes_input); ?>
+                        `);
                     }
                 }).trigger('change');
             });
@@ -82,6 +103,10 @@ class FormHandler
             $cart_item_data['ticket_names'] = array_map('sanitize_text_field', $_POST['ticket_names']);
         }
 
+        if (isset($_POST['ticket_ids'])) {
+            $cart_item_data['ticket_ids'] = array_map('sanitize_text_field', $_POST['ticket_ids']);
+        }
+
         return $cart_item_data;
     }
 
@@ -94,14 +119,21 @@ class FormHandler
      */
     public function displayItemData($item_data, $cart_item): array
     {
+
         if (isset($cart_item['ticket_names'])) {
             foreach ($cart_item['ticket_names'] as $index => $name) {
+                
+                if ($cart_item['ticket_ids'][$index]) {
+                    $name .= ' (' . esc_html($cart_item['ticket_ids'][$index]) . ')';
+                }
+
                 $item_data[] = [
-                    'key'   => __('#', 'dl-ticket-manager') . ' ' . ($index + 1),
+                    'key'   => __('#', 'dl-ticket-manager') . '' . ($index + 1),
                     'value' => $name,
                 ];
             }
         }
+
         return $item_data;
     }
 
@@ -119,5 +151,11 @@ class FormHandler
         if (isset($values['ticket_names']) && is_array($values['ticket_names'])) {
             $item->add_meta_data('ticket_names', $values['ticket_names']);
         }
+
+        if (isset($values['ticket_ids']) && is_array($values['ticket_ids'])) {
+            $item->add_meta_data('ticket_ids', $values['ticket_ids']);
+        }
+
+
     }
 }
