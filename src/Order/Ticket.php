@@ -112,6 +112,11 @@ class Ticket
                         'event' => get_post_meta(get_the_ID(), 'event', true),
                         'status' => get_post_meta(get_the_ID(), 'status', true),
                         'identifier' => get_post_meta(get_the_ID(), 'identifier', true),
+                        'date' => get_post_meta(get_the_ID(), 'date', true),
+                        'address' => get_post_meta(get_the_ID(), '_event_address', true),
+                        'city' => get_post_meta(get_the_ID(), '_event_city', true),
+                        'state' => get_post_meta(get_the_ID(), '_event_state', true),
+                        'venue' => get_post_meta(get_the_ID(), '_event_venue', true),
                     ]
                 );
             }
