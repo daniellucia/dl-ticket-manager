@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Ticket Manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 16:52+0000\n"
-"PO-Revision-Date: 2025-08-26 20:28+0000\n"
+"PO-Revision-Date: 2025-08-26 20:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.29\n"
 "X-Domain: dl-ticket-manager"
 
-#: src/Frontend/FormHandler.php:121
+#: src/Frontend/FormHandler.php:131
 msgid "#"
 msgstr "#"
 
@@ -24,15 +24,15 @@ msgstr "#"
 msgid "%s of %s of %s"
 msgstr "%s de %s de %s"
 
-#: src/Frontend/Cpt.php:104
+#: src/Frontend/Cpt.php:105
 msgid "Add new"
 msgstr "Añadir nuevo"
 
-#: src/Frontend/Cpt.php:154
+#: src/Frontend/Cpt.php:155
 msgid "Add new event"
 msgstr "Agregar nuevo evento"
 
-#: src/Frontend/Cpt.php:105
+#: src/Frontend/Cpt.php:106
 msgid "Add new ticket"
 msgstr "Añadir nuevo ticket"
 
@@ -40,7 +40,7 @@ msgstr "Añadir nuevo ticket"
 msgid "Address"
 msgstr "Dirección"
 
-#: src/Frontend/Cpt.php:149
+#: src/Frontend/Cpt.php:150
 msgid "All events"
 msgstr "Todos los eventos"
 
@@ -60,20 +60,20 @@ msgstr "agosto"
 msgid "Cancelled"
 msgstr "Cancelado"
 
-#: src/Frontend/Cpt.php:191
+#: src/Frontend/Cpt.php:193
 msgid "Change Status"
 msgstr "Cambiar estado"
 
 #: src/ProductType/TicketProduct.php:126
 msgid "Check to request the attendee's DNI on the ticket."
-msgstr ""
+msgstr "Marque para solicitar el DNI del asistente en la entrada."
 
 #: src/ProductType/TicketProduct.php:180 src/ProductType/TicketProduct.php:181
 #: src/Pdf/Templates/Default.php:160
 msgid "City"
 msgstr "Ciudad"
 
-#: src/Frontend/Cpt.php:188 src/Order/TicketGenerator.php:94
+#: src/Frontend/Cpt.php:190 src/Order/TicketGenerator.php:94
 #: src/Pdf/Templates/Default.php:172
 msgid "Code"
 msgstr "Código"
@@ -106,25 +106,21 @@ msgstr "Plantilla predeterminada"
 msgid "Does this ticket require the name of the attendees?"
 msgstr "¿Este ticket requiere el nombre de los asistentes?"
 
-#: src/Frontend/Cpt.php:189
+#: src/Frontend/Cpt.php:191
 msgid "Download"
 msgstr "Descargar"
 
-#: src/Frontend/Cpt.php:208 src/Order/TicketGenerator.php:95
+#: src/Frontend/Cpt.php:210 src/Order/TicketGenerator.php:95
 msgid "Download ticket"
 msgstr "Descargar ticket"
 
-#: src/Frontend/Cpt.php:152
+#: src/Frontend/Cpt.php:153
 msgid "Edit event"
 msgstr "Editar evento"
 
-#: src/Frontend/Cpt.php:106
+#: src/Frontend/Cpt.php:107
 msgid "Edit ticket"
 msgstr "Editar ticket"
-
-#: src/Config/Page.php:196
-msgid "Eliminar logo"
-msgstr ""
 
 #: src/ProductType/TicketProduct.php:196
 msgid "End sale date"
@@ -154,11 +150,11 @@ msgstr "Ingrese el estado donde se llevará a cabo el evento."
 msgid "Enter the venue where the event will take place."
 msgstr "Ingrese el lugar donde se realizará el evento."
 
-#: src/Frontend/Cpt.php:324
+#: src/Frontend/Cpt.php:335
 msgid "Error updating status"
 msgstr "Error al actualizar el estado"
 
-#: src/Frontend/Cpt.php:147 src/ProductType/TicketProduct.php:93
+#: src/Frontend/Cpt.php:148 src/ProductType/TicketProduct.php:93
 msgid "Event"
 msgstr "Evento"
 
@@ -178,7 +174,7 @@ msgstr "Hora del evento"
 msgid "Event venue"
 msgstr "Lugar del evento"
 
-#: src/Frontend/Cpt.php:146 src/Frontend/Cpt.php:156
+#: src/Frontend/Cpt.php:147 src/Frontend/Cpt.php:157
 msgid "Events"
 msgstr "Eventos"
 
@@ -206,8 +202,12 @@ msgstr "http://www.daniellucia.es"
 msgid "ID of the ticket holder"
 msgstr "DNI del titular"
 
+#: src/Frontend/Cpt.php:189
+msgid "Identifier"
+msgstr ""
+
 #: src/ProductType/TicketProduct.php:208
-msgid "Imagen para ticket"
+msgid "Image for ticket"
 msgstr ""
 
 #: src/ProductType/TicketProduct.php:149
@@ -262,11 +262,11 @@ msgstr "Nombre"
 msgid "Name(s) for the ticket:"
 msgstr "Nombre(s) para la entrada:"
 
-#: src/Frontend/Cpt.php:155
+#: src/Frontend/Cpt.php:156
 msgid "New event name"
 msgstr "Nuevo nombre del evento"
 
-#: src/Frontend/Cpt.php:107
+#: src/Frontend/Cpt.php:108
 msgid "New ticket"
 msgstr "Nuevo billete"
 
@@ -274,11 +274,11 @@ msgstr "Nuevo billete"
 msgid "No order data."
 msgstr "No hay datos de pedidos."
 
-#: src/Frontend/Cpt.php:110
+#: src/Frontend/Cpt.php:111
 msgid "No tickets found"
 msgstr "No se encontraron tickets"
 
-#: src/Frontend/Cpt.php:111
+#: src/Frontend/Cpt.php:112
 msgid "No tickets found in trash"
 msgstr "No se encontraron tickets en la basura"
 
@@ -298,15 +298,15 @@ msgstr "noviembre"
 msgid "october"
 msgstr "octubre"
 
-#: src/Frontend/Cpt.php:187 src/Pdf/Templates/Default.php:176
+#: src/Frontend/Cpt.php:188 src/Pdf/Templates/Default.php:176
 msgid "Order"
 msgstr "Pedido"
 
-#: src/Frontend/Cpt.php:150
+#: src/Frontend/Cpt.php:151
 msgid "Parent event"
 msgstr "Evento para padres"
 
-#: src/Frontend/Cpt.php:151
+#: src/Frontend/Cpt.php:152
 msgid "Parent event:"
 msgstr "Evento padre:"
 
@@ -322,6 +322,10 @@ msgstr "Complemento para venta de tickets con WooCommerce."
 msgid "Remove image"
 msgstr "Eliminar imagen"
 
+#: src/Config/Page.php:196
+msgid "Remove logo"
+msgstr ""
+
 #: src/ProductType/TicketProduct.php:125
 msgid "Request DNI"
 msgstr "Solicitar DNI"
@@ -330,11 +334,11 @@ msgstr "Solicitar DNI"
 msgid "Sale completed"
 msgstr "Venta completada"
 
-#: src/Frontend/Cpt.php:148
+#: src/Frontend/Cpt.php:149
 msgid "Search events"
 msgstr "Buscar eventos"
 
-#: src/Frontend/Cpt.php:109
+#: src/Frontend/Cpt.php:110
 msgid "Search tickets"
 msgstr "Buscar tickets"
 
@@ -342,13 +346,13 @@ msgstr "Buscar tickets"
 msgid "Security code"
 msgstr "Código de seguridad"
 
-#: src/Config/Page.php:195
-msgid "Seleccionar logo"
-msgstr ""
-
 #: src/ProductType/TicketProduct.php:210 src/ProductType/TicketProduct.php:225
 msgid "Select image for ticket"
 msgstr "Seleccione la imagen del ticket"
+
+#: src/Config/Page.php:195
+msgid "Select logo"
+msgstr ""
 
 #: src/Config/Page.php:209
 msgid "Select logo for tickets"
@@ -362,11 +366,11 @@ msgstr "septiembre"
 msgid "State"
 msgstr "Provincia"
 
-#: src/Frontend/Cpt.php:190
+#: src/Frontend/Cpt.php:192
 msgid "Status"
 msgstr "Estado"
 
-#: src/Frontend/Cpt.php:319
+#: src/Frontend/Cpt.php:330
 msgid "Status updated"
 msgstr "Estado actualizado"
 
@@ -382,7 +386,7 @@ msgstr "No se ha encontrado el pedido asociado a este ticket."
 msgid "The ticket sales for this event have ended."
 msgstr "La venta de tickets para este evento ha finalizado."
 
-#: src/Frontend/Cpt.php:103 src/ProductType/TicketProduct.php:68
+#: src/Frontend/Cpt.php:104 src/ProductType/TicketProduct.php:68
 #: src/Pdf/Templates/Default.php:6
 msgid "Ticket"
 msgstr "Ticket"
@@ -415,7 +419,7 @@ msgstr "Ticket Manager para WooCommerce"
 msgid "Ticket template"
 msgstr "Plantilla de ticket"
 
-#: src/Frontend/Cpt.php:102 src/Frontend/Cpt.php:112
+#: src/Frontend/Cpt.php:103 src/Frontend/Cpt.php:113
 msgid "Tickets"
 msgstr "Tickets"
 
@@ -423,7 +427,7 @@ msgstr "Tickets"
 msgid "Time"
 msgstr "Hora"
 
-#: src/Frontend/Cpt.php:258
+#: src/Frontend/Cpt.php:269
 #, php-format
 msgid "Todos los %s"
 msgstr "Todos los %s"
@@ -432,7 +436,7 @@ msgstr "Todos los %s"
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: src/Frontend/Cpt.php:153
+#: src/Frontend/Cpt.php:154
 msgid "Update event"
 msgstr "Evento de actualización"
 
@@ -452,7 +456,7 @@ msgstr "Asistentes válidos:"
 msgid "Venue"
 msgstr "Localización"
 
-#: src/Frontend/Cpt.php:108
+#: src/Frontend/Cpt.php:109
 msgid "View ticket"
 msgstr "Ver ticket"
 

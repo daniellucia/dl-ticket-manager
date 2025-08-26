@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ticket Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-26 20:27+0000\n"
+"POT-Creation-Date: 2025-08-26 20:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.29\n"
 "X-Domain: dl-ticket-manager"
 
-#: src/Frontend/FormHandler.php:121
+#: src/Frontend/FormHandler.php:131
 msgid "#"
 msgstr ""
 
@@ -25,15 +25,15 @@ msgstr ""
 msgid "%s of %s of %s"
 msgstr ""
 
-#: src/Frontend/Cpt.php:104
+#: src/Frontend/Cpt.php:105
 msgid "Add new"
 msgstr ""
 
-#: src/Frontend/Cpt.php:154
+#: src/Frontend/Cpt.php:155
 msgid "Add new event"
 msgstr ""
 
-#: src/Frontend/Cpt.php:105
+#: src/Frontend/Cpt.php:106
 msgid "Add new ticket"
 msgstr ""
 
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: src/Frontend/Cpt.php:149
+#: src/Frontend/Cpt.php:150
 msgid "All events"
 msgstr ""
 
@@ -61,7 +61,7 @@ msgstr ""
 msgid "Cancelled"
 msgstr ""
 
-#: src/Frontend/Cpt.php:191
+#: src/Frontend/Cpt.php:193
 msgid "Change Status"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "City"
 msgstr ""
 
-#: src/Frontend/Cpt.php:188 src/Order/TicketGenerator.php:94
+#: src/Frontend/Cpt.php:190 src/Order/TicketGenerator.php:94
 #: src/Pdf/Templates/Default.php:172
 msgid "Code"
 msgstr ""
@@ -107,24 +107,20 @@ msgstr ""
 msgid "Does this ticket require the name of the attendees?"
 msgstr ""
 
-#: src/Frontend/Cpt.php:189
+#: src/Frontend/Cpt.php:191
 msgid "Download"
 msgstr ""
 
-#: src/Frontend/Cpt.php:208 src/Order/TicketGenerator.php:95
+#: src/Frontend/Cpt.php:210 src/Order/TicketGenerator.php:95
 msgid "Download ticket"
 msgstr ""
 
-#: src/Frontend/Cpt.php:152
+#: src/Frontend/Cpt.php:153
 msgid "Edit event"
 msgstr ""
 
-#: src/Frontend/Cpt.php:106
+#: src/Frontend/Cpt.php:107
 msgid "Edit ticket"
-msgstr ""
-
-#: src/Config/Page.php:196
-msgid "Eliminar logo"
 msgstr ""
 
 #: src/ProductType/TicketProduct.php:196
@@ -155,11 +151,11 @@ msgstr ""
 msgid "Enter the venue where the event will take place."
 msgstr ""
 
-#: src/Frontend/Cpt.php:324
+#: src/Frontend/Cpt.php:335
 msgid "Error updating status"
 msgstr ""
 
-#: src/Frontend/Cpt.php:147 src/ProductType/TicketProduct.php:93
+#: src/Frontend/Cpt.php:148 src/ProductType/TicketProduct.php:93
 msgid "Event"
 msgstr ""
 
@@ -179,7 +175,7 @@ msgstr ""
 msgid "Event venue"
 msgstr ""
 
-#: src/Frontend/Cpt.php:146 src/Frontend/Cpt.php:156
+#: src/Frontend/Cpt.php:147 src/Frontend/Cpt.php:157
 msgid "Events"
 msgstr ""
 
@@ -207,8 +203,12 @@ msgstr ""
 msgid "ID of the ticket holder"
 msgstr ""
 
+#: src/Frontend/Cpt.php:189
+msgid "Identifier"
+msgstr ""
+
 #: src/ProductType/TicketProduct.php:208
-msgid "Imagen para ticket"
+msgid "Image for ticket"
 msgstr ""
 
 #: src/ProductType/TicketProduct.php:149
@@ -263,11 +263,11 @@ msgstr ""
 msgid "Name(s) for the ticket:"
 msgstr ""
 
-#: src/Frontend/Cpt.php:155
+#: src/Frontend/Cpt.php:156
 msgid "New event name"
 msgstr ""
 
-#: src/Frontend/Cpt.php:107
+#: src/Frontend/Cpt.php:108
 msgid "New ticket"
 msgstr ""
 
@@ -275,11 +275,11 @@ msgstr ""
 msgid "No order data."
 msgstr ""
 
-#: src/Frontend/Cpt.php:110
+#: src/Frontend/Cpt.php:111
 msgid "No tickets found"
 msgstr ""
 
-#: src/Frontend/Cpt.php:111
+#: src/Frontend/Cpt.php:112
 msgid "No tickets found in trash"
 msgstr ""
 
@@ -299,15 +299,15 @@ msgstr ""
 msgid "october"
 msgstr ""
 
-#: src/Frontend/Cpt.php:187 src/Pdf/Templates/Default.php:176
+#: src/Frontend/Cpt.php:188 src/Pdf/Templates/Default.php:176
 msgid "Order"
 msgstr ""
 
-#: src/Frontend/Cpt.php:150
+#: src/Frontend/Cpt.php:151
 msgid "Parent event"
 msgstr ""
 
-#: src/Frontend/Cpt.php:151
+#: src/Frontend/Cpt.php:152
 msgid "Parent event:"
 msgstr ""
 
@@ -323,6 +323,10 @@ msgstr ""
 msgid "Remove image"
 msgstr ""
 
+#: src/Config/Page.php:196
+msgid "Remove logo"
+msgstr ""
+
 #: src/ProductType/TicketProduct.php:125
 msgid "Request DNI"
 msgstr ""
@@ -331,11 +335,11 @@ msgstr ""
 msgid "Sale completed"
 msgstr ""
 
-#: src/Frontend/Cpt.php:148
+#: src/Frontend/Cpt.php:149
 msgid "Search events"
 msgstr ""
 
-#: src/Frontend/Cpt.php:109
+#: src/Frontend/Cpt.php:110
 msgid "Search tickets"
 msgstr ""
 
@@ -343,12 +347,12 @@ msgstr ""
 msgid "Security code"
 msgstr ""
 
-#: src/Config/Page.php:195
-msgid "Seleccionar logo"
-msgstr ""
-
 #: src/ProductType/TicketProduct.php:210 src/ProductType/TicketProduct.php:225
 msgid "Select image for ticket"
+msgstr ""
+
+#: src/Config/Page.php:195
+msgid "Select logo"
 msgstr ""
 
 #: src/Config/Page.php:209
@@ -363,11 +367,11 @@ msgstr ""
 msgid "State"
 msgstr ""
 
-#: src/Frontend/Cpt.php:190
+#: src/Frontend/Cpt.php:192
 msgid "Status"
 msgstr ""
 
-#: src/Frontend/Cpt.php:319
+#: src/Frontend/Cpt.php:330
 msgid "Status updated"
 msgstr ""
 
@@ -383,7 +387,7 @@ msgstr ""
 msgid "The ticket sales for this event have ended."
 msgstr ""
 
-#: src/Frontend/Cpt.php:103 src/ProductType/TicketProduct.php:68
+#: src/Frontend/Cpt.php:104 src/ProductType/TicketProduct.php:68
 #: src/Pdf/Templates/Default.php:6
 msgid "Ticket"
 msgstr ""
@@ -416,7 +420,7 @@ msgstr ""
 msgid "Ticket template"
 msgstr ""
 
-#: src/Frontend/Cpt.php:102 src/Frontend/Cpt.php:112
+#: src/Frontend/Cpt.php:103 src/Frontend/Cpt.php:113
 msgid "Tickets"
 msgstr ""
 
@@ -424,7 +428,7 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-#: src/Frontend/Cpt.php:258
+#: src/Frontend/Cpt.php:269
 #, php-format
 msgid "Todos los %s"
 msgstr ""
@@ -433,7 +437,7 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: src/Frontend/Cpt.php:153
+#: src/Frontend/Cpt.php:154
 msgid "Update event"
 msgstr ""
 
@@ -453,7 +457,7 @@ msgstr ""
 msgid "Venue"
 msgstr ""
 
-#: src/Frontend/Cpt.php:108
+#: src/Frontend/Cpt.php:109
 msgid "View ticket"
 msgstr ""
 
