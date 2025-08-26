@@ -205,7 +205,7 @@ class TicketProduct
         ?>
         
         <p class="form-field" style="display: flex;gap: 10px;align-items: flex-start;">
-            <label><?php esc_html_e('Imagen para ticket', 'dl-ticket-manager'); ?></label>
+            <label><?php esc_html_e('Image for ticket', 'dl-ticket-manager'); ?></label>
             <input type="hidden" id="dl-ticket-image" name="_ticket_image" value="<?php echo esc_attr($image_id); ?>" />
             <button type="button" class="button" id="dl-ticket-select-image"><?php esc_html_e('Select image for ticket', 'dl-ticket-manager'); ?></button>
             <button type="button" class="button" id="dl-ticket-remove-image" <?php echo $image_url ? '' : 'style="display:none;"'; ?>><?php esc_html_e('Remove image', 'dl-ticket-manager'); ?></button>
