@@ -73,7 +73,9 @@ class Email
                         echo '<tr>';
                             echo '<td style="padding: 0;">';
                                 echo '<strong>' . $ticket['name'] . '</strong><br />';
-                                echo $ticket['event'] ;
+                                if ($ticket['identifier']) {
+                                    echo '<strong>' . $ticket['identifier'] . '</strong><br />';
+                                }
                             echo '</td>';
                             echo '<td style="padding: 0; text-align: right;"><img src="' . $ticket_generator->getQrImage($order_id, $code). '" style="width:220px; height:auto; margin: 0;" /></td>';
                         echo '</tr>';

@@ -111,6 +111,7 @@ class Ticket
                         'name' => get_post_meta(get_the_ID(), 'name', true),
                         'event' => get_post_meta(get_the_ID(), 'event', true),
                         'status' => get_post_meta(get_the_ID(), 'status', true),
+                        'identifier' => get_post_meta(get_the_ID(), 'identifier', true),
                     ]
                 );
             }
