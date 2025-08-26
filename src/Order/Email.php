@@ -81,11 +81,11 @@ class Email
 
                                 do_action('dl_ticket_manager_email_ticket_details_before', $ticket, $order);
 
-                                echo '<p><strong>' . $ticket['name'] . '</strong></p>';
+                                echo '<p style="margin: 0;"><strong>' . $ticket['name'] . '</strong></p>';
                                 if ($ticket['identifier']) {
-                                    echo '<p><strong>' . $ticket['identifier'] . '</strong></p>';
+                                    echo '<p style="margin: 0;"><strong>' . $ticket['identifier'] . '</strong></p>';
                                 }
-                                echo '<p>' . $ticket['event'] . '</p>';
+                                echo '<p style="margin: 0;">' . $ticket['event'] . '</p>';
 
                                 do_action('dl_ticket_manager_email_ticket_details_after', $ticket, $order);
 
