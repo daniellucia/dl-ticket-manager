@@ -1,3 +1,22 @@
-.ticket-name input {
+body .ticket-names-wrapper {
+    margin: 20px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 370px;
+}
+
+body .ticket-names-wrapper label {
+    margin-bottom: 5px;
+}
+
+body .ticket-names-wrapper .ticket-name {
+    display: flex;
+    gap: 10px;
+}
+
+body .ticket-names-wrapper .ticket-name input {
     padding: 7px 16px;
+    flex: 1;
+    box-sizing: border-box;
 }
