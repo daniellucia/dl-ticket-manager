@@ -71,7 +71,7 @@ class Email
                     foreach ($tickets as $ticket) {
                         $code = $ticket['code'];
                         echo '<tr>';
-                        
+
                             echo '
                             <td style="padding: 0; text-align: left;width: 170px;padding-right: 10px;">
                                 <img src="' . $ticket_generator->getQrImage($order_id, $code). '" style="width:170px; height:auto; margin: 0;" />
@@ -79,11 +79,15 @@ class Email
 
                             echo '<td style="padding: 0;">';
 
+                                do_action('dl_ticket_manager_email_ticket_details_before', $ticket, $order);
+
                                 echo '<strong>' . $ticket['name'] . '</strong><br />';
                                 if ($ticket['identifier']) {
                                     echo '<strong>' . $ticket['identifier'] . '</strong><br />';
                                 }
                                 echo $ticket['event'];
+
+                                do_action('dl_ticket_manager_email_ticket_details_after', $ticket, $order);
 
                             echo '</td>';
                             
