@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Ticket Manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 16:52+0000\n"
-"PO-Revision-Date: 2025-08-25 18:46+0000\n"
+"PO-Revision-Date: 2025-08-26 20:40+0000\n"
 "Last-Translator: \n"
 "Language-Team: German\n"
 "Language: de_DE\n"
@@ -15,66 +15,72 @@ msgstr ""
 "X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.29\n"
 "X-Domain: dl-ticket-manager"
 
-#: src/Frontend/FormHandler.php:99
+#: src/Frontend/FormHandler.php:131
 msgid "#"
 msgstr "#"
 
-#: src/Order/TicketPdfGenerator.php:152
+#: src/Order/TicketPdfGenerator.php:173
 #, php-format
 msgid "%s of %s of %s"
 msgstr "%s von %s von %s"
 
-#: src/Frontend/Cpt.php:104
+#: src/Frontend/Cpt.php:105
 msgid "Add new"
 msgstr "Neu hinzufügen"
 
-#: src/Frontend/Cpt.php:154
+#: src/Frontend/Cpt.php:155
 msgid "Add new event"
 msgstr "Neues Ereignis hinzufügen"
 
-#: src/Frontend/Cpt.php:105
+#: src/Frontend/Cpt.php:106
 msgid "Add new ticket"
 msgstr "Neues Ticket hinzufügen"
 
-#: src/ProductType/TicketProduct.php:145 src/Pdf/Templates/Default.php:158
+#: src/ProductType/TicketProduct.php:172 src/Pdf/Templates/Default.php:156
 msgid "Address"
 msgstr "Adresse"
 
-#: src/Frontend/Cpt.php:149
+#: src/Frontend/Cpt.php:150
 msgid "All events"
 msgstr "Alle Veranstaltungen"
 
-#: src/Order/TicketPdfGenerator.php:137
+#: src/Order/TicketPdfGenerator.php:158
 msgid "april"
-msgstr ""
+msgstr "April"
 
 #: src/Order/TicketGenerator.php:58
 msgid "Asistentes"
 msgstr "Assistenten"
 
-#: src/Order/TicketPdfGenerator.php:141
+#: src/Order/TicketPdfGenerator.php:162
 msgid "august"
-msgstr ""
+msgstr "August"
 
 #: src/Order/TicketStatus.php:31
 msgid "Cancelled"
 msgstr "Abgesagt"
 
-#: src/Frontend/Cpt.php:191
+#: src/Frontend/Cpt.php:193
 msgid "Change Status"
 msgstr "Status ändern"
 
-#: src/ProductType/TicketProduct.php:153 src/ProductType/TicketProduct.php:154
-#: src/Pdf/Templates/Default.php:162
+#: src/ProductType/TicketProduct.php:126
+msgid "Check to request the attendee's DNI on the ticket."
+msgstr ""
+"Aktivieren Sie dieses Kontrollkästchen, um die DNI des Teilnehmers auf dem "
+"Ticket anzufordern."
+
+#: src/ProductType/TicketProduct.php:180 src/ProductType/TicketProduct.php:181
+#: src/Pdf/Templates/Default.php:160
 msgid "City"
 msgstr "Stadt"
 
-#: src/Frontend/Cpt.php:188 src/Order/TicketGenerator.php:94
-#: src/Pdf/Templates/Default.php:174
+#: src/Frontend/Cpt.php:190 src/Order/TicketGenerator.php:94
+#: src/Pdf/Templates/Default.php:172
 msgid "Code"
 msgstr "Code"
 
-#: src/Config/Page.php:47
+#: src/Config/Page.php:49
 msgid "Configure the legal texts and conditions of the plugin."
 msgstr "Konfigurieren Sie die Rechtstexte und Bedingungen des Plugins."
 
@@ -86,15 +92,15 @@ msgstr "Bestätigt"
 msgid "Daniel Lúcia"
 msgstr "Daniel Lúcia"
 
-#: src/Pdf/Templates/Default.php:146
+#: src/Pdf/Templates/Default.php:144
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
-#: src/Order/TicketPdfGenerator.php:145
+#: src/Order/TicketPdfGenerator.php:166
 msgid "december"
-msgstr ""
+msgstr "Dezember"
 
-#: src/Config/Page.php:147
+#: src/Config/Page.php:157
 msgid "Default template"
 msgstr "Standardvorlage"
 
@@ -102,154 +108,170 @@ msgstr "Standardvorlage"
 msgid "Does this ticket require the name of the attendees?"
 msgstr "Ist auf diesem Ticket der Name der Teilnehmer erforderlich?"
 
-#: src/Frontend/Cpt.php:189
+#: src/Frontend/Cpt.php:191
 msgid "Download"
 msgstr "Herunterladen"
 
-#: src/Frontend/Cpt.php:208 src/Order/TicketGenerator.php:95
+#: src/Frontend/Cpt.php:210 src/Order/TicketGenerator.php:95
 msgid "Download ticket"
 msgstr "Ticket herunterladen"
 
-#: src/Frontend/Cpt.php:152
+#: src/Frontend/Cpt.php:153
 msgid "Edit event"
 msgstr "Ereignis bearbeiten"
 
-#: src/Frontend/Cpt.php:106
+#: src/Frontend/Cpt.php:107
 msgid "Edit ticket"
 msgstr "Ticket bearbeiten"
 
-#: src/ProductType/TicketProduct.php:169
+#: src/ProductType/TicketProduct.php:196
 msgid "End sale date"
 msgstr "Enddatum des Verkaufs"
 
-#: src/ProductType/TicketProduct.php:148
+#: src/ProductType/TicketProduct.php:175
 msgid "Enter the address where the event will take place."
 msgstr "Geben Sie die Adresse ein, an der die Veranstaltung stattfinden soll."
 
-#: src/ProductType/TicketProduct.php:156
+#: src/ProductType/TicketProduct.php:183
 msgid "Enter the city where the event will take place."
 msgstr "Geben Sie die Stadt ein, in der die Veranstaltung stattfinden soll."
 
-#: src/ProductType/TicketProduct.php:172
+#: src/ProductType/TicketProduct.php:199
 msgid "Enter the end sale date for the ticket."
 msgstr "Geben Sie das Endverkaufsdatum für das Ticket ein."
 
-#: src/ProductType/TicketProduct.php:131
+#: src/ProductType/TicketProduct.php:158
 msgid "Enter the start time of the event."
 msgstr "Geben Sie die Startzeit des Ereignisses ein."
 
-#: src/ProductType/TicketProduct.php:164
+#: src/ProductType/TicketProduct.php:191
 msgid "Enter the state where the event will take place."
 msgstr ""
 "Geben Sie das Bundesland ein, in dem die Veranstaltung stattfinden soll."
 
-#: src/ProductType/TicketProduct.php:140
+#: src/ProductType/TicketProduct.php:167
 msgid "Enter the venue where the event will take place."
 msgstr ""
 "Geben Sie den Veranstaltungsort ein, an dem die Veranstaltung stattfinden "
 "wird."
 
-#: src/Frontend/Cpt.php:324
+#: src/Frontend/Cpt.php:335
 msgid "Error updating status"
 msgstr "Fehler beim Aktualisieren des Status"
 
-#: src/Frontend/Cpt.php:147 src/ProductType/TicketProduct.php:93
+#: src/Frontend/Cpt.php:148 src/ProductType/TicketProduct.php:93
 msgid "Event"
 msgstr "Ereignis"
 
-#: src/ProductType/TicketProduct.php:146
+#: src/ProductType/TicketProduct.php:173
 msgid "Event address"
 msgstr "Veranstaltungsadresse"
 
-#: src/ProductType/TicketProduct.php:119
+#: src/ProductType/TicketProduct.php:146
 msgid "Event date"
 msgstr "Veranstaltungsdatum"
 
-#: src/ProductType/TicketProduct.php:128
+#: src/ProductType/TicketProduct.php:155
 msgid "Event time"
 msgstr "Ereigniszeit"
 
-#: src/ProductType/TicketProduct.php:137 src/ProductType/TicketProduct.php:138
+#: src/ProductType/TicketProduct.php:164 src/ProductType/TicketProduct.php:165
 msgid "Event venue"
 msgstr "Veranstaltungsort"
 
-#: src/Frontend/Cpt.php:146 src/Frontend/Cpt.php:156
+#: src/Frontend/Cpt.php:147 src/Frontend/Cpt.php:157
 msgid "Events"
 msgstr "Veranstaltungen"
 
-#: src/Order/TicketPdfGenerator.php:135
+#: src/Order/TicketPdfGenerator.php:156
 msgid "february"
-msgstr ""
+msgstr "Februar"
 
-#: src/Config/Page.php:62
+#: src/Config/Page.php:64
 msgid "General conditions of entry"
 msgstr "Allgemeine Teilnahmebedingungen"
 
-#: src/Pdf/Templates/Default.php:199
+#: src/Pdf/Templates/Default.php:202
 msgid "General conditions of ticket"
-msgstr ""
+msgstr "Allgemeine Ticketbedingungen"
 
-#: src/Config/Page.php:45
+#: src/Config/Page.php:47
 msgid "General settings"
 msgstr "Allgemeine Einstellungen"
 
 #. Author URI of the plugin
 msgid "http://www.daniellucia.es"
-msgstr ""
+msgstr "http://www.daniellucia.es"
 
-#: src/ProductType/TicketProduct.php:122
+#: src/Frontend/FormHandler.php:56 src/Frontend/FormHandler.php:78
+msgid "ID of the ticket holder"
+msgstr "Ausweis des Ticketinhabers"
+
+#: src/Frontend/Cpt.php:189
+msgid "Identifier"
+msgstr "Kennung"
+
+#: src/ProductType/TicketProduct.php:208
+msgid "Image for ticket"
+msgstr "Bild für Ticket"
+
+#: src/ProductType/TicketProduct.php:149
 msgid "Introduce la fecha de inicio del evento."
 msgstr "Stellen Sie die fecha de inicio del evento vor."
 
-#: src/Config/Page.php:94
+#: src/Config/Page.php:96
 msgid "Issuer email"
-msgstr ""
+msgstr "E-Mail des Ausstellers"
 
-#: src/Config/Page.php:78
+#: src/Config/Page.php:80
 msgid "Issuer name"
-msgstr ""
+msgstr "Name des Ausstellers"
 
-#: src/Config/Page.php:86
+#: src/Config/Page.php:88
 msgid "Issuer website"
-msgstr ""
+msgstr "Website des Emittenten"
 
-#: src/Order/TicketPdfGenerator.php:134
+#: src/Order/TicketPdfGenerator.php:155
 msgid "january"
-msgstr ""
+msgstr "Januar"
 
-#: src/Order/TicketPdfGenerator.php:140
+#: src/Order/TicketPdfGenerator.php:161
 msgid "july"
-msgstr ""
+msgstr "Juli"
 
-#: src/Order/TicketPdfGenerator.php:139
+#: src/Order/TicketPdfGenerator.php:160
 msgid "june"
-msgstr ""
+msgstr "Juni"
 
-#: src/Config/Page.php:54
+#: src/Config/Page.php:56
 msgid "Legal text"
 msgstr "Gesetzestext"
 
-#: src/Order/TicketPdfGenerator.php:136
-msgid "march"
-msgstr ""
+#: src/Config/Page.php:104
+msgid "Logo for tickets"
+msgstr "Logo für Tickets"
 
-#: src/Order/TicketPdfGenerator.php:138
+#: src/Order/TicketPdfGenerator.php:157
+msgid "march"
+msgstr "Marsch"
+
+#: src/Order/TicketPdfGenerator.php:159
 msgid "may"
-msgstr ""
+msgstr "Mai"
 
 #: src/Order/TicketGenerator.php:93
 msgid "Name"
 msgstr "Name"
 
-#: src/Frontend/FormHandler.php:47
+#: src/Frontend/FormHandler.php:50
 msgid "Name(s) for the ticket:"
 msgstr "Name(n) für das Ticket:"
 
-#: src/Frontend/Cpt.php:155
+#: src/Frontend/Cpt.php:156
 msgid "New event name"
 msgstr "Neuer Ereignisname"
 
-#: src/Frontend/Cpt.php:107
+#: src/Frontend/Cpt.php:108
 msgid "New ticket"
 msgstr "Neues Ticket"
 
@@ -257,15 +279,15 @@ msgstr "Neues Ticket"
 msgid "No order data."
 msgstr "Keine Bestelldaten."
 
-#: src/Frontend/Cpt.php:110
+#: src/Frontend/Cpt.php:111
 msgid "No tickets found"
 msgstr "Keine Tickets gefunden"
 
-#: src/Frontend/Cpt.php:111
+#: src/Frontend/Cpt.php:112
 msgid "No tickets found in trash"
 msgstr "Keine Tickets im Papierkorb gefunden"
 
-#: src/Frontend/FormHandler.php:60
+#: src/Frontend/FormHandler.php:76
 msgid "Nombre del titular del ticket"
 msgstr "Nombre del titular del ticket"
 
@@ -273,23 +295,23 @@ msgstr "Nombre del titular del ticket"
 msgid "Nominative ticket"
 msgstr "Namensticket"
 
-#: src/Order/TicketPdfGenerator.php:144
+#: src/Order/TicketPdfGenerator.php:165
 msgid "november"
-msgstr ""
+msgstr "November"
 
-#: src/Order/TicketPdfGenerator.php:143
+#: src/Order/TicketPdfGenerator.php:164
 msgid "october"
-msgstr ""
+msgstr "Oktober"
 
-#: src/Frontend/Cpt.php:187 src/Pdf/Templates/Default.php:178
+#: src/Frontend/Cpt.php:188 src/Pdf/Templates/Default.php:176
 msgid "Order"
 msgstr "Befehl"
 
-#: src/Frontend/Cpt.php:150
+#: src/Frontend/Cpt.php:151
 msgid "Parent event"
 msgstr "Übergeordnetes Ereignis"
 
-#: src/Frontend/Cpt.php:151
+#: src/Frontend/Cpt.php:152
 msgid "Parent event:"
 msgstr "Übergeordnetes Ereignis:"
 
@@ -301,15 +323,27 @@ msgstr "Ausstehend"
 msgid "Plugin para venta de tickets con WooCommerce."
 msgstr "Plugin zum Verkauf von Tickets mit WooCommerce."
 
-#: src/ProductType/TicketProduct.php:260
+#: src/ProductType/TicketProduct.php:211
+msgid "Remove image"
+msgstr "Bild entfernen"
+
+#: src/Config/Page.php:196
+msgid "Remove logo"
+msgstr "Logo entfernen"
+
+#: src/ProductType/TicketProduct.php:125
+msgid "Request DNI"
+msgstr "DNI anfordern"
+
+#: src/ProductType/TicketProduct.php:337
 msgid "Sale completed"
 msgstr "Verkauf abgeschlossen"
 
-#: src/Frontend/Cpt.php:148
+#: src/Frontend/Cpt.php:149
 msgid "Search events"
 msgstr "Ereignisse suchen"
 
-#: src/Frontend/Cpt.php:109
+#: src/Frontend/Cpt.php:110
 msgid "Search tickets"
 msgstr "Tickets suchen"
 
@@ -317,76 +351,88 @@ msgstr "Tickets suchen"
 msgid "Security code"
 msgstr "Sicherheitscode"
 
-#: src/Order/TicketPdfGenerator.php:142
-msgid "september"
-msgstr ""
+#: src/ProductType/TicketProduct.php:210 src/ProductType/TicketProduct.php:225
+msgid "Select image for ticket"
+msgstr "Bild für Ticket auswählen"
 
-#: src/ProductType/TicketProduct.php:161 src/ProductType/TicketProduct.php:162
+#: src/Config/Page.php:195
+msgid "Select logo"
+msgstr "Logo auswählen"
+
+#: src/Config/Page.php:209
+msgid "Select logo for tickets"
+msgstr "Logo für Tickets auswählen"
+
+#: src/Order/TicketPdfGenerator.php:163
+msgid "september"
+msgstr "September"
+
+#: src/ProductType/TicketProduct.php:188 src/ProductType/TicketProduct.php:189
 msgid "State"
 msgstr "Zustand"
 
-#: src/Frontend/Cpt.php:190
+#: src/Frontend/Cpt.php:192
 msgid "Status"
 msgstr "Status"
 
-#: src/Frontend/Cpt.php:319
+#: src/Frontend/Cpt.php:330
 msgid "Status updated"
 msgstr "Status aktualisiert"
 
-#: src/Pdf/Templates/Default.php:210
+#: src/Pdf/Templates/Default.php:213
 msgid "Terms and conditions"
-msgstr ""
+msgstr "Geschäftsbedingungen"
 
 #: src/Order/TicketPdfGenerator.php:70
 msgid "The order associated with this ticket has not been found."
-msgstr ""
+msgstr "Die mit diesem Ticket verknüpfte Bestellung wurde nicht gefunden."
 
-#: src/ProductType/TicketProduct.php:245
+#: src/ProductType/TicketProduct.php:322
 msgid "The ticket sales for this event have ended."
 msgstr "Der Ticketverkauf für diese Veranstaltung ist beendet."
 
-#: src/Frontend/Cpt.php:103 src/ProductType/TicketProduct.php:68
+#: src/Frontend/Cpt.php:104 src/ProductType/TicketProduct.php:68
 #: src/Pdf/Templates/Default.php:6
 msgid "Ticket"
 msgstr "Ticket"
 
-#: src/Pdf/Templates/Default.php:170
+#: src/Pdf/Templates/Default.php:168
 msgid "Ticket Holder"
-msgstr ""
+msgstr "Ticketinhaber"
 
-#: src/Pdf/Templates/Default.php:220
+#: src/Pdf/Templates/Default.php:223
 msgid "Ticket issued by"
-msgstr ""
+msgstr "Ticket ausgestellt von"
 
-#: src/Config/Page.php:22
+#: src/Config/Page.php:23
 msgid "Ticket Manager"
 msgstr "Ticketmanager"
 
-#: src/Config/Page.php:21
+#: src/Config/Page.php:22
 msgid "Ticket Manager Configuración"
 msgstr "Ticket Manager Configación"
 
-#: src/Config/Page.php:105
+#: src/Config/Page.php:115
 msgid "Ticket Manager Configuration"
 msgstr "Ticket-Manager-Konfiguration"
 
 #. Name of the plugin
 msgid "Ticket Manager for WooCommerce"
-msgstr ""
+msgstr "Ticket Manager für WooCommerce"
 
-#: src/Config/Page.php:70
+#: src/Config/Page.php:72
 msgid "Ticket template"
 msgstr "Ticketvorlage"
 
-#: src/Frontend/Cpt.php:102 src/Frontend/Cpt.php:112
+#: src/Frontend/Cpt.php:103 src/Frontend/Cpt.php:113
 msgid "Tickets"
 msgstr "Tickets"
 
-#: src/Pdf/Templates/Default.php:150
+#: src/Pdf/Templates/Default.php:148
 msgid "Time"
-msgstr ""
+msgstr "Zeit"
 
-#: src/Frontend/Cpt.php:258
+#: src/Frontend/Cpt.php:269
 #, php-format
 msgid "Todos los %s"
 msgstr "Todos los %s"
@@ -395,18 +441,36 @@ msgstr "Todos los %s"
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: src/Frontend/Cpt.php:153
+#: src/Frontend/Cpt.php:154
 msgid "Update event"
 msgstr "Update-Ereignis"
+
+#: src/ProductType/TicketProduct.php:226
+msgid "Use this image"
+msgstr "Verwenden Sie dieses Bild"
+
+#: src/Config/Page.php:210
+msgid "Use this logo"
+msgstr "Verwenden Sie dieses Logo"
 
 #: src/Order/TicketGenerator.php:85
 msgid "Valid attendees:"
 msgstr "Gültige Teilnehmer:"
 
-#: src/Pdf/Templates/Default.php:154
+#: src/Pdf/Templates/Default.php:152
 msgid "Venue"
-msgstr ""
+msgstr "Veranstaltungsort"
 
-#: src/Frontend/Cpt.php:108
+#: src/Frontend/Cpt.php:109
 msgid "View ticket"
 msgstr "Ticket ansehen"
+
+#: src/Order/Email.php:58 src/Order/Email.php:65
+msgid ""
+"You have purchased tickets for an event. You will receive your tickets with "
+"QR code attached to this email. Present them at the entrance to validate "
+"them."
+msgstr ""
+"Sie haben Tickets für eine Veranstaltung gekauft. Sie erhalten Ihre Tickets "
+"mit QR-Code im Anhang dieser E-Mail. Zeigen Sie diese am Eingang vor, um sie "
+"zu entwerten."
