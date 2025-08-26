@@ -1,0 +1,470 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Ticket Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-26 20:38+0000\n"
+"PO-Revision-Date: 2025-08-26 20:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: Portuguese (Portugal)\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.2.29\n"
+"X-Domain: dl-ticket-manager"
+
+#: src/Frontend/FormHandler.php:131
+msgid "#"
+msgstr "#"
+
+#: src/Order/TicketPdfGenerator.php:173
+#, php-format
+msgid "%s of %s of %s"
+msgstr "%s de %s de %s"
+
+#: src/Frontend/Cpt.php:105
+msgid "Add new"
+msgstr "Adicionar novo"
+
+#: src/Frontend/Cpt.php:155
+msgid "Add new event"
+msgstr "Adicionar novo evento"
+
+#: src/Frontend/Cpt.php:106
+msgid "Add new ticket"
+msgstr "Adicionar novo tíquete"
+
+#: src/ProductType/TicketProduct.php:172 src/Pdf/Templates/Default.php:156
+msgid "Address"
+msgstr "Endereço"
+
+#: src/Frontend/Cpt.php:150
+msgid "All events"
+msgstr "Todos os eventos"
+
+#: src/Order/TicketPdfGenerator.php:158
+msgid "april"
+msgstr "abril"
+
+#: src/Order/TicketGenerator.php:58
+msgid "Asistentes"
+msgstr "Assistentes"
+
+#: src/Order/TicketPdfGenerator.php:162
+msgid "august"
+msgstr "agosto"
+
+#: src/Order/TicketStatus.php:31
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#: src/Frontend/Cpt.php:193
+msgid "Change Status"
+msgstr "Alterar status"
+
+#: src/ProductType/TicketProduct.php:126
+msgid "Check to request the attendee's DNI on the ticket."
+msgstr "Marque para solicitar o DNI do participante no ingresso."
+
+#: src/ProductType/TicketProduct.php:180 src/ProductType/TicketProduct.php:181
+#: src/Pdf/Templates/Default.php:160
+msgid "City"
+msgstr "Cidade"
+
+#: src/Frontend/Cpt.php:190 src/Order/TicketGenerator.php:94
+#: src/Pdf/Templates/Default.php:172
+msgid "Code"
+msgstr "Código"
+
+#: src/Config/Page.php:49
+msgid "Configure the legal texts and conditions of the plugin."
+msgstr "Configure os textos e condições legais do plugin."
+
+#: src/Order/TicketStatus.php:26
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. Author of the plugin
+msgid "Daniel Lúcia"
+msgstr "Daniel Lúcia"
+
+#: src/Pdf/Templates/Default.php:144
+msgid "Date"
+msgstr "Data"
+
+#: src/Order/TicketPdfGenerator.php:166
+msgid "december"
+msgstr "dezembro"
+
+#: src/Config/Page.php:157
+msgid "Default template"
+msgstr "Modelo padrão"
+
+#: src/ProductType/TicketProduct.php:114
+msgid "Does this ticket require the name of the attendees?"
+msgstr "Este ingresso exige o nome dos participantes?"
+
+#: src/Frontend/Cpt.php:191
+msgid "Download"
+msgstr "Download"
+
+#: src/Frontend/Cpt.php:210 src/Order/TicketGenerator.php:95
+msgid "Download ticket"
+msgstr "Baixar ingresso"
+
+#: src/Frontend/Cpt.php:153
+msgid "Edit event"
+msgstr "Editar evento"
+
+#: src/Frontend/Cpt.php:107
+msgid "Edit ticket"
+msgstr "Editar tíquete"
+
+#: src/ProductType/TicketProduct.php:196
+msgid "End sale date"
+msgstr "Data de término da venda"
+
+#: src/ProductType/TicketProduct.php:175
+msgid "Enter the address where the event will take place."
+msgstr "Insira o endereço onde o evento ocorrerá."
+
+#: src/ProductType/TicketProduct.php:183
+msgid "Enter the city where the event will take place."
+msgstr "Informe a cidade onde o evento ocorrerá."
+
+#: src/ProductType/TicketProduct.php:199
+msgid "Enter the end sale date for the ticket."
+msgstr "Insira a data final de venda do ingresso."
+
+#: src/ProductType/TicketProduct.php:158
+msgid "Enter the start time of the event."
+msgstr "Insira a hora de início do evento."
+
+#: src/ProductType/TicketProduct.php:191
+msgid "Enter the state where the event will take place."
+msgstr "Informe o estado onde o evento ocorrerá."
+
+#: src/ProductType/TicketProduct.php:167
+msgid "Enter the venue where the event will take place."
+msgstr "Informe o local onde o evento ocorrerá."
+
+#: src/Frontend/Cpt.php:335
+msgid "Error updating status"
+msgstr "Erro ao atualizar o status"
+
+#: src/Frontend/Cpt.php:148 src/ProductType/TicketProduct.php:93
+msgid "Event"
+msgstr "Evento"
+
+#: src/ProductType/TicketProduct.php:173
+msgid "Event address"
+msgstr "Endereço do evento"
+
+#: src/ProductType/TicketProduct.php:146
+msgid "Event date"
+msgstr "Data do evento"
+
+#: src/ProductType/TicketProduct.php:155
+msgid "Event time"
+msgstr "Hora do evento"
+
+#: src/ProductType/TicketProduct.php:164 src/ProductType/TicketProduct.php:165
+msgid "Event venue"
+msgstr "Local do evento"
+
+#: src/Frontend/Cpt.php:147 src/Frontend/Cpt.php:157
+msgid "Events"
+msgstr "Eventos"
+
+#: src/Order/TicketPdfGenerator.php:156
+msgid "february"
+msgstr "fevereiro"
+
+#: src/Config/Page.php:64
+msgid "General conditions of entry"
+msgstr "Condições gerais de entrada"
+
+#: src/Pdf/Templates/Default.php:202
+msgid "General conditions of ticket"
+msgstr "Condições gerais do bilhete"
+
+#: src/Config/Page.php:47
+msgid "General settings"
+msgstr "Configurações gerais"
+
+#. Author URI of the plugin
+msgid "http://www.daniellucia.es"
+msgstr "http://www.danielucia.es"
+
+#: src/Frontend/FormHandler.php:56 src/Frontend/FormHandler.php:78
+msgid "ID of the ticket holder"
+msgstr "ID do titular do bilhete"
+
+#: src/Frontend/Cpt.php:189
+msgid "Identifier"
+msgstr "Identificador"
+
+#: src/ProductType/TicketProduct.php:208
+msgid "Image for ticket"
+msgstr "Imagem para ingresso"
+
+#: src/ProductType/TicketProduct.php:149
+msgid "Introduce la fecha de inicio del evento."
+msgstr "Apresente a data de início do evento."
+
+#: src/Config/Page.php:96
+msgid "Issuer email"
+msgstr "E-mail do emissor"
+
+#: src/Config/Page.php:80
+msgid "Issuer name"
+msgstr "Nome do emissor"
+
+#: src/Config/Page.php:88
+msgid "Issuer website"
+msgstr "Site do emissor"
+
+#: src/Order/TicketPdfGenerator.php:155
+msgid "january"
+msgstr "janeiro"
+
+#: src/Order/TicketPdfGenerator.php:161
+msgid "july"
+msgstr "julho"
+
+#: src/Order/TicketPdfGenerator.php:160
+msgid "june"
+msgstr "junho"
+
+#: src/Config/Page.php:56
+msgid "Legal text"
+msgstr "Texto legal"
+
+#: src/Config/Page.php:104
+msgid "Logo for tickets"
+msgstr "Logotipo para ingressos"
+
+#: src/Order/TicketPdfGenerator.php:157
+msgid "march"
+msgstr "marchar"
+
+#: src/Order/TicketPdfGenerator.php:159
+msgid "may"
+msgstr "poderia"
+
+#: src/Order/TicketGenerator.php:93
+msgid "Name"
+msgstr "Nome"
+
+#: src/Frontend/FormHandler.php:50
+msgid "Name(s) for the ticket:"
+msgstr "Nome(s) para o bilhete:"
+
+#: src/Frontend/Cpt.php:156
+msgid "New event name"
+msgstr "Novo nome do evento"
+
+#: src/Frontend/Cpt.php:108
+msgid "New ticket"
+msgstr "Novo bilhete"
+
+#: src/Order/TicketGenerator.php:74
+msgid "No order data."
+msgstr "Nenhum dado do pedido."
+
+#: src/Frontend/Cpt.php:111
+msgid "No tickets found"
+msgstr "Nenhum ingresso encontrado"
+
+#: src/Frontend/Cpt.php:112
+msgid "No tickets found in trash"
+msgstr "Nenhum ingresso encontrado no lixo"
+
+#: src/Frontend/FormHandler.php:76
+msgid "Nombre del titular del ticket"
+msgstr "Nome do titular do bilhete"
+
+#: src/ProductType/TicketProduct.php:113
+msgid "Nominative ticket"
+msgstr "Bilhete nominativo"
+
+#: src/Order/TicketPdfGenerator.php:165
+msgid "november"
+msgstr "novembro"
+
+#: src/Order/TicketPdfGenerator.php:164
+msgid "october"
+msgstr "outubro"
+
+#: src/Frontend/Cpt.php:188 src/Pdf/Templates/Default.php:176
+msgid "Order"
+msgstr "Ordem"
+
+#: src/Frontend/Cpt.php:151
+msgid "Parent event"
+msgstr "Evento pai"
+
+#: src/Frontend/Cpt.php:152
+msgid "Parent event:"
+msgstr "Evento pai:"
+
+#: src/Order/TicketStatus.php:21
+msgid "Pending"
+msgstr "Pendente"
+
+#. Description of the plugin
+msgid "Plugin para venta de tickets con WooCommerce."
+msgstr "Plugin para venda de ingressos com WooCommerce."
+
+#: src/ProductType/TicketProduct.php:211
+msgid "Remove image"
+msgstr "Remover imagem"
+
+#: src/Config/Page.php:196
+msgid "Remove logo"
+msgstr "Remover logotipo"
+
+#: src/ProductType/TicketProduct.php:125
+msgid "Request DNI"
+msgstr "Solicitar DNI"
+
+#: src/ProductType/TicketProduct.php:337
+msgid "Sale completed"
+msgstr "Venda concluída"
+
+#: src/Frontend/Cpt.php:149
+msgid "Search events"
+msgstr "Pesquisar eventos"
+
+#: src/Frontend/Cpt.php:110
+msgid "Search tickets"
+msgstr "Pesquisar ingressos"
+
+#: src/Order/TicketGenerator.php:81
+msgid "Security code"
+msgstr "Código de segurança"
+
+#: src/ProductType/TicketProduct.php:210 src/ProductType/TicketProduct.php:225
+msgid "Select image for ticket"
+msgstr "Selecione a imagem para o ingresso"
+
+#: src/Config/Page.php:195
+msgid "Select logo"
+msgstr "Selecione o logotipo"
+
+#: src/Config/Page.php:209
+msgid "Select logo for tickets"
+msgstr "Selecione o logotipo para os ingressos"
+
+#: src/Order/TicketPdfGenerator.php:163
+msgid "september"
+msgstr "setembro"
+
+#: src/ProductType/TicketProduct.php:188 src/ProductType/TicketProduct.php:189
+msgid "State"
+msgstr "Estado"
+
+#: src/Frontend/Cpt.php:192
+msgid "Status"
+msgstr "Status"
+
+#: src/Frontend/Cpt.php:330
+msgid "Status updated"
+msgstr "Status atualizado"
+
+#: src/Pdf/Templates/Default.php:213
+msgid "Terms and conditions"
+msgstr "Termos e Condições"
+
+#: src/Order/TicketPdfGenerator.php:70
+msgid "The order associated with this ticket has not been found."
+msgstr "O pedido associado a este bilhete não foi encontrado."
+
+#: src/ProductType/TicketProduct.php:322
+msgid "The ticket sales for this event have ended."
+msgstr "As vendas de ingressos para este evento já terminaram."
+
+#: src/Frontend/Cpt.php:104 src/ProductType/TicketProduct.php:68
+#: src/Pdf/Templates/Default.php:6
+msgid "Ticket"
+msgstr "Bilhete"
+
+#: src/Pdf/Templates/Default.php:168
+msgid "Ticket Holder"
+msgstr "Portador de ingresso"
+
+#: src/Pdf/Templates/Default.php:223
+msgid "Ticket issued by"
+msgstr "Bilhete emitido por"
+
+#: src/Config/Page.php:23
+msgid "Ticket Manager"
+msgstr "Gerenciador de ingressos"
+
+#: src/Config/Page.php:22
+msgid "Ticket Manager Configuración"
+msgstr "Configuração do Ticket Manager"
+
+#: src/Config/Page.php:115
+msgid "Ticket Manager Configuration"
+msgstr "Configuração do Gerenciador de Tickets"
+
+#. Name of the plugin
+msgid "Ticket Manager for WooCommerce"
+msgstr "Gerenciador de tickets para WooCommerce"
+
+#: src/Config/Page.php:72
+msgid "Ticket template"
+msgstr "Modelo de bilhete"
+
+#: src/Frontend/Cpt.php:103 src/Frontend/Cpt.php:113
+msgid "Tickets"
+msgstr "Ingressos"
+
+#: src/Pdf/Templates/Default.php:148
+msgid "Time"
+msgstr "Tempo"
+
+#: src/Frontend/Cpt.php:269
+#, php-format
+msgid "Todos los %s"
+msgstr "Todos os %s"
+
+#: src/Order/TicketStatus.php:36
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: src/Frontend/Cpt.php:154
+msgid "Update event"
+msgstr "Evento de atualização"
+
+#: src/ProductType/TicketProduct.php:226
+msgid "Use this image"
+msgstr "Use esta imagem"
+
+#: src/Config/Page.php:210
+msgid "Use this logo"
+msgstr "Use este logotipo"
+
+#: src/Order/TicketGenerator.php:85
+msgid "Valid attendees:"
+msgstr "Participantes válidos:"
+
+#: src/Pdf/Templates/Default.php:152
+msgid "Venue"
+msgstr "Local"
+
+#: src/Frontend/Cpt.php:109
+msgid "View ticket"
+msgstr "Ver bilhete"
+
+#: src/Order/Email.php:58 src/Order/Email.php:65
+msgid ""
+"You have purchased tickets for an event. You will receive your tickets with "
+"QR code attached to this email. Present them at the entrance to validate "
+"them."
+msgstr ""
+"Você comprou ingressos para um evento. Você receberá seus ingressos com o QR "
+"code anexado a este e-mail. Apresente-os na entrada para validá-los."
