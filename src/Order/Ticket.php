@@ -117,6 +117,7 @@ class Ticket
                         'city' => get_post_meta(get_the_ID(), '_event_city', true),
                         'state' => get_post_meta(get_the_ID(), '_event_state', true),
                         'venue' => get_post_meta(get_the_ID(), '_event_venue', true),
+                        'description' => apply_filters('the_content', get_post_field('post_content', get_the_ID())),
                     ]
                 );
             }
