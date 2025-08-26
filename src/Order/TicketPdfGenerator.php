@@ -109,6 +109,8 @@ class TicketPdfGenerator
 
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'portrait');
+        $dompdf->getOptions()->set('isRemoteEnabled', true);
+
         $dompdf = apply_filters('dl_ticket_manager_dompdf', $dompdf);
 
         $dompdf->render();
