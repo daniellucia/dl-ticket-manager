@@ -50,3 +50,7 @@ Este complemento permite gestionar la venta de tickets para eventos directamente
 
 - El sistema de validación de QR funciona desde cualquier dispositivo con cámara (móvil, tablet o PC con webcam).
 - El plugin evita que los tickets puedan reutilizarse una vez validados.
+
+## Autor
+
+Desarrollado por [Daniel Lúcia](https://daniellucia.es)  
