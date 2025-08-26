@@ -52,7 +52,7 @@ class FormHandler
             echo '<div class="ticket-name">';
             
                 echo '<input type="text" name="ticket_names[]" required class="' . esc_attr($classes_input) . '">';
-                if ($is_show_id) {
+                if ($is_show_id == 'yes') {
                     echo '<input type="text" name="ticket_ids[]" required placeholder="' . __('ID of the ticket holder', 'dl-ticket-manager') . '" class="' . esc_attr($classes_input) . '">';
                 }
 
@@ -74,7 +74,7 @@ class FormHandler
                         wrapper.append(`
                         <div class="ticket-name">
                         <input type="text" name="ticket_names[]" required placeholder="<?php esc_attr_e('Nombre del titular del ticket', 'dl-ticket-manager'); ?>" class="<?php esc_attr_e($classes_input); ?>">
-                        <?php if ($is_show_id) : ?>
+                        <?php if ($is_show_id == 'yes') : ?>
                         <input type="text" name="ticket_ids[]" required placeholder="<?php esc_attr_e('ID of the ticket holder', 'dl-ticket-manager'); ?>" class="<?php esc_attr_e($classes_input); ?>">
                         <?php endif; ?>
                         </div>
