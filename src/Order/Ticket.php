@@ -103,6 +103,9 @@ class Ticket
         if ($query->have_posts()) {
             while ($query->have_posts()) {
                 $query->the_post();
+
+                $product_id = get_post_meta(get_the_ID(), 'product_id', true);
+
                 $tickets[] = apply_filters(
                     'dl_ticket_manager_get_ticket_data',
                     [
@@ -112,12 +115,13 @@ class Ticket
                         'event' => get_post_meta(get_the_ID(), 'event', true),
                         'status' => get_post_meta(get_the_ID(), 'status', true),
                         'identifier' => get_post_meta(get_the_ID(), 'identifier', true),
-                        'date' => get_post_meta(get_the_ID(), 'date', true),
-                        'address' => get_post_meta(get_the_ID(), '_event_address', true),
-                        'city' => get_post_meta(get_the_ID(), '_event_city', true),
-                        'state' => get_post_meta(get_the_ID(), '_event_state', true),
-                        'venue' => get_post_meta(get_the_ID(), '_event_venue', true),
-                        'description' => apply_filters('the_content', get_post_field('post_content', get_the_ID())),
+                        'date' => get_post_meta($product_id, '_event_date', true),
+                        'time' => get_post_meta($product_id, '_event_time', true),
+                        'address' => get_post_meta($product_id, '_event_address', true),
+                        'city' => get_post_meta($product_id, '_event_city', true),
+                        'state' => get_post_meta($product_id, '_event_state', true),
+                        'venue' => get_post_meta($product_id, '_event_venue', true),
+                        'description' => apply_filters('the_content', get_post_field('post_content', $product_id)),
                     ]
                 );
             }
