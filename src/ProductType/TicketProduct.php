@@ -352,12 +352,24 @@ class TicketProduct
     public function isTicketPurchasable(bool $purchasable, \WC_Product $product): bool
     {
         if ($product->get_type() === 'ticket') {
+
+            //Verificamos fecha
             $end_date = $product->get_meta('_end_date');
 
             if ($end_date && strtotime($end_date) < strtotime('today')) {
                 return false;
             }
+
+            //Verificamos aforo
+            $capacity = $product->get_meta('_event_capacity');
+            $sales = $product->get_total_sales();
+
+            if ($capacity && $sales >= $capacity) {
+                return false;
+            }
+
         }
+        
         return $purchasable;
     }
 
