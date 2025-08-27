@@ -2,7 +2,7 @@
 
 **Plugin para la venta de entradas nominativas con códigos QR en WooCommerce.**  
 
-Este complemento permite gestionar la venta de tickets para eventos directamente desde WooCommerce. Cada entrada es nominativa, con código único y validable mediante un sistema propio de lectura de QR.
+Este plugin permite gestionar la venta de tickets para eventos directamente desde WooCommerce. Cada entrada es nominativa, con código único y validable mediante un sistema propio de lectura de QR.
 
 ---
 
