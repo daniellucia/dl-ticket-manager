@@ -24,13 +24,13 @@ class Validation
 
 
         ob_start();
-?>
+        ?>
         <div id="ticket-validator">
             <h3>Validador de Tickets</h3>
             <video id="qr-video"></video>
             <p id="qr-result">Esperando lectura...</p>
         </div>
-<?php
+        <?php
         return ob_get_clean();
     }
 
@@ -111,7 +111,7 @@ class Validation
 
             $response = [
                 'status'  => 'error',
-                'message' => 'Código de ticket inválido.'
+                'message' => __('Invalid ticket code.', 'dl-ticket-manager')
             ];
 
             do_action('dltm_log_event', 'invalid_ticket_code', $data);
@@ -125,7 +125,7 @@ class Validation
 
             $response = [
                 'status'  => 'error',
-                'message' => 'El pedido no es válido.'
+                'message' => __('The order is not valid.', 'dl-ticket-manager')
             ];
 
             do_action('dltm_log_event', 'invalid_order', $data);
@@ -138,7 +138,7 @@ class Validation
 
             $response = [
                 'status'  => 'error',
-                'message' => 'El pedido no está en estado procesando/completado.'
+                'message' => __('The order is not in processing/completed status.', 'dl-ticket-manager')
             ];
 
             do_action('dltm_log_event', 'invalid_order_status', $data, $order_id);
@@ -151,7 +151,7 @@ class Validation
 
             $response = [
                 'status'  => 'error',
-                'message' => 'Código de seguridad inválido.'
+                'message' => __('Invalid security code.', 'dl-ticket-manager')
             ];
 
             do_action('dltm_log_event', 'invalid_security_code', $data, $order_id);
@@ -168,7 +168,7 @@ class Validation
 
             $response = [
                 'status'  => 'error',
-                'message' => 'El ticket ya se ha usado o se ha cancelado.'
+                'message' => __('The ticket has already been used or cancelled.', 'dl-ticket-manager')
             ];
 
             do_action('dltm_log_event', 'invalid_ticket_status', $data, $order_id, $ticket_data);
