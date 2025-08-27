@@ -22,10 +22,13 @@ class FormHandler
      */
     public function isSoldIndividually(bool $sold_individually, $product): bool
     {
+        
         if ($product->get_type() === 'ticket') {
             return false;
         }
+
         return $sold_individually;
+
     }
 
     /**
