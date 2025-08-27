@@ -147,6 +147,8 @@ class TicketProduct
     {
         echo '<div id="event_product_data" class="panel woocommerce_options_panel">';
 
+        do_action('dl_ticket_event_fields_before');
+
         woocommerce_wp_checkbox([
             'id' => '_is_nominative',
             'label' => __('Nominative ticket', 'dl-ticket-manager'),
@@ -239,18 +241,7 @@ class TicketProduct
             'type'  => 'date',
         ]);
 
-        woocommerce_wp_text_input([
-            'id'  => '_event_capacity',
-            'label'  => __('Event capacity', 'dl-ticket-manager'),
-            'placeholder' => __('Capacity', 'dl-ticket-manager'),
-            'desc_tip' => true,
-            'description' => __('Maximum number of attendees. Can be zero.', 'dl-ticket-manager'),
-            'type'  => 'number',
-            'custom_attributes' => [
-                'min' => '0',
-                'step' => '1'
-            ],
-        ]);
+        do_action('dl_ticket_event_fields_after');
 
         $image_id = get_post_meta(get_the_ID(), '_ticket_image', true);
         $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
@@ -329,9 +320,6 @@ class TicketProduct
         $end_date = $_POST['_end_date'] ?? '';
         update_post_meta($post_id, '_end_date', sanitize_text_field($end_date));
 
-        $event_capacity = isset($_POST['_event_capacity']) ? intval($_POST['_event_capacity']) : 0;
-        update_post_meta($post_id, '_event_capacity', $event_capacity);
-
         $is_nominative = isset($_POST['_is_nominative']) ? 'yes' : 'no';
         update_post_meta($post_id, '_is_nominative', $is_nominative);
 
@@ -340,6 +328,8 @@ class TicketProduct
 
         $ticket_image = $_POST['_ticket_image'] ?? '';
         update_post_meta($post_id, '_ticket_image', sanitize_text_field($ticket_image));
+
+        do_action('dl_ticket_save_event_fields', $post_id);
     }
 
     /**
@@ -357,16 +347,10 @@ class TicketProduct
             $end_date = $product->get_meta('_end_date');
 
             if ($end_date && strtotime($end_date) < strtotime('today')) {
-                return false;
+                $purchasable = false;
             }
 
-            //Verificamos aforo
-            $capacity = $product->get_meta('_event_capacity');
-            $sales = $product->get_total_sales();
-
-            if ($capacity && $sales >= $capacity) {
-                return false;
-            }
+            $purchasable = apply_filters('dl_ticket_purchasable', $purchasable, $product);
 
         }
         
