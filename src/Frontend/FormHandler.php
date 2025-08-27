@@ -130,7 +130,13 @@ class FormHandler
 
         if (isset($cart_item['ticket_names'])) {
             foreach ($cart_item['ticket_names'] as $index => $name) {
-                
+
+                //Si el nombre es númerico, el ticket no es nominativo
+                //y no lo mostramos en el carrito
+                if (is_numeric($name)) {
+                    continue;
+                }
+
                 if (isset($cart_item['ticket_ids'][$index]) && $cart_item['ticket_ids'][$index] != '') {
                     $name .= ' (' . esc_html($cart_item['ticket_ids'][$index]) . ')';
                 }
