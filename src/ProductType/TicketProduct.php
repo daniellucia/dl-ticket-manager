@@ -25,6 +25,45 @@ class TicketProduct
         add_filter('woocommerce_product_type_selector', [$this, 'addType']);
         add_filter('woocommerce_locate_template', [$this, 'addCartTemplate'], 10, 3);
         add_filter('woocommerce_single_product_summary', [$this, 'singleProductSummary'], 31);
+
+        add_filter('woocommerce_cart_item_quantity', [$this, 'lockTicketQuantity'], 10, 3);
+
+        add_filter( 'woocommerce_store_api_product_quantity_editable', [$this, 'disable_change_quantity_cart'], 10, 2 );
+
+    }
+
+    /**
+     * Deshabilita la edición de la cantidad de productos en el carrito para los tickets
+     * @param mixed $is_editable
+     * @param mixed $cart_item
+     * @author Daniel Lucia
+     */
+    public function disable_change_quantity_cart($is_editable, $cart_item) {
+
+        if ( $cart_item && $cart_item->get_type() === 'ticket' ) {
+            return false;
+        }
+
+        return $is_editable;
+
+    }
+
+    /**
+     * Bloqueamos la cantidad de tickets en el carrito
+     * @param mixed $product_quantity
+     * @param mixed $cart_item_key
+     * @param mixed $cart_item
+     * @author Daniel Lucia
+     */
+    public function lockTicketQuantity($product_quantity, $cart_item_key, $cart_item)
+    {
+        $product = $cart_item['data'];
+
+        if ($product && $product->is_type('ticket')) {
+            return sprintf('%d', $cart_item['quantity']);
+        }
+
+        return $product_quantity;
     }
 
     /**
