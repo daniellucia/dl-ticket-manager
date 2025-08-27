@@ -24,13 +24,13 @@ class Validation
 
 
         ob_start();
-        ?>
+?>
         <div id="ticket-validator">
             <h3>Validador de Tickets</h3>
             <video id="qr-video"></video>
             <p id="qr-result">Esperando lectura...</p>
         </div>
-        <?php
+<?php
         return ob_get_clean();
     }
 
@@ -108,35 +108,55 @@ class Validation
         $security = $data['security'] ?? null;
 
         if ($order_id === null) {
-            return new \WP_REST_Response([
+
+            $response = [
                 'status'  => 'error',
                 'message' => 'Código de ticket inválido.'
-            ], 400);
+            ];
+
+            do_action('dltm_log_event', 'invalid_ticket_code', $data);
+
+            return new \WP_REST_Response($response, 400);
         }
 
         //Obtenemos el pedido y comprobamos si existe
         $order = wc_get_order((int)$order_id);
         if (!$order) {
-            return new \WP_REST_Response([
+
+            $response = [
                 'status'  => 'error',
                 'message' => 'El pedido no es válido.'
-            ], 400);
+            ];
+
+            do_action('dltm_log_event', 'invalid_order', $data);
+
+            return new \WP_REST_Response($response, 400);
         }
 
         //Obtenemos el pedido y comprobamos que es valido y tiene el estado procesando o completado
         if (!in_array($order->get_status(), ['processing', 'completed'])) {
-            return new \WP_REST_Response([
+
+            $response = [
                 'status'  => 'error',
                 'message' => 'El pedido no está en estado procesando/completado.'
-            ], 400);
+            ];
+
+            do_action('dltm_log_event', 'invalid_order_status', $data, $order_id);
+
+            return new \WP_REST_Response($response, 400);
         }
 
         //Comprobamos seguridad
         if ($security !== get_post_meta($order_id, 'security', true)) {
-            return new \WP_REST_Response([
+
+            $response = [
                 'status'  => 'error',
                 'message' => 'Código de seguridad inválido.'
-            ], 400);
+            ];
+
+            do_action('dltm_log_event', 'invalid_security_code', $data, $order_id);
+
+            return new \WP_REST_Response($response, 400);
         }
 
         //Comprobamos estado del ticket
@@ -145,22 +165,31 @@ class Validation
         $ticket_status = $ticket_data['status'] ?? null;
 
         if ($ticket_status !== 'pending') {
-            return new \WP_REST_Response([
+
+            $response = [
                 'status'  => 'error',
                 'message' => 'El ticket ya se ha usado o se ha cancelado.'
-            ], 400);
+            ];
+
+            do_action('dltm_log_event', 'invalid_ticket_status', $data, $order_id, $ticket_data);
+
+            return new \WP_REST_Response($response, 400);
         }
 
         //Confirmamos ticket
         $ticket->changeStatus($ticket_data['id'], TicketStatus::STATUS_CONFIRMED);
 
-        return new \WP_REST_Response([
+        $response = [
             'status'  => 'success',
             'message' => "
             <strong>{$ticket_data['event']}</strong>
             <span>{$ticket_data['name']}</span>
             <span>{$ticket_data['time']}, {$ticket_data['date']}</span>
             ",
-        ]);
+        ];
+
+        do_action('dltm_log_event', 'ticket_confirmed', $data, $order_id, $ticket_data);
+
+        return new \WP_REST_Response($response);
     }
 }
