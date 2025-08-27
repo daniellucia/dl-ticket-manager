@@ -241,8 +241,6 @@ class TicketProduct
             'type'  => 'date',
         ]);
 
-        do_action('dl_ticket_event_fields_after');
-
         $image_id = get_post_meta(get_the_ID(), '_ticket_image', true);
         $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
         ?>
@@ -286,6 +284,8 @@ class TicketProduct
         });
         </script>
         <?php
+
+        do_action('dl_ticket_event_fields_after');
 
         echo '</div>';
     }
