@@ -45,13 +45,13 @@ class FormHandler
         $is_show_id = get_post_meta($product->get_id(), '_is_show_id', true);
         $classes_input = apply_filters('dl_ticket_manager_input_classes', 'input-text form-control form-input woocommerce-Input woocommerce-input-text');
 
-        echo '<div class="ticket-names-wrapper" id="ticket-names-wrapper" ' . ($is_nominative ? 'style="display:flex;"' : 'style="display:none;"') . '>';
+        echo '<div class="ticket-names-wrapper" id="ticket-names-wrapper" ' . ($is_nominative == 'yes' ? 'style="display:flex;"' : 'style="display:none;"') . '>';
         
             echo '<label>' . __('Name(s) for the ticket:', 'dl-ticket-manager') . '</label>';
 
             echo '<div class="ticket-name">';
             
-                echo '<input type="text" name="ticket_names[]" required class="' . esc_attr($classes_input) . '">';
+                echo '<input type="text" name="ticket_names[]" required class="' . esc_attr($classes_input) . '" ' . (!$is_nominative ? ' value="1" ' : '') . '>';
                 if ($is_show_id == 'yes') {
                     echo '<input type="text" name="ticket_ids[]" required placeholder="' . __('ID of the ticket holder', 'dl-ticket-manager') . '" class="' . esc_attr($classes_input) . '">';
                 }
@@ -69,11 +69,19 @@ class FormHandler
                 qtyInput.on('change', function() {
                     var count = parseInt($(this).val());
                     var wrapper = $('#ticket-names-wrapper');
+                    const is_nominative = '<?php echo $is_nominative; ?>';
+                    
                     wrapper.find('.ticket-name').remove();
                     for (let i = 0; i < count; i++) {
+
+                        let value = '';
+                        if (is_nominative == 'no') {
+                            value = i + 1;
+                        }
+
                         wrapper.append(`
                         <div class="ticket-name">
-                        <input type="text" name="ticket_names[]" required placeholder="<?php esc_attr_e('Nombre del titular del ticket', 'dl-ticket-manager'); ?>" class="<?php esc_attr_e($classes_input); ?>">
+                        <input type="text" name="ticket_names[]" required placeholder="<?php esc_attr_e('Nombre del titular del ticket', 'dl-ticket-manager'); ?>" class="<?php esc_attr_e($classes_input); ?>"  value="` + value + `" >
                         <?php if ($is_show_id == 'yes') : ?>
                         <input type="text" name="ticket_ids[]" required placeholder="<?php esc_attr_e('ID of the ticket holder', 'dl-ticket-manager'); ?>" class="<?php esc_attr_e($classes_input); ?>">
                         <?php endif; ?>
@@ -123,7 +131,7 @@ class FormHandler
         if (isset($cart_item['ticket_names'])) {
             foreach ($cart_item['ticket_names'] as $index => $name) {
                 
-                if ($cart_item['ticket_ids'][$index]) {
+                if (isset($cart_item['ticket_ids'][$index]) && $cart_item['ticket_ids'][$index] != '') {
                     $name .= ' (' . esc_html($cart_item['ticket_ids'][$index]) . ')';
                 }
 
