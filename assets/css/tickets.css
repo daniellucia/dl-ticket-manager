@@ -2,7 +2,6 @@ body .ticket-names-wrapper {
     margin: 20px 0 0 0;
     flex-direction: column;
     gap: 5px;
-    max-width: 370px;
     width: 100%;
 }
 
@@ -13,6 +12,7 @@ body .ticket-names-wrapper label {
 body .ticket-names-wrapper .ticket-name {
     display: flex;
     gap: 10px;
+    max-width: 350px;
 }
 
 body .ticket-names-wrapper .ticket-name input {
