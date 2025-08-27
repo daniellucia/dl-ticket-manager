@@ -239,6 +239,19 @@ class TicketProduct
             'type'  => 'date',
         ]);
 
+        woocommerce_wp_text_input([
+            'id'  => '_event_capacity',
+            'label'  => __('Event capacity', 'dl-ticket-manager'),
+            'placeholder' => __('Capacity', 'dl-ticket-manager'),
+            'desc_tip' => true,
+            'description' => __('Maximum number of attendees. Can be zero.', 'dl-ticket-manager'),
+            'type'  => 'number',
+            'custom_attributes' => [
+                'min' => '0',
+                'step' => '1'
+            ],
+        ]);
+
         $image_id = get_post_meta(get_the_ID(), '_ticket_image', true);
         $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
         ?>
@@ -315,6 +328,9 @@ class TicketProduct
 
         $end_date = $_POST['_end_date'] ?? '';
         update_post_meta($post_id, '_end_date', sanitize_text_field($end_date));
+
+        $event_capacity = isset($_POST['_event_capacity']) ? intval($_POST['_event_capacity']) : 0;
+        update_post_meta($post_id, '_event_capacity', $event_capacity);
 
         $is_nominative = isset($_POST['_is_nominative']) ? 'yes' : 'no';
         update_post_meta($post_id, '_is_nominative', $is_nominative);
