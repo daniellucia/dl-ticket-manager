@@ -25,7 +25,7 @@
                     <?= $this->e($ticket['identifier']) ?>
                 </td>
                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-actions">
-                    <a href="<?= $pdf->url($ticket['code']); ?>" class="woocommerce-button button view"><?= __('Download ticket', 'dl-ticket-manager') ?></a>
+                    <a href="<?= $pdf->url($ticket['code']); ?>" class="woocommerce-button wp-element-button button view"><?= __('Download ticket', 'dl-ticket-manager') ?></a>
                 </td>
             </tr>
         <?php endforeach; ?>
