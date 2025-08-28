@@ -176,6 +176,36 @@ class Validation
             return new \WP_REST_Response($response, 400);
         }
 
+        /**
+         * Permite a plugins externos validar el ticket antes de continuar.
+         * Si el filtro retorna un WP_Error, se devuelve como error.
+         */
+        $external_validation = apply_filters('dltm_validate_ticket_data',  $ticket_data, $order_id, $data);
+
+        if (is_wp_error($external_validation)) {
+
+            $response = [
+                'status'  => 'error',
+                'message' => $external_validation->get_error_message(),
+            ];
+
+            do_action('dltm_log_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data);
+            
+            return new \WP_REST_Response($response, 400);
+
+        } elseif ($external_validation === false) {
+
+            $response = [
+                'status'  => 'error',
+                'message' => __('Ticket validation failed by external plugin.', 'dl-ticket-manager'),
+            ];
+
+            do_action('dltm_log_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data);
+            
+            return new \WP_REST_Response($response, 400);
+            
+        }
+
         //Confirmamos ticket
         $ticket->changeStatus($ticket_data['id'], TicketStatus::STATUS_CONFIRMED);
 
