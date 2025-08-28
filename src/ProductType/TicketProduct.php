@@ -258,12 +258,12 @@ class TicketProduct
             $image_url = $image_id ? wp_get_attachment_url($image_id) : '';
             ?>
             
-            <p class="form-field" style="display: flex;gap: 10px;align-items: flex-start;">
+            <p class="form-field" style="display: flex;gap: 10px;align-items: flex-start;flex-wrap: wrap;">
                 <label><?php esc_html_e('Image for ticket', 'dl-ticket-manager'); ?></label>
                 <input type="hidden" id="dl-ticket-image" name="_ticket_image" value="<?php echo esc_attr($image_id); ?>" />
                 <button type="button" class="button" id="dl-ticket-select-image"><?php esc_html_e('Select image for ticket', 'dl-ticket-manager'); ?></button>
                 <button type="button" class="button" id="dl-ticket-remove-image" <?php echo $image_url ? '' : 'style="display:none;"'; ?>><?php esc_html_e('Remove image', 'dl-ticket-manager'); ?></button>
-                <img id="dl-ticket-image-preview" src="<?php echo esc_url($image_url); ?>" style="max-width: 208px;max-height:80px;<?php echo $image_url ? '' : 'display:none;'; ?>" />
+                <img id="dl-ticket-image-preview" src="<?php echo esc_url($image_url); ?>" style="width: 100%;max-width: 610px;margin: 0 0 0 10px;border-radius: 5px;<?php echo $image_url ? '' : 'display:none;'; ?>" />
             </p>
 
             <script>
