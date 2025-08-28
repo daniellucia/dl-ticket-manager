@@ -114,7 +114,7 @@ class Validation
                 'message' => __('Invalid ticket code.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_log_event', 'invalid_ticket_code', $data);
+            do_action('dl_log_event', 'invalid_ticket_code', $data, 0, []);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -128,7 +128,7 @@ class Validation
                 'message' => __('The order is not valid.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_log_event', 'invalid_order', $data);
+            do_action('dl_log_event', 'invalid_order', $data, 0, []);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -141,7 +141,7 @@ class Validation
                 'message' => __('The order is not in processing/completed status.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_log_event', 'invalid_order_status', $data, $order_id);
+            do_action('dl_log_event', 'invalid_order_status', $data, $order_id, []);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -154,7 +154,7 @@ class Validation
                 'message' => __('Invalid security code.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_log_event', 'invalid_security_code', $data, $order_id);
+            do_action('dl_log_event', 'invalid_security_code', $data, $order_id, []);
 
             return new \WP_REST_Response($response, 400);
         }
