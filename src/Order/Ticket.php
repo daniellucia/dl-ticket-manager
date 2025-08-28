@@ -32,10 +32,7 @@ class Ticket
             wp_set_object_terms($post_id, $event_id, 'dl-event');
         }
 
-        do_action('dl_ticket_manager_ticket_created', [
-            'ticket_id' => $post_id,
-            'data'      => $data,
-        ]);
+        do_action('dl_ticket_manager_ticket_created', $post_id, $data);
 
         return $post_id;
     }
