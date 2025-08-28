@@ -16,7 +16,7 @@
                     <?= $this->e($ticket['event']) ?>
                 </th>
                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-date">
-                    <?= $this->e($ticket['date']) ?>
+                    <?= $this->e(date_i18n(get_option('date_format'), timestamp_with_offset: strtotime($ticket['date']))) ?>
                 </td>
                 <td class="woocommerce-orders-table__cell woocommerce-orders-table__cell-order-status" dta-title="Estado">
                     <?= $this->e($ticket['name']) ?>
