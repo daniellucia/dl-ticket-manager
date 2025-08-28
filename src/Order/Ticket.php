@@ -20,6 +20,7 @@ class Ticket
             'post_status'  => 'publish',
             'post_type'    => 'dl-ticket',
             'meta_input'   => $data,
+            'user_id'      => get_current_user_id()
         ];
 
         $ticket_data = apply_filters('dl_ticket_manager_create_ticket_data', $ticket_data);
