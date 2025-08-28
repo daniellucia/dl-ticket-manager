@@ -7,7 +7,7 @@ use DL\TicketManager\Order\TicketPdfGenerator;
 class Email
 {
 
-    public function register()
+    public function __construct()
     {
         add_action('woocommerce_email_order_details', [$this, 'add_ticket_message'], 20, 4);
         //add_filter('woocommerce_email_order_address', [$this, 'maybe_remove_billing_address'], 10, 5);

@@ -7,7 +7,7 @@ use DL\TicketManager\Order\TicketStatus;
 
 class Validation
 {
-    public function register(): void
+    public function __construct()
     {
         add_shortcode('ticket_validator', [$this, 'renderValidator']);
         add_action('wp_enqueue_scripts', [$this, 'enqueueAssets']);

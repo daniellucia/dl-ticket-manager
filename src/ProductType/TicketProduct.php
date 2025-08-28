@@ -6,7 +6,7 @@ namespace DL\TicketManager\ProductType;
 class TicketProduct
 {
 
-    public function register(): void
+    public function __construct()
     {
         add_filter('product_type_selector', [$this, 'addType']);
         add_filter('woocommerce_product_class', [$this, 'mapProductClass'], 10, 2);

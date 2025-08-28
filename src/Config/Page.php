@@ -4,7 +4,7 @@ namespace DL\TicketManager\Config;
 
 class Page
 {
-    public function register(): void
+    public function __construct()
     {
         add_action('admin_menu', [$this, 'addSettingsPage']);
         add_action('admin_init', [$this, 'registerSettings']);

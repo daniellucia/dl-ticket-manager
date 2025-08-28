@@ -8,7 +8,7 @@ use DL\TicketManager\Order\TicketStatus;
 
 class Cpt
 {
-    public function register(): void
+    public function __construct()
     {
         add_filter('manage_dl-ticket_posts_columns', [$this, 'addCustomColumns']);
         add_action('manage_dl-ticket_posts_custom_column', [$this, 'renderCustomColumns'], 10, 2);

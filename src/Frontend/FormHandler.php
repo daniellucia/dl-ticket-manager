@@ -4,7 +4,7 @@ namespace DL\TicketManager\Frontend;
 
 class FormHandler
 {
-    public function register(): void
+    public function __construct()
     {
         add_action('woocommerce_after_add_to_cart_button', [$this, 'outputForm']);
         add_filter('woocommerce_add_cart_item_data', [$this, 'addCartItemData'], 10, 3);

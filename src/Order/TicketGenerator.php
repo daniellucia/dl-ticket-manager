@@ -9,7 +9,7 @@ class TicketGenerator
 {
     private $ticket;
 
-    public function register(): void
+    public function __construct()
     {
         add_action('woocommerce_order_status_processing', [$this, 'generateTickets']);
         add_action('woocommerce_order_status_completed', [$this, 'generateTickets']);

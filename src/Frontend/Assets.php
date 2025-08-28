@@ -4,7 +4,7 @@ namespace DL\TicketManager\Frontend;
 
 class Assets
 {
-    public function register()
+    public function __construct()
     {
         wp_enqueue_style(
             'tickets-css',
