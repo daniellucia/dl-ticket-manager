@@ -52,10 +52,7 @@ class Ticket
 
         update_post_meta($ticket_id, 'status', $new_status);
 
-        do_action('dl_ticket_manager_ticket_status_changed', [
-            'ticket_id' => $ticket_id,
-            'new_status' => $new_status,
-        ]);
+        do_action('dl_ticket_manager_ticket_status_changed', $ticket_id, $new_status);
     }
 
     /**
