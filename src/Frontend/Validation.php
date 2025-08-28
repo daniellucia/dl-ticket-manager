@@ -114,7 +114,7 @@ class Validation
                 'message' => __('Invalid ticket code.', 'dl-ticket-manager')
             ];
 
-            do_action('dltm_log_event', 'invalid_ticket_code', $data);
+            do_action('dl_log_event', 'invalid_ticket_code', $data);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -128,7 +128,7 @@ class Validation
                 'message' => __('The order is not valid.', 'dl-ticket-manager')
             ];
 
-            do_action('dltm_log_event', 'invalid_order', $data);
+            do_action('dl_log_event', 'invalid_order', $data);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -141,7 +141,7 @@ class Validation
                 'message' => __('The order is not in processing/completed status.', 'dl-ticket-manager')
             ];
 
-            do_action('dltm_log_event', 'invalid_order_status', $data, $order_id);
+            do_action('dl_log_event', 'invalid_order_status', $data, $order_id);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -154,7 +154,7 @@ class Validation
                 'message' => __('Invalid security code.', 'dl-ticket-manager')
             ];
 
-            do_action('dltm_log_event', 'invalid_security_code', $data, $order_id);
+            do_action('dl_log_event', 'invalid_security_code', $data, $order_id);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -171,7 +171,7 @@ class Validation
                 'message' => __('The ticket has already been used or cancelled.', 'dl-ticket-manager')
             ];
 
-            do_action('dltm_log_event', 'invalid_ticket_status', $data, $order_id, $ticket_data);
+            do_action('dl_log_event', 'invalid_ticket_status', $data, $order_id, $ticket_data);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -180,7 +180,7 @@ class Validation
          * Permite a plugins externos validar el ticket antes de continuar.
          * Si el filtro retorna un WP_Error, se devuelve como error.
          */
-        $external_validation = apply_filters('dltm_validate_ticket_data',  $ticket_data, $order_id, $data);
+        $external_validation = apply_filters('dl_validate_ticket_data',  $ticket_data, $order_id, $data);
 
         if (is_wp_error($external_validation)) {
 
@@ -189,7 +189,7 @@ class Validation
                 'message' => $external_validation->get_error_message(),
             ];
 
-            do_action('dltm_log_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data);
+            do_action('dl_log_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data);
             
             return new \WP_REST_Response($response, 400);
 
@@ -200,7 +200,7 @@ class Validation
                 'message' => __('Ticket validation failed by external plugin.', 'dl-ticket-manager'),
             ];
 
-            do_action('dltm_log_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data);
+            do_action('dl_log_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data);
             
             return new \WP_REST_Response($response, 400);
             
@@ -218,7 +218,7 @@ class Validation
             ",
         ];
 
-        do_action('dltm_log_event', 'ticket_confirmed', $data, $order_id, $ticket_data);
+        do_action('dl_log_event', 'ticket_confirmed', $data, $order_id, $ticket_data);
 
         return new \WP_REST_Response($response);
     }
