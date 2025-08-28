@@ -6,11 +6,12 @@ use DL\TicketManager\ProductType\TicketProduct;
 use DL\TicketManager\Frontend\FormHandler;
 use DL\TicketManager\Frontend\Cpt;
 use DL\TicketManager\Frontend\Validation;
+use DL\TicketManager\Frontend\Assets;
+use DL\TicketManager\Frontend\Account;
 use DL\TicketManager\Order\TicketGenerator;
 use DL\TicketManager\Order\TicketPdfGenerator;
 use DL\TicketManager\Order\Email;
 use DL\TicketManager\Config\Page;
-use DL\TicketManager\Frontend\Assets;
 
 class Plugin
 {
@@ -23,6 +24,7 @@ class Plugin
     private Validation $validation;
     private Email $email;
     private Assets $assets;
+    private Account $account;
 
     public function __construct()
     {
@@ -35,6 +37,7 @@ class Plugin
         $this->validation = new Validation();
         $this->email = new Email();
         $this->assets = new Assets();
+        $this->account = new Account();
     }
 
     public function init(): void
