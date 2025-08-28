@@ -52,6 +52,8 @@ class FormHandler
         
             echo '<label>' . __('Name(s) for the ticket:', 'dl-ticket-manager') . '</label>';
 
+            do_action('dl_ticket_manager_before_ticket_name_input', $product, $is_show_id, $classes_input);
+
             echo '<div class="ticket-name">';
             
                 echo '<input type="text" name="ticket_names[]" required class="' . esc_attr($classes_input) . '" ' . (!$is_nominative ? ' value="1" ' : '') . '>';
