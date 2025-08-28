@@ -167,7 +167,7 @@ class TicketGenerator
             foreach ($names as $index => $name) {
                 $code = (new Code())->generate(8, $product->get_id());
 
-                $this->ticket->create([
+                $this->ticket->create(apply_filters('dl_ticket_manager_create_ticket', [
                     'order_id' => $order_id,
                     'product_id' => $product->get_id(),
                     'code'     => $code,
@@ -175,7 +175,7 @@ class TicketGenerator
                     'event'   => $product_name,
                     'status'  => (new TicketStatus())->getDefaultStatus(),
                     'identifier' => isset($ids[$index]) ? $ids[$index] : '',
-                ]);
+                ]));
             }
         }
     }
