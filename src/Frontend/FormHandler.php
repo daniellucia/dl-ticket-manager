@@ -85,6 +85,7 @@ class FormHandler
                         }
 
                         wrapper.append(`
+                        <?php do_action('dl_ticket_manager_before_ticket_name_input', $product, $is_show_id, $classes_input); ?>
                         <div class="ticket-name">
                         <input type="text" name="ticket_names[]" required placeholder="<?php esc_attr_e('Nombre del titular del ticket', 'dl-ticket-manager'); ?>" class="<?php esc_attr_e($classes_input); ?>"  value="` + value + `" >
                         <?php if ($is_show_id == 'yes') : ?>
