@@ -257,7 +257,7 @@ class TicketGenerator
 
         $temp_dir = plugin_dir_path(DL_TICKET_MANAGER_FILE) . 'temp/';
         if (is_dir($temp_dir)) {
-            foreach (glob($temp_dir . '*') as $file) {
+            foreach (glob($temp_dir . '*.pdf') as $file) {
                 if (is_file($file)) {
                     @unlink($file);
                 }
