@@ -14,13 +14,14 @@ class Ticket
     public function create($data)
     {
 
+        $data['user_id'] = get_current_user_id();
+
         $ticket_data = [
             'post_title'   => $data['name'],
             'post_content' => '',
             'post_status'  => 'publish',
             'post_type'    => 'dl-ticket',
-            'meta_input'   => $data,
-            'user_id'      => get_current_user_id()
+            'meta_input'   => $data
         ];
 
         $ticket_data = apply_filters('dl_ticket_manager_create_ticket_data', $ticket_data);
@@ -97,6 +98,54 @@ class Ticket
                 [
                     'key'   => 'order_id',
                     'value' => $order_id,
+                ],
+            ],
+        ]);
+
+        if ($query->have_posts()) {
+            while ($query->have_posts()) {
+                $query->the_post();
+
+                $product_id = get_post_meta(get_the_ID(), 'product_id', true);
+
+                $tickets[] = apply_filters(
+                    'dl_ticket_manager_get_ticket_data',
+                    [
+                        'id'   => get_the_ID(),
+                        'code' => get_post_meta(get_the_ID(), 'code', true),
+                        'name' => get_post_meta(get_the_ID(), 'name', true),
+                        'event' => get_post_meta(get_the_ID(), 'event', true),
+                        'status' => get_post_meta(get_the_ID(), 'status', true),
+                        'identifier' => get_post_meta(get_the_ID(), 'identifier', true),
+                        'date' => get_post_meta($product_id, '_event_date', true),
+                        'time' => get_post_meta($product_id, '_event_time', true),
+                        'address' => get_post_meta($product_id, '_event_address', true),
+                        'city' => get_post_meta($product_id, '_event_city', true),
+                        'state' => get_post_meta($product_id, '_event_state', true),
+                        'venue' => get_post_meta($product_id, '_event_venue', true),
+                        'description' => apply_filters('the_content', get_post_field('post_content', $product_id)),
+                    ]
+                );
+            }
+            wp_reset_postdata();
+        }
+
+        return $tickets;
+    }
+
+    /**
+     * Obtenemos los tickets de un usuario a partir de su ID
+     * @param int $user_id
+     * @return array
+     * @author Daniel Lucia
+     */
+    public function getFromUserId(int $user_id) {
+        $query = new \WP_Query([
+            'post_type'  => 'dl-ticket',
+            'meta_query' => [
+                [
+                    'key'   => 'user_id',
+                    'value' => $user_id,
                 ],
             ],
         ]);
