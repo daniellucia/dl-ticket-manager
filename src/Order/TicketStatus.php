@@ -2,6 +2,8 @@
 
 namespace DL\TicketManager\Order;
 
+defined('ABSPATH') || exit;
+
 class TicketStatus
 {
     const STATUS_PENDING = 'pending';

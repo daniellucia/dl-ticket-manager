@@ -2,6 +2,8 @@
 
 namespace DL\TicketManager\Frontend;
 
+defined('ABSPATH') || exit;
+
 class FormHandler
 {
     public function __construct()

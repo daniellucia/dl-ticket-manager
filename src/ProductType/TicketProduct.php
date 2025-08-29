@@ -2,6 +2,7 @@
 
 namespace DL\TicketManager\ProductType;
 
+defined('ABSPATH') || exit;
 
 class TicketProduct
 {

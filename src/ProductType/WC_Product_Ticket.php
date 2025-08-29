@@ -2,6 +2,8 @@
 
 namespace DL\TicketManager\ProductType;
 
+defined('ABSPATH') || exit;
+
 class WC_Product_Ticket extends \WC_Product_Simple
 {
 

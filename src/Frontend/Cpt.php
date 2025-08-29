@@ -6,6 +6,8 @@ use DL\TicketManager\Order\Ticket;
 use DL\TicketManager\Order\TicketPdfGenerator;
 use DL\TicketManager\Order\TicketStatus;
 
+defined('ABSPATH') || exit;
+
 class Cpt
 {
     public function __construct()

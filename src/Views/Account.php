@@ -1,3 +1,4 @@
+<?php defined('ABSPATH') || exit; ?>
 <table class="woocommerce-orders-table woocommerce-MyAccount-orders shop_table shop_table_responsive my_account_orders account-orders-table">
     <thead>
         <tr>

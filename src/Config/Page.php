@@ -2,6 +2,8 @@
 
 namespace DL\TicketManager\Config;
 
+defined('ABSPATH') || exit;
+
 class Page
 {
     public function __construct()

@@ -5,6 +5,8 @@ namespace DL\TicketManager\Frontend;
 use DL\TicketManager\Order\Ticket;
 use DL\TicketManager\Order\TicketStatus;
 
+defined('ABSPATH') || exit;
+
 class Validation
 {
     public function __construct()

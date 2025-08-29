@@ -13,6 +13,8 @@ use DL\TicketManager\Order\TicketPdfGenerator;
 use DL\TicketManager\Order\Email;
 use DL\TicketManager\Config\Page;
 
+defined('ABSPATH') || exit;
+
 class Plugin
 {
     private TicketProduct $product_type;

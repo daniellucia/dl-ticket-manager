@@ -5,6 +5,8 @@ namespace DL\TicketManager\Order;
 use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
 use chillerlan\QRCode\QRCode;
 
+defined('ABSPATH') || exit;
+
 class TicketGenerator
 {
     private $ticket;

@@ -4,6 +4,8 @@ namespace DL\TicketManager\Order;
 
 use DL\TicketManager\Order\TicketPdfGenerator;
 
+defined('ABSPATH') || exit;
+
 class Email
 {
 

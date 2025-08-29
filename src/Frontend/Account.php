@@ -6,9 +6,7 @@ use DL\TicketManager\Order\Ticket;
 use DL\TicketManager\Order\TicketPdfGenerator;
 use League\Plates\Engine;
 
-if (! defined('ABSPATH')) {
-    exit;
-}
+defined('ABSPATH') || exit;
 
 class Account
 {

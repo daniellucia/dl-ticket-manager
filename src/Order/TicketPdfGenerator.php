@@ -6,6 +6,8 @@ use Dompdf\Dompdf;
 use Dompdf\Options;
 use League\Plates\Engine;
 
+defined('ABSPATH') || exit;
+
 class TicketPdfGenerator
 {
 

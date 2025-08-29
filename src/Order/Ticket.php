@@ -2,6 +2,8 @@
 
 namespace DL\TicketManager\Order;
 
+defined('ABSPATH') || exit;
+
 class Ticket
 {
 

@@ -2,6 +2,8 @@
 
 namespace DL\TicketManager\Frontend;
 
+defined('ABSPATH') || exit;
+
 class Assets
 {
     public function __construct()
