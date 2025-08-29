@@ -20,11 +20,13 @@ class Cpt
         add_action('wp_ajax_change_ticket_status', [$this, 'ajaxChangeTicketStatus']);
         add_action('admin_footer', [$this, 'adminAjaxScript']);
         add_action('woocommerce_loop_add_to_cart_link', [$this, 'hideAddToCartForTickets'], 20, 2);
+        add_action('pre_get_posts', [$this, 'filterSearchQuery']);
         add_action('pre_get_posts', function ($query) {
             if (is_admin() && $query->get('post_type') === 'dl-ticket' && !current_user_can('manage_options')) {
                 $query->set('post_type', 'none');
             }
         });
+        
     }
 
     /**
@@ -372,6 +374,44 @@ class Cpt
                 });
             </script>
         <?php
+        }
+    }
+
+    /**
+     * Filtra la consulta de búsqueda en el listado
+     * @param mixed $query
+     * @return void
+     * @author Daniel Lucia
+     */
+    public function filterSearchQuery($query)
+    {
+        if (
+            is_admin() &&
+            $query->is_main_query() &&
+            $query->get('post_type') === 'dl-ticket' &&
+            !empty($query->get('s'))
+        ) {
+            $search = $query->get('s');
+            $meta_query = [
+                'relation' => 'OR',
+                [
+                    'key'     => 'code',
+                    'value'   => $search,
+                    'compare' => 'LIKE',
+                ],
+                [
+                    'key'     => 'identifier',
+                    'value'   => $search,
+                    'compare' => 'LIKE',
+                ],
+                [
+                    'key'     => 'order_id',
+                    'value'   => $search,
+                    'compare' => 'LIKE',
+                ],
+            ];
+            $query->set('meta_query', $meta_query);
+            $query->set('s', ''); // Evita que WP busque por título
         }
     }
 }
