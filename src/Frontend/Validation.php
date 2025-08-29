@@ -114,7 +114,7 @@ class Validation
                 'message' => __('Invalid ticket code.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_validation_event', 'invalid_ticket_code', $data, 0, []);
+            do_action('dl_validation_event', 'invalid_ticket_code', $data, 0, [], $response);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -128,7 +128,7 @@ class Validation
                 'message' => __('The order is not valid.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_validation_event', 'invalid_order', $data, 0, []);
+            do_action('dl_validation_event', 'invalid_order', $data, 0, [], $response);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -141,7 +141,7 @@ class Validation
                 'message' => __('The order is not in processing/completed status.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_validation_event', 'invalid_order_status', $data, $order_id, []);
+            do_action('dl_validation_event', 'invalid_order_status', $data, $order_id, [], $response);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -154,7 +154,7 @@ class Validation
                 'message' => __('Invalid security code.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_validation_event', 'invalid_security_code', $data, $order_id, []);
+            do_action('dl_validation_event', 'invalid_security_code', $data, $order_id, [], $response);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -171,7 +171,7 @@ class Validation
                 'message' => __('The ticket has already been used or cancelled.', 'dl-ticket-manager')
             ];
 
-            do_action('dl_validation_event', 'invalid_ticket_status', $data, $order_id, $ticket_data);
+            do_action('dl_validation_event', 'invalid_ticket_status', $data, $order_id, $ticket_data, $response);
 
             return new \WP_REST_Response($response, 400);
         }
@@ -189,8 +189,8 @@ class Validation
                 'message' => $external_validation->get_error_message(),
             ];
 
-            do_action('dl_validation_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data);
-            
+            do_action('dl_validation_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data, $response);
+
             return new \WP_REST_Response($response, 400);
 
         } elseif ($external_validation === false) {
@@ -200,7 +200,7 @@ class Validation
                 'message' => __('Ticket validation failed by external plugin.', 'dl-ticket-manager'),
             ];
 
-            do_action('dl_validation_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data);
+            do_action('dl_validation_event', 'external_ticket_validation_failed', $data, $order_id, $ticket_data, $response);
             
             return new \WP_REST_Response($response, 400);
             
