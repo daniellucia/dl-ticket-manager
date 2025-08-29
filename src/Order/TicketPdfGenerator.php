@@ -73,10 +73,10 @@ class TicketPdfGenerator
         $logo_id = get_option('dl_ticket_manager_pdf_logo', '');
         $logo_url = $logo_id ? wp_get_attachment_url($logo_id) : '';
 
-        $template_folder = get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.php');
+        $template_folder = get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Default.php');
         $template_folder = dirname($template_folder);
 
-        $template_file = basename(get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.php'));
+        $template_file = basename(get_option('dl_ticket_manager_template', plugin_dir_path(__FILE__) . '../Pdf/Default.php'));
         $template_file = pathinfo($template_file, PATHINFO_FILENAME);
 
         $template = new Engine($template_folder);

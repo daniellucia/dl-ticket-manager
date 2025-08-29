@@ -154,7 +154,7 @@ class Page
     public function renderTemplateSelectField(): void
     {
         $templates = apply_filters('dl_ticket_manager_templates', [
-            plugin_dir_path(__FILE__) . '../Pdf/Templates/Default.php' => __('Default template', 'dl-ticket-manager'),
+            plugin_dir_path(__FILE__) . '../Pdf/Default.php' => __('Default template', 'dl-ticket-manager'),
         ]);
 
         $selected = get_option('dl_ticket_manager_template', 'default');
