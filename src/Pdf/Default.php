@@ -141,6 +141,9 @@
                     <tr>
                         <td>
                             <table class="w-100" cellspacing="0" cellpadding="2">
+
+                                <?php do_action('dl_ticket_manager_pdf_extra_data_before', $ORDER_ID, $TICKET_ID); ?>
+
                                 <tr>
                                     <td class="label"><?= __('Date', 'dl-ticket-manager') ?></td>
                                     <td class="right"><?= $this->e($EVENT_DATE) ?></td>
@@ -177,6 +180,9 @@
                                     <td class="label"><?= __('Order', 'dl-ticket-manager') ?></td>
                                     <td class="right"><?= $this->e($ORDER_NUMBER) ?></td>
                                 </tr>
+
+                                <?php do_action('dl_ticket_manager_pdf_extra_data_after', $ORDER_ID, $TICKET_ID); ?>
+
                             </table>
 
                             <!--<table class="w-100" cellspacing="0" cellpadding="0">
