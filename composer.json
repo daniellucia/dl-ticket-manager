@@ -1,4 +1,15 @@
 {
+  "name": "daniel-lucia/dl-ticket-manager",
+  "description": "Plugin for ticket sales with WooCommerce.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Daniel Lucia",
+      "email": "daniellucia84@gmail.com",
+      "homepage": "http://daniellucia.es"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "DL\\TicketManager\\": "src/"
@@ -8,5 +19,9 @@
     "chillerlan/php-qrcode": "^5.0",
     "dompdf/dompdf": "^3.1",
     "league/plates": "^3.6"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "autoloader-suffix": "DLTicketManager"
   }
 }

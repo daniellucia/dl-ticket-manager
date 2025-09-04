@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'daniel-lucia/dl-ticket-manager',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '19398fde36b855daf5b5022e3beffd75d10d3881',
-        'type' => 'library',
+        'reference' => '58f9ecf3398d75dc75c4ae684ed550d0d701997d',
+        'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => '19398fde36b855daf5b5022e3beffd75d10d3881',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'chillerlan/php-qrcode' => array(
             'pretty_version' => '5.0.3',
             'version' => '5.0.3.0',
@@ -34,6 +25,15 @@
             'reference' => '95ed3e9676a1d47cab2e3174d19b43f5dbf52681',
             'type' => 'library',
             'install_path' => __DIR__ . '/../chillerlan/php-settings-container',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'daniel-lucia/dl-ticket-manager' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '58f9ecf3398d75dc75c4ae684ed550d0d701997d',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
