@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
         function onScanSuccess(result) {
 
             qrScanner.stop();
-            //$("#qr-result").text("Código leído: " + result.data);
+            
             $("#qr-result").text(ticketValidator.text_checking);
 
             $.post(ticketValidator.endpoint, {
