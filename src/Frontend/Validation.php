@@ -24,7 +24,14 @@ class Validation
     public function renderValidator(): string
     {
 
-
+        /**
+         * @var mixed $show Opción para mostrar el validador solo a administradores
+         */
+        $show = get_option('dl_ticket_manager_show_validator_admin', 'no');
+        if ($show === 'no' && !current_user_can('manage_options')) {
+            return '';
+        }
+        
         ob_start();
         ?>
         <div id="ticket-validator">

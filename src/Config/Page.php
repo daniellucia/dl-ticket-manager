@@ -43,6 +43,7 @@ class Page
         register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_issuer_website');
         register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_support_email');
         register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_pdf_logo');
+        register_setting('dl_ticket_manager_settings', 'dl_ticket_manager_show_validator_admin');
 
         add_settings_section(
             'dl_ticket_manager_section',
@@ -105,6 +106,14 @@ class Page
             'dl_ticket_manager_pdf_logo',
             __('Logo for tickets', 'dl-ticket-manager'),
             [$this, 'renderPdfLogoField'],
+            'dl-ticket-manager-settings',
+            'dl_ticket_manager_section'
+        );
+
+        add_settings_field(
+            'dl_ticket_manager_show_validator_admin',
+            __('Show validator shortcode only to admin?', 'dl-ticket-manager'),
+            [$this, 'renderShowValidatorShortcodeAdmin'],
             'dl-ticket-manager-settings',
             'dl_ticket_manager_section'
         );
@@ -183,6 +192,13 @@ class Page
     {
         $value = get_option('dl_ticket_manager_support_email', '');
         echo '<input type="email" name="dl_ticket_manager_support_email" value="' . esc_attr($value) . '" style="width: 100%;" />';
+    }
+
+    public function renderShowValidatorShortcodeAdmin(): void
+    {
+        $value = get_option('dl_ticket_manager_show_validator_admin', 'no');
+        echo '<label><input type="checkbox" name="dl_ticket_manager_show_validator_admin" value="yes" ' . checked($value, 'yes', false) . ' /> ';
+        echo esc_html__('Yes, only administrators will see the validator shortcode.', 'dl-ticket-manager') . '</label>';
     }
 
     public function renderPdfLogoField(): void
