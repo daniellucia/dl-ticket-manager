@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Ticket Manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 16:52+0000\n"
-"PO-Revision-Date: 2025-09-06 08:05+0000\n"
+"PO-Revision-Date: 2025-09-06 08:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -56,6 +56,10 @@ msgstr "Asistentes"
 msgid "august"
 msgstr "agosto"
 
+#: src/Frontend/Validation.php:82
+msgid "Awaiting reading..."
+msgstr "Esperando lectura..."
+
 #: src/Order/TicketStatus.php:33
 msgid "Cancelled"
 msgstr "Cancelado"
@@ -67,6 +71,10 @@ msgstr "Cambiar estado"
 #: src/ProductType/TicketProduct.php:169
 msgid "Check to request the attendee's DNI on the ticket."
 msgstr "Marque para solicitar el DNI del asistente en la entrada."
+
+#: src/Frontend/Validation.php:80
+msgid "Checking..."
+msgstr "Comprobando..."
 
 #: src/Pdf/Default.php:164 src/ProductType/TicketProduct.php:229
 #: src/ProductType/TicketProduct.php:230
@@ -216,11 +224,11 @@ msgstr "Imagen para ticket"
 msgid "Introduce la fecha de inicio del evento."
 msgstr "Introduzca la fecha de inicio del evento."
 
-#: src/Frontend/Validation.php:163
+#: src/Frontend/Validation.php:167
 msgid "Invalid security code."
 msgstr "Código de seguridad inválido."
 
-#: src/Frontend/Validation.php:123
+#: src/Frontend/Validation.php:127
 msgid "Invalid ticket code."
 msgstr "Código de ticket no válido."
 
@@ -348,6 +356,10 @@ msgstr "Solicitar DNI"
 msgid "Sale completed"
 msgstr "Venta completada"
 
+#: src/Frontend/Validation.php:79
+msgid "Scan another code"
+msgstr "Escanear otro código"
+
 #: src/Frontend/Cpt.php:153
 msgid "Search events"
 msgstr "Buscar eventos"
@@ -396,19 +408,23 @@ msgstr "Estado actualizado"
 msgid "Terms and conditions"
 msgstr "Condiciones generales"
 
+#: src/Frontend/Validation.php:81
+msgid "The camera could not be accessed:"
+msgstr "No se pudo acceder a la cámara:"
+
 #: src/Order/TicketPdfGenerator.php:72
 msgid "The order associated with this ticket has not been found."
 msgstr "No se ha encontrado el pedido asociado a este ticket."
 
-#: src/Frontend/Validation.php:150
+#: src/Frontend/Validation.php:154
 msgid "The order is not in processing/completed status."
 msgstr "El pedido no está en estado de procesando/completado."
 
-#: src/Frontend/Validation.php:137
+#: src/Frontend/Validation.php:141
 msgid "The order is not valid."
 msgstr "El pedido no es válido."
 
-#: src/Frontend/Validation.php:180
+#: src/Frontend/Validation.php:184
 msgid "The ticket has already been used or cancelled."
 msgstr "El ticket ya ha sido utilizado o anulado."
 
@@ -449,7 +465,7 @@ msgstr "Ticket Manager para WooCommerce"
 msgid "Ticket template"
 msgstr "Plantilla de ticket"
 
-#: src/Frontend/Validation.php:209
+#: src/Frontend/Validation.php:213
 msgid "Ticket validation failed by external plugin."
 msgstr "Fallo en la validación del ticket por un plugin externo."
 
