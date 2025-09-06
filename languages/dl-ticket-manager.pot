@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ticket Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-06 08:11+0000\n"
+"POT-Creation-Date: 2025-09-06 08:14+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -57,7 +57,7 @@ msgstr ""
 msgid "august"
 msgstr ""
 
-#: src/Frontend/Validation.php:82
+#: src/Frontend/Validation.php:40 src/Frontend/Validation.php:82
 msgid "Awaiting reading..."
 msgstr ""
 
@@ -468,6 +468,10 @@ msgstr ""
 
 #: src/Frontend/Validation.php:213
 msgid "Ticket validation failed by external plugin."
+msgstr ""
+
+#: src/Frontend/Validation.php:38
+msgid "Ticket Validator"
 msgstr ""
 
 #: src/Frontend/Cpt.php:107 src/Frontend/Cpt.php:117
