@@ -75,7 +75,11 @@ class Validation
 
             wp_localize_script('ticket-validator-js', 'ticketValidator', [
                 'endpoint' => esc_url(rest_url('tickets/v1/validate')),
-                'nonce'    => wp_create_nonce('wp_rest')
+                'nonce'    => wp_create_nonce('wp_rest'),
+                'button_scan_text' => __('Scan another code', 'dl-ticket-manager'),
+                'text_checking' => __('Checking...', 'dl-ticket-manager'),
+                'text_not_camera' => __('The camera could not be accessed:', 'dl-ticket-manager'),
+                'text_awaiting' => __('Awaiting reading...', 'dl-ticket-manager'),
             ]);
 
             wp_enqueue_style(

@@ -11,14 +11,14 @@ jQuery(document).ready(function ($) {
         );
 
         qrScanner.start().catch(e => {
-            $("#qr-result").text("No se pudo acceder a la cámara: " + e.message);
+            $("#qr-result").text(ticketValidator.text_not_camera + " " + e.message);
         });
 
         function onScanSuccess(result) {
 
             qrScanner.stop();
             //$("#qr-result").text("Código leído: " + result.data);
-            $("#qr-result").text("Comprobando...");
+            $("#qr-result").text(ticketValidator.text_checking);
 
             $.post(ticketValidator.endpoint, {
                 code: result.data,
@@ -39,9 +39,9 @@ jQuery(document).ready(function ($) {
             });
         }
 
-        $("#qr-result").after('<button id="restart-scan" type="button">Escanear otro código</button>');
+        $("#qr-result").after('<button id="restart-scan" type="button">' + ticketValidator.button_scan_text + '</button>');
         $("#restart-scan").on('click', function () {
-            $("#qr-result").text('Esperando lectura…');
+            $("#qr-result").text(ticketValidator.text_awaiting);
             qrScanner.start();
         });
     }
