@@ -35,9 +35,9 @@ class Validation
         ob_start();
         ?>
         <div id="ticket-validator">
-            <h3>Validador de Tickets</h3>
+            <h3><?php _E('Ticket Validator', 'dl-ticket-manager'); ?></h3>
             <video id="qr-video"></video>
-            <p id="qr-result">Esperando lectura...</p>
+            <p id="qr-result"><?php _E('Awaiting reading...', 'dl-ticket-manager'); ?></p>
         </div>
         <?php
         return ob_get_clean();
