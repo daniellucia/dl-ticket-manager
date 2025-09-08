@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Ticket Manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-20 16:52+0000\n"
-"PO-Revision-Date: 2025-09-06 08:15+0000\n"
+"PO-Revision-Date: 2025-09-08 09:45+0000\n"
 "Last-Translator: \n"
 "Language-Team: Español\n"
 "Language: es_ES\n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "#"
 msgstr "#"
 
-#: src/Order/TicketPdfGenerator.php:175
+#: src/Order/TicketPdfGenerator.php:176
 #, php-format
 msgid "%s of %s of %s"
 msgstr "%s de %s de %s"
@@ -44,7 +44,7 @@ msgstr "Dirección"
 msgid "All events"
 msgstr "Todos los eventos"
 
-#: src/Order/TicketPdfGenerator.php:160
+#: src/Order/TicketPdfGenerator.php:161
 msgid "april"
 msgstr "abril"
 
@@ -52,7 +52,7 @@ msgstr "abril"
 msgid "Asistentes"
 msgstr "Asistentes"
 
-#: src/Order/TicketPdfGenerator.php:164
+#: src/Order/TicketPdfGenerator.php:165
 msgid "august"
 msgstr "agosto"
 
@@ -81,12 +81,12 @@ msgstr "Comprobando..."
 msgid "City"
 msgstr "Ciudad"
 
-#: src/Frontend/Cpt.php:194 src/Order/TicketGenerator.php:96
+#: src/Frontend/Cpt.php:194 src/Order/TicketGenerator.php:101
 #: src/Pdf/Default.php:176
 msgid "Code"
 msgstr "Código"
 
-#: src/Config/Page.php:52
+#: src/Config/Page.php:53
 msgid "Configure the legal texts and conditions of the plugin."
 msgstr "Configurar los textos legales y condiciones del plugin."
 
@@ -102,13 +102,17 @@ msgstr "Daniel Lucía"
 msgid "Date"
 msgstr "Fecha"
 
-#: src/Order/TicketPdfGenerator.php:168
+#: src/Order/TicketPdfGenerator.php:169
 msgid "december"
 msgstr "diciembre"
 
-#: src/Config/Page.php:168
+#: src/Config/Page.php:177
 msgid "Default template"
 msgstr "Plantilla predeterminada"
+
+#: src/Config/Page.php:124
+msgid "Display QR code on the ticket"
+msgstr "Mostrar código QR"
 
 #: src/ProductType/TicketProduct.php:157
 msgid "Does this ticket require the name of the attendees?"
@@ -118,7 +122,7 @@ msgstr "¿Este ticket requiere el nombre de los asistentes?"
 msgid "Download"
 msgstr "Descargar"
 
-#: src/Frontend/Cpt.php:214 src/Order/TicketGenerator.php:97
+#: src/Frontend/Cpt.php:214 src/Order/TicketGenerator.php:102
 #: src/Views/Account.php:9 src/Views/Account.php:29
 msgid "Download ticket"
 msgstr "Descargar ticket"
@@ -188,19 +192,19 @@ msgstr "Lugar del evento"
 msgid "Events"
 msgstr "Eventos"
 
-#: src/Order/TicketPdfGenerator.php:158
+#: src/Order/TicketPdfGenerator.php:159
 msgid "february"
 msgstr "febrero"
 
-#: src/Config/Page.php:67
+#: src/Config/Page.php:68
 msgid "General conditions of entry"
 msgstr "Condiciones generales de tickets"
 
-#: src/Pdf/Default.php:209
+#: src/Pdf/Default.php:211
 msgid "General conditions of ticket"
 msgstr "Condiciones generales de la entrada"
 
-#: src/Config/Page.php:50
+#: src/Config/Page.php:51
 msgid "General settings"
 msgstr "Configuración general"
 
@@ -232,43 +236,43 @@ msgstr "Código de seguridad inválido."
 msgid "Invalid ticket code."
 msgstr "Código de ticket no válido."
 
-#: src/Config/Page.php:99
+#: src/Config/Page.php:100
 msgid "Issuer email"
 msgstr "Correo electrónico del emisor"
 
-#: src/Config/Page.php:83
+#: src/Config/Page.php:84
 msgid "Issuer name"
 msgstr "Emisor"
 
-#: src/Config/Page.php:91
+#: src/Config/Page.php:92
 msgid "Issuer website"
 msgstr "Web"
 
-#: src/Order/TicketPdfGenerator.php:157
+#: src/Order/TicketPdfGenerator.php:158
 msgid "january"
 msgstr "enero"
 
-#: src/Order/TicketPdfGenerator.php:163
+#: src/Order/TicketPdfGenerator.php:164
 msgid "july"
 msgstr "julio"
 
-#: src/Order/TicketPdfGenerator.php:162
+#: src/Order/TicketPdfGenerator.php:163
 msgid "june"
 msgstr "junio"
 
-#: src/Config/Page.php:59
+#: src/Config/Page.php:60
 msgid "Legal text"
 msgstr "Texto legal"
 
-#: src/Config/Page.php:107
+#: src/Config/Page.php:108
 msgid "Logo for tickets"
 msgstr "Logo para tickets"
 
-#: src/Order/TicketPdfGenerator.php:159
+#: src/Order/TicketPdfGenerator.php:160
 msgid "march"
 msgstr "marzo"
 
-#: src/Order/TicketPdfGenerator.php:161
+#: src/Order/TicketPdfGenerator.php:162
 msgid "may"
 msgstr "mayo"
 
@@ -276,7 +280,7 @@ msgstr "mayo"
 msgid "My tickets"
 msgstr "Mis tickets"
 
-#: src/Order/TicketGenerator.php:95 src/Views/Account.php:7
+#: src/Order/TicketGenerator.php:100 src/Views/Account.php:7
 msgid "Name"
 msgstr "Nombre"
 
@@ -312,11 +316,11 @@ msgstr "Nombre del titular del ticket"
 msgid "Nominative ticket"
 msgstr "Billete nominativo"
 
-#: src/Order/TicketPdfGenerator.php:167
+#: src/Order/TicketPdfGenerator.php:168
 msgid "november"
 msgstr "noviembre"
 
-#: src/Order/TicketPdfGenerator.php:166
+#: src/Order/TicketPdfGenerator.php:167
 msgid "october"
 msgstr "octubre"
 
@@ -344,7 +348,7 @@ msgstr "Plugin para la venta de entradas con WooCommerce."
 msgid "Remove image"
 msgstr "Eliminar imagen"
 
-#: src/Config/Page.php:214
+#: src/Config/Page.php:230
 msgid "Remove logo"
 msgstr "Quitar logo"
 
@@ -376,19 +380,19 @@ msgstr "Código de seguridad"
 msgid "Select image for ticket"
 msgstr "Seleccione la imagen del ticket"
 
-#: src/Config/Page.php:213
+#: src/Config/Page.php:229
 msgid "Select logo"
 msgstr "Seleccionar logo"
 
-#: src/Config/Page.php:227
+#: src/Config/Page.php:243
 msgid "Select logo for tickets"
 msgstr "Seleccionar logo para tickets"
 
-#: src/Order/TicketPdfGenerator.php:165
+#: src/Order/TicketPdfGenerator.php:166
 msgid "september"
 msgstr "septiembre"
 
-#: src/Config/Page.php:115
+#: src/Config/Page.php:116
 msgid "Show validator shortcode only to admin?"
 msgstr "¿Mostrar el shortcode del validador sólo al administrador?"
 
@@ -404,7 +408,7 @@ msgstr "Estado"
 msgid "Status updated"
 msgstr "Estado actualizado"
 
-#: src/Pdf/Default.php:220
+#: src/Pdf/Default.php:222
 msgid "Terms and conditions"
 msgstr "Condiciones generales"
 
@@ -441,7 +445,7 @@ msgstr "Ticket"
 msgid "Ticket Holder"
 msgstr "Titular de la entrada"
 
-#: src/Pdf/Default.php:230
+#: src/Pdf/Default.php:232
 msgid "Ticket issued by"
 msgstr "Billete expedido por"
 
@@ -453,7 +457,7 @@ msgstr "Gestor de tickets"
 msgid "Ticket Manager Configuración"
 msgstr "Configuración del Ticket Manager"
 
-#: src/Config/Page.php:126
+#: src/Config/Page.php:135
 msgid "Ticket Manager Configuration"
 msgstr "Configuración del gestor de tickets"
 
@@ -461,7 +465,7 @@ msgstr "Configuración del gestor de tickets"
 msgid "Ticket Manager for WooCommerce"
 msgstr "Ticket Manager para WooCommerce"
 
-#: src/Config/Page.php:75
+#: src/Config/Page.php:76
 msgid "Ticket template"
 msgstr "Plantilla de ticket"
 
@@ -498,7 +502,7 @@ msgstr "Evento de actualización"
 msgid "Use this image"
 msgstr "Usar esta imagen"
 
-#: src/Config/Page.php:228
+#: src/Config/Page.php:244
 msgid "Use this logo"
 msgstr "Usar este logo"
 
@@ -514,7 +518,11 @@ msgstr "Localización"
 msgid "View ticket"
 msgstr "Ver ticket"
 
-#: src/Config/Page.php:201
+#: src/Config/Page.php:217
+msgid "Yes, display the QR code on the ticket."
+msgstr "Sí, muestre el código QR."
+
+#: src/Config/Page.php:210
 msgid "Yes, only administrators will see the validator shortcode."
 msgstr "Sí, sólo los administradores verán el shortcode del validador."
 
@@ -522,7 +530,7 @@ msgstr "Sí, sólo los administradores verán el shortcode del validador."
 msgid "You have no tickets purchased."
 msgstr "No tiene entradas compradas."
 
-#: src/Order/Email.php:60 src/Order/Email.php:67
+#: src/Order/Email.php:60 src/Order/Email.php:72
 msgid ""
 "You have purchased tickets for an event. You will receive your tickets with "
 "QR code attached to this email. Present them at the entrance to validate "
