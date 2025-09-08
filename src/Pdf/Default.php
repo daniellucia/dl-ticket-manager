@@ -199,7 +199,9 @@
             </td>
 
             <td class="pad bbtm" style="text-align: right;">
-                <img class="qr" src="<?= $this->e($QR_IMAGE_SRC) ?>" alt="Código QR">
+                <?php if ($SHOW_IMAGE_QR) : ?>
+                    <img class="qr" src="<?= $this->e($QR_IMAGE_SRC) ?>" alt="Código QR">
+                <?php endif; ?>
             </td>
         </tr>
 

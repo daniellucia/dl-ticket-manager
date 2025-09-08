@@ -88,6 +88,7 @@ class TicketPdfGenerator
             apply_filters('dl_ticket_manager_pdf_template_vars', [
                 'LOGO' => $logo_url,
                 'TICKET_IMAGE' => $ticket_data['image_url'] ?? '',
+                'SHOW_IMAGE_QR' => get_option('dl_ticket_manager_show_qr', 'yes') === 'yes',
                 'QR_IMAGE_SRC' => $ticket_generator->getQrImage($order_id, $code),
                 'TICKET_CODE' => $ticket_data['code'] ?? '',
                 'EVENT_TITLE' => $ticket_data['event'] ?? '',
