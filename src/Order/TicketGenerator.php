@@ -157,6 +157,10 @@ class TicketGenerator
 
         foreach ($order->get_items() as $item_id => $item) {
 
+            if (!method_exists($item, 'get_product')) {
+                continue;
+            }
+
             $product = $item->get_product();
             $product_name = $product->get_name();
 
