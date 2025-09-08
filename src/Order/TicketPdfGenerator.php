@@ -52,7 +52,7 @@ class TicketPdfGenerator
      * Genera un PDF a partir del código del ticket.
      * @param string $code
      * @param bool $download
-     * @return void
+     * @return string|null
      * @author Daniel Lúcia
      */
     public function createPdf(string $code, bool $download = true)
