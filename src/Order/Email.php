@@ -63,6 +63,11 @@ class Email
                 $order_id = $order->get_id();
                 $ticket_generator = new TicketGenerator();
 
+                $show_qr = get_option('dl_ticket_manager_show_qr', 'yes');
+                if ($show_qr !== 'yes') {
+                    return;
+                }
+                
                 echo '<p style="margin-top:20px; font-weight:bold; color:#2d2d2d;">' .
                     __('You have purchased tickets for an event. You will receive your tickets with QR code attached to this email. Present them at the entrance to validate them.', 'dl-ticket-manager') .
                     '</p>';
