@@ -89,9 +89,14 @@ class TicketGenerator
             $pdf = new TicketPdfGenerator;
             foreach ($codes as $code) {
 
+                $qr_image = '';
+                $show_qr = get_option('dl_ticket_manager_show_qr', 'yes');
+                if ($show_qr == 'yes') {
+                    $qr_image = '<img src="' . $this->getQrImage($order->get_id(), $code['code']) . '" style="max-width:60px; height:auto; margin: 0 20px 0 0; float:left;">';
+                }
 
                 echo '<li style="overflow:hidden;">' .
-                    '<img src="' . $this->getQrImage($order->get_id(), $code['code']) . '" style="max-width:60px; height:auto; margin: 0 20px 0 0; float:left;">' .
+                    $qr_image .
                     '<strong>' . __('Name', 'dl-ticket-manager') . '</strong>: ' . esc_html($code['name']) . '<br>' .
                     '<strong>' . __('Code', 'dl-ticket-manager') . '</strong>: ' . esc_html($code['code']) . '<br>' .
                     '<a href="' . esc_url($pdf->url($code['code'])) . '">' . __('Download ticket', 'dl-ticket-manager') . '</a>' .
