@@ -38,9 +38,10 @@ define('DL_TICKET_MANAGER_VERSION', '1.0.0');
 define('DL_TICKET_MANAGER_FILE', __FILE__);
 
 add_action('init', function () {
-
     load_plugin_textdomain('dl-ticket-manager', false, dirname(plugin_basename(__FILE__)) . '/languages');
+});
 
+add_action('plugins_loaded', function () {
     $plugin = new Plugin();
     $plugin->init();
 });
